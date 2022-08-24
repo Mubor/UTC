@@ -1,0 +1,58 @@
+.header {
+    position: relative;
+    padding: 1% 1.5%;
+    font-family: AndaleMono;
+    font-size: 28px;
+    letter-spacing: 2.6px;
+    background-color: black;
+    color: #B2B2B2;
+    
+    &__container {
+        width: 50%;
+
+        &--homepage {
+            display: none;
+        }
+    }
+
+    &__logo>a {
+        text-transform: uppercase;
+        color: #3FED41;
+        
+    }
+
+    &__text {
+        span {
+            color: #6261F8;
+        }
+        
+        &--line {
+            margin: 0.2% 0 0 10px;
+            width: 10px;
+            height: 22px;
+            background-color: #B2B2B2;
+            animation: .9s infinite prompt;
+            // animation-duration: 3s;
+            // animation-name: prompt;
+        }
+    }
+
+    &__menu-button {
+        display: none;
+    }
+
+    &__link {
+        font-family: Varela;
+        font-size: 144px;
+        text-transform: uppercase;
+    }
+}
+
+@keyframes prompt {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

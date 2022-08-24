@@ -1,0 +1,357 @@
+@font-face {
+    font-family: AndaleMono;
+    src: url("../fonts/AndaleMono.ttf");
+}
+@font-face {
+    font-family: Varela;
+    src: url("../fonts/Varela.ttf");
+}
+
+@keyframes prompt {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@mixin mediaQueryDesktopContentResizing($mainTextSize, $ptTeam, $ptLang, $liPadding, $ls) {
+    html {
+        font-size: $mainTextSize;
+    }
+
+    .team {
+        padding-top: $ptTeam;
+    }
+
+    .language {
+        padding-top: $ptLang;
+    }
+
+    .nav {
+        letter-spacing: $ls;
+        &>li:not(li:last-child) {
+            padding: $liPadding;
+        }
+    
+    }
+}
+
+@import 'reset/reset.scss';
+
+.wrapper {
+    position: relative;
+    max-width: 100%;
+}
+
+.header {
+    justify-content: space-between;
+    padding: 1% 1.5%;
+    font-family: AndaleMono;
+    font-size: 28px;
+    letter-spacing: 2.6px;
+    background-color: black;
+    color: #B2B2B2;
+    z-index: 4;
+
+    &__menu--homepage, 
+    &__menu-button, &__menu-top{
+        display: none;
+    }
+
+    &__logo>a {
+        text-transform: uppercase;
+        color: #3FED41;
+    }
+
+    &__text {
+        span {
+            color: #6261F8;
+        }    
+    }
+
+    &__line {
+        margin: 0.2% 0 0 8px;
+        width: 10px;
+        height: 24px;
+        background-color: #B2B2B2;
+        animation: 1.1s infinite prompt;
+    }
+
+    &__menu-button, &__link {
+        color: #E46D29;
+    }
+
+    &__link {
+        font-family: AndaleMono;
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    &__menu-top>a {
+        border-bottom: 2px solid #3FED41;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+}
+
+
+.df {
+    display: flex;
+}
+
+html {
+    font-size: 10px;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+}
+
+.team__media, .language {
+    width: 38%;
+}
+
+.team {
+    padding: 3% 0 0 3%;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        width: 38%;
+    }
+
+    &__picture {
+        display: none;
+    }
+
+    &__media, &__media>img {
+        width: 100%;
+    }
+
+    &__message {
+        padding: 8% 0 0 4%;
+        width: 29%;
+        font-family: AndaleMono;
+        font-size: 4rem;
+        font-weight: 400s;
+        text-transform: uppercase;
+        word-spacing: 10px;
+        letter-spacing: 4px;
+        line-height: 1.1;
+    }
+
+    .indent {
+        padding-left: 60px;
+    }
+
+}
+.spec-violet {
+    color: #6261F8;
+}
+
+.spec-orange {
+    color: #E46D29;
+}
+
+.keytext {
+    padding: 0 1%;
+    background-color: #4AE54B;
+}
+
+.language {
+    justify-content: center;
+    padding: 2% 0 0 3%;
+    font-family: Varela;
+    font-size: 3.6rem;
+    text-transform: uppercase;
+    color: #AFAFAF;
+    
+    &>* {
+        margin-right: 1%;
+    }
+    
+    &__elem {
+        padding: 1%;
+
+        &--current {
+            border: 2px solid black;
+        }
+
+        &:not(&--current):hover {
+            border: 1px solid black;
+            transition: border .1s;
+        }
+    }
+
+    & &__elem--current > a {
+        color: black ;
+    }
+    
+    &__elem > a {
+        color: #AFAFAF;
+    }
+
+    span {
+        padding-top: 1%;
+    }
+}
+
+menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 1%;
+}
+
+.nav {
+    width: 100%;
+    font-family: Varela;
+    font-size: 16rem;
+    letter-spacing: 16px;
+    text-transform: uppercase;
+
+    &>li {
+        padding: 3.3% 0;
+        text-align: right;
+    }
+
+    &>li:last-child {
+        padding-bottom: 0;
+    }
+    
+    &__link {
+        transition: color .3s;
+    }
+
+    &__link:hover {
+        // color: #3FED41;
+        color: #6261F8;
+        // color: #E46D29;
+        transition: color .3s;
+    }
+}
+
+@media  screen and (max-width: 1700px) {
+    @include mediaQueryDesktopContentResizing(9px, 5%, 3%, 4% 0, 15px);
+}
+@media  screen and (max-width: 1550px) {
+    @include mediaQueryDesktopContentResizing(8px, 5%, 4%, 4% 0, 13px);
+}
+@media  screen and (max-width: 1400px) {
+    @include mediaQueryDesktopContentResizing(7px, 6%, 6%, 5% 0, 11px);
+}
+@media  screen and (max-width: 1260px) {
+    @include mediaQueryDesktopContentResizing(5px, 6%, 3%, 6% 0, 8px);
+    .team__message {
+        font-size: 23px;
+        word-spacing: normal;
+        width: 30%;
+    }
+}
+@media  screen and (max-width: 1100px) {
+    @include mediaQueryDesktopContentResizing(4px, 6%, 3%, 7% 0, 8px);
+    .team__message {
+        font-size: 19px;
+    }
+}
+
+@media  screen and (max-width: 801px) {
+    .header__menu--homepage {
+        display: block;
+        height: 0;
+    }
+    
+    .header__menu {
+        visibility: hidden;
+        width: 100%;
+    }
+}
+
+@media  screen and (max-width: 800px) {
+    .header.open {
+        position: absolute;
+        top: 0;
+        min-height: 100vh;
+        transition: min-height .3s;
+    }
+    
+    .open > .header__menu {
+        visibility: visible;
+    }
+    
+    .open .header__logo,
+    .open .spec-violet {
+        color: black;
+    }
+    
+    menu, .header__text,
+    .header__line {
+        display: none;
+    }
+    
+    .header__menu-button,
+    .header__menu-top,
+    .header__list {
+        display: block;
+    }
+    
+    .header {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        padding: 5%;
+        width: 100%;
+        min-height: 0vh;
+        font-size: 20px;
+        transition: min-height .3s;
+        
+        &__body {
+            justify-content: space-between;
+        }
+        
+        &__logo, &__menu-button {
+            letter-spacing: normal;
+        }
+
+        &__menu-button {
+            text-transform: uppercase;
+        }
+
+        &__menu-top {
+            margin: 10vh 0;
+            text-align: center;
+        }
+
+        &__list {
+            &>li {
+                padding-bottom: 6vh;
+            }
+
+            &>li:before {
+                content: '->';
+                font-size: 48px;
+            }
+
+            & a {
+                margin-left: 5%;
+            }
+        }
+
+        &__link {
+            color: #4AE54B;
+            font-size: 48px;
+            letter-spacing: normal;
+
+            &:hover {
+                color: #E46D29;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,64 @@
+.header {
+  position: relative;
+  padding: 1% 1.5%;
+  font-family: AndaleMono;
+  font-size: 28px;
+  letter-spacing: 2.6px;
+  background-color: black;
+  color: #B2B2B2;
+}
+
+.header__container {
+  width: 50%;
+}
+
+.header__container--homepage {
+  display: none;
+}
+
+.header__logo > a {
+  text-transform: uppercase;
+  color: #3FED41;
+}
+
+.header__text span {
+  color: #6261F8;
+}
+
+.header__text--line {
+  margin: 0.2% 0 0 10px;
+  width: 10px;
+  height: 22px;
+  background-color: #B2B2B2;
+  -webkit-animation: .9s infinite prompt;
+          animation: .9s infinite prompt;
+}
+
+.header__menu-button {
+  display: none;
+}
+
+.header__link {
+  font-family: Varela;
+  font-size: 144px;
+  text-transform: uppercase;
+}
+
+@-webkit-keyframes prompt {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes prompt {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=header.css.map */

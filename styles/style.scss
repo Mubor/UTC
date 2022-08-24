@@ -127,10 +127,6 @@ html {
         width: 38%;
     }
 
-    &__picture {
-        display: none;
-    }
-
     &__media, &__media>img {
         width: 100%;
     }
@@ -138,13 +134,17 @@ html {
     &__message {
         padding: 8% 0 0 4%;
         width: 29%;
-        font-family: AndaleMono;
+        font-family: Varela;
         font-size: 4rem;
         font-weight: 400s;
         text-transform: uppercase;
         word-spacing: 10px;
         letter-spacing: 4px;
         line-height: 1.1;
+    }
+
+    &__message>&__container {
+        display: none;
     }
 
     .indent {
@@ -161,6 +161,7 @@ html {
 }
 
 .keytext {
+    font-family: AndaleMono;
     padding: 0 1%;
     background-color: #4AE54B;
 }
@@ -179,6 +180,8 @@ html {
     
     &__elem {
         padding: 1%;
+
+        border: 2px solid white;
 
         &--current {
             border: 2px solid black;
@@ -199,7 +202,7 @@ html {
     }
 
     span {
-        padding-top: 1%;
+        padding: 1% 1% 0 1%;
     }
 }
 
@@ -305,7 +308,7 @@ menu {
     .header {
         flex-direction: column-reverse;
         justify-content: space-between;
-        padding: 5%;
+        padding: 4.5% 5%;
         width: 100%;
         min-height: 0vh;
         font-size: 20px;
@@ -354,4 +357,60 @@ menu {
         }
     }
 
+    .team {
+        display: block;
+        width: 100%;
+
+        &__container:not(&__message>&__container) {
+            display: none
+        }
+
+        &__message>&__container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 8% 0;
+            width: 100%;
+        }
+
+        &__message {
+            padding: .5% 5% 0 2%;
+            width: 100%;
+            font-size: 40px;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-align: justify;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        span {
+            padding: 0%;
+        }
+
+        .indent {
+            padding-left: 2px;
+        }
+        
+    }
+
+    .language {
+        margin-top: 5%;
+        width: 100%;
+        font-size: 24px;
+        line-height: 1;
+
+        &__elem {
+            border: 1px solid white;
+            
+            &--current {
+                border: 1px solid black;
+            }
+        }
+    }
+
+    .indent-mobile {
+        display: block;
+        text-align: right;
+    }
 }

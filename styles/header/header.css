@@ -1,11 +1,11 @@
 @font-face {
   font-family: AndaleMono;
-  src: url("../fonts/AndaleMono.ttf");
+  src: url("../../../fonts/AndaleMono.ttf");
 }
 
 @font-face {
   font-family: Varela;
-  src: url("../fonts/Varela.ttf");
+  src: url("../../../fonts/Varela.ttf");
 }
 
 @-webkit-keyframes prompt {
@@ -41,12 +41,25 @@ html {
   max-width: 100%;
 }
 
+.spec-violet {
+  color: #6261F8;
+}
+
+.spec-orange {
+  color: #E46D29;
+}
+
+.keytext {
+  font-family: AndaleMono;
+  padding: 0 1%;
+  background-color: #4AE54B;
+}
+
 .header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 1% 1.5%;
-  font-family: AndaleMono;
   font-size: 28px;
   letter-spacing: 2.6px;
   background-color: black;
@@ -63,8 +76,16 @@ html {
   color: #3FED41;
 }
 
-.header__text span {
-  color: #6261F8;
+.header__logo *, .header__logo {
+  font-family: AndaleMono;
+}
+
+.header__logo {
+  word-spacing: 4px;
+}
+
+.header__text > a {
+  color: #B2B2B2;
 }
 
 .header__line {
@@ -80,10 +101,17 @@ html {
   color: #E46D29;
 }
 
+.header__menu {
+  width: 30%;
+}
+
 .header__link {
   font-family: AndaleMono;
-  font-size: 20px;
   text-transform: uppercase;
+}
+
+.header__link--current {
+  display: none;
 }
 
 .header__menu-top > a {
@@ -97,6 +125,12 @@ html {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 100%;
+}
+
+@media screen and (max-width: 1440px) {
+  .header * {
+    font-size: 24px;
+  }
 }
 
 @media screen and (max-width: 801px) {
@@ -131,7 +165,8 @@ html {
   }
   .header__menu-button,
   .header__menu-top,
-  .header__list {
+  .header__list,
+  .header__link--current {
     display: block;
   }
   .header {
@@ -181,6 +216,9 @@ html {
   }
   .header__link:hover {
     color: #E46D29;
+  }
+  .header__link--current {
+    display: block;
   }
 }
 /*# sourceMappingURL=header.css.map */

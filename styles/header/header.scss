@@ -1,10 +1,10 @@
 @font-face {
     font-family: AndaleMono;
-    src: url("../fonts/AndaleMono.ttf");
+    src: url("../../../fonts/AndaleMono.ttf");
 }
 @font-face {
     font-family: Varela;
-    src: url("../fonts/Varela.ttf");
+    src: url("../../../fonts/Varela.ttf");
 }
 
 @keyframes prompt {
@@ -28,10 +28,23 @@ html {
     max-width: 100%;
 }
 
+.spec-violet {
+    color: #6261F8;
+}
+
+.spec-orange {
+    color: #E46D29;
+}
+
+.keytext {
+    font-family: AndaleMono;
+    padding: 0 1%;
+    background-color: #4AE54B;
+}
+
 .header {
     justify-content: space-between;
     padding: 1% 1.5%;
-    font-family: AndaleMono;
     font-size: 28px;
     letter-spacing: 2.6px;
     background-color: black;
@@ -47,12 +60,19 @@ html {
         text-transform: uppercase;
         color: #3FED41;
     }
-
-    &__text {
-        span {
-            color: #6261F8;
-        }    
+    
+    &__logo *, &__logo {
+        font-family: AndaleMono;
     }
+
+    &__logo {
+        word-spacing: 4px;
+    }
+
+    &__text>a {
+        color: #B2B2B2;
+    }
+    
 
     &__line {
         margin: 0.2% 0 0 8px;
@@ -66,10 +86,17 @@ html {
         color: #E46D29;
     }
 
+    &__menu {
+        width: 30%;
+    }
+
     &__link {
         font-family: AndaleMono;
-        font-size: 20px;
         text-transform: uppercase;
+
+        &--current {
+            display: none;
+        }
     }
 
     &__menu-top>a {
@@ -81,6 +108,12 @@ html {
         justify-content: space-around;
         width: 100%;
     }
+}
+
+@media  screen and (max-width: 1440px) {
+     .header * {
+         font-size: 24px;
+     }
 }
 
 @media  screen and (max-width: 801px) {
@@ -119,7 +152,8 @@ html {
     
     .header__menu-button,
     .header__menu-top,
-    .header__list {
+    .header__list,
+    .header__link--current {
         display: block;
     }
     
@@ -171,6 +205,10 @@ html {
 
             &:hover {
                 color: #E46D29;
+            }
+
+            &--current {
+                display: block;
             }
         }
     }

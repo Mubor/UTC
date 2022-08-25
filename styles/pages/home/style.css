@@ -193,6 +193,9 @@ html {
 }
 
 @media screen and (max-width: 800px) {
+  body.overflow {
+    overflow: hidden;
+  }
   .header.open {
     position: absolute;
     top: 0;
@@ -202,6 +205,9 @@ html {
   }
   .open > .header__menu {
     visibility: visible;
+  }
+  .open ~ .main {
+    overflow: hidden;
   }
   .open .header__logo,
   .open .spec-violet {
@@ -523,7 +529,7 @@ menu {
   }
   .language {
     margin-top: 5%;
-    padding-bottom: 1%;
+    padding-bottom: 3%;
     width: 100%;
     font-size: 24px;
     line-height: 1;

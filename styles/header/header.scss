@@ -131,8 +131,12 @@ html {
 
 @media  screen and (max-width: 800px) {
 
-    body.overflow{
-        overflow: hidden;
+    // body.overflow{
+    //     overflow: hidden;
+    // }
+
+    .header.open~*{
+        display: none;
     }
 
     .header.open {
@@ -144,10 +148,6 @@ html {
     
     .open > .header__menu {
         visibility: visible;
-    }
-
-    .open~.main {
-        overflow: hidden;
     }
     
     .open .header__logo,

@@ -114,9 +114,7 @@ menu {
     }
 
     &__link:hover {
-        // color: #3FED41;
         color: #6261F8;
-        // color: #E46D29;
         transition: color .3s;
     }
 }
@@ -231,11 +229,14 @@ menu {
             padding-left: 2px;
         }
         
+        & .indent-br {
+            display: unset;
+        }
     }
 
     .language {
         margin-top: 5%;
-        padding-bottom: 1%;
+        padding-bottom: 3%;
         width: 100%;
         font-size: 24px;
         line-height: 1;
@@ -254,7 +255,4 @@ menu {
         text-align: right;
     }
 
-    .indent-br {
-        display: unset;
-    }
 }

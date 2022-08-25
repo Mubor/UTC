@@ -253,6 +253,7 @@ html {
   }
   .header__list > li:before {
     content: '->';
+    font-family: AndaleMono;
     font-size: 48px;
   }
   .header__list a {

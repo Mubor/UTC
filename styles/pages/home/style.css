@@ -253,6 +253,7 @@ html {
   }
   .header__list > li:before {
     content: '->';
+    font-family: AndaleMono;
     font-size: 48px;
   }
   .header__list a {
@@ -517,6 +518,9 @@ menu {
   .team .indent {
     padding-left: 2px;
   }
+  .team .indent-br {
+    display: unset;
+  }
   .language {
     margin-top: 5%;
     padding-bottom: 1%;
@@ -533,9 +537,6 @@ menu {
   .indent-mobile {
     display: block;
     text-align: right;
-  }
-  .indent-br {
-    display: unset;
   }
 }
 /*# sourceMappingURL=style.css.map */

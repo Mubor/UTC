@@ -83,6 +83,7 @@ html {
     }
 
     &__menu-button, &__link {
+        font-family: AndaleMono;
         color: #E46D29;
     }
 
@@ -91,7 +92,6 @@ html {
     }
 
     &__link {
-        font-family: AndaleMono;
         text-transform: uppercase;
 
         &--current {
@@ -125,6 +125,7 @@ html {
     .header__menu {
         visibility: hidden;
         width: 100%;
+        height: 0;
     }
 }
 
@@ -172,6 +173,7 @@ html {
         
         &__logo, &__menu-button {
             letter-spacing: normal;
+            word-spacing: normal;
         }
 
         &__menu-button {

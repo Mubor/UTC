@@ -123,12 +123,12 @@ html {
   color: #3FED41;
 }
 
-.header__logo * {
+.header__logo *, .header__logo {
   font-family: AndaleMono;
 }
 
 .header__logo {
-  word-spacing: 10px;
+  word-spacing: 4px;
 }
 
 .header__text > a {
@@ -145,12 +145,15 @@ html {
 }
 
 .header__menu-button, .header__link {
+  font-family: AndaleMono;
   color: #E46D29;
 }
 
+.header__menu {
+  width: 30%;
+}
+
 .header__link {
-  font-family: AndaleMono;
-  font-size: 20px;
   text-transform: uppercase;
 }
 
@@ -185,6 +188,7 @@ html {
   .header__menu {
     visibility: hidden;
     width: 100%;
+    height: 0;
   }
 }
 
@@ -235,6 +239,7 @@ html {
   }
   .header__logo, .header__menu-button {
     letter-spacing: normal;
+    word-spacing: normal;
   }
   .header__menu-button {
     text-transform: uppercase;
@@ -271,12 +276,12 @@ html {
   width: 100%;
 }
 
-.team__media, .language {
-  width: 38%;
+.language {
+  width: 40.5%;
 }
 
 .team {
-  padding: 3% 0 0 3%;
+  padding: 1% 0 0 1%;
 }
 
 .team__container {
@@ -286,7 +291,7 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 38%;
+  width: 40.5%;
 }
 
 .team__media, .team__media > img {
@@ -294,11 +299,10 @@ html {
 }
 
 .team__message {
-  padding: 8% 0 0 4%;
+  padding: 9% 0 0 2%;
   width: 29%;
   font-family: Varela;
   font-size: 4rem;
-  font-weight: 400s;
   text-transform: uppercase;
   word-spacing: 10px;
   letter-spacing: 4px;
@@ -313,11 +317,15 @@ html {
   padding-left: 60px;
 }
 
+.team .indent-br {
+  display: block;
+}
+
 .language {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 2% 0 0 3%;
+  padding: 0.3% 0 0 1%;
   font-family: Varela;
   font-size: 3.6rem;
   text-transform: uppercase;
@@ -529,6 +537,7 @@ menu {
   }
   .language {
     margin-top: 5%;
+    padding-bottom: 1%;
     width: 100%;
     font-size: 24px;
     line-height: 1;
@@ -542,6 +551,9 @@ menu {
   .indent-mobile {
     display: block;
     text-align: right;
+  }
+  .indent-br {
+    display: unset;
   }
 }
 /*# sourceMappingURL=style.css.map */

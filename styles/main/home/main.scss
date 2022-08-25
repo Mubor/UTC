@@ -3,17 +3,17 @@
     width: 100%;
 }
 
-.team__media, .language {
-    width: 38%;
+.language {
+    width: 40.5%;
 }
 
 .team {
-    padding: 3% 0 0 3%;
+    padding: 1% 0 0 1%;
 
     &__container {
         display: flex;
         justify-content: center;
-        width: 38%;
+        width: 40.5%;
     }
 
     &__media, &__media>img {
@@ -21,11 +21,10 @@
     }
 
     &__message {
-        padding: 8% 0 0 4%;
+        padding: 9% 0 0 2%;
         width: 29%;
         font-family: Varela;
         font-size: 4rem;
-        font-weight: 400s;
         text-transform: uppercase;
         word-spacing: 10px;
         letter-spacing: 4px;
@@ -40,11 +39,15 @@
         padding-left: 60px;
     }
 
+    .indent-br {
+        display: block;
+    }
+
 }
 
 .language {
     justify-content: center;
-    padding: 2% 0 0 3%;
+    padding: 0.3% 0 0 1%;
     font-family: Varela;
     font-size: 3.6rem;
     text-transform: uppercase;
@@ -208,6 +211,7 @@ menu {
 
     .language {
         margin-top: 5%;
+        padding-bottom: 1%;
         width: 100%;
         font-size: 24px;
         line-height: 1;
@@ -224,5 +228,9 @@ menu {
     .indent-mobile {
         display: block;
         text-align: right;
+    }
+
+    .indent-br {
+        display: unset;
     }
 }

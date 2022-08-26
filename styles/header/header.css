@@ -60,7 +60,7 @@ html {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 1% 1.5%;
-  font-size: 1.6vw;
+  font-size: 1.7vw;
   letter-spacing: 2.6px;
   background-color: black;
   color: #B2B2B2;
@@ -122,12 +122,6 @@ html {
   width: 100%;
 }
 
-@media screen and (max-width: 1440px) {
-  .header * {
-    font-size: 24px;
-  }
-}
-
 @media screen and (max-width: 801px) {
   .header__menu--homepage {
     display: block;
@@ -179,7 +173,8 @@ html {
     padding: 4.5% 5%;
     width: 100%;
     min-height: 0vh;
-    font-size: 20px;
+    word-spacing: 20px;
+    font-size: 5.3vw;
     -webkit-transition: min-height .3s;
     transition: min-height .3s;
   }

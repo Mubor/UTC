@@ -116,24 +116,6 @@
     }
 }
 
-@media  screen and (max-width: 1601px) {
-
-}
-
-@media screen and (max-width: 1700px) {
-    .team {
-
-    }
-
-    .team__message {
-        // width: 24%;
-    }
-
-    .nav {
-
-    }
-}
-
 @media  screen and (max-width: 800px) {
     .nav {
         display: none;
@@ -142,7 +124,7 @@
 
     .team {
         width: 100%;
-
+        padding: 0;
         &>&__media  {
             display: none
         }
@@ -156,11 +138,12 @@
         }
 
         &__message {
-            padding: .5% 5% 0 2%;
+            position: static;
+            padding: 5% 5% 0 5%;
             width: 100%;
             font-size: 40px;
             letter-spacing: normal;
-            word-spacing: normal;
+            word-spacing: 20px;
             text-align: justify;
             font-weight: 500;
             line-height: 1.2;
@@ -180,7 +163,7 @@
     }
 
     .language {
-        margin-top: 5%;
+        margin-top: 13%;
         padding-bottom: 3%;
         width: 100%;
         font-size: 24px;

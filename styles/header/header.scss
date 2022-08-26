@@ -45,7 +45,7 @@ html {
 .header {
     justify-content: space-between;
     padding: 1% 1.5%;
-    font-size: 1.6vw;
+    font-size: 1.7vw;
     // font-size: 28px;
     letter-spacing: 2.6px;
     background-color: black;
@@ -115,11 +115,11 @@ html {
     }
 }
 
-@media  screen and (max-width: 1440px) {
-     .header * {
-         font-size: 24px;
-     }
-}
+// @media  screen and (max-width: 1440px) {
+//      .header * {
+//          font-size: 24px;
+//      }
+// }
 
 @media  screen and (max-width: 801px) {
     .header__menu--homepage {
@@ -178,7 +178,8 @@ html {
         padding: 4.5% 5%;
         width: 100%;
         min-height: 0vh;
-        font-size: 20px;
+        word-spacing: 20px;
+        font-size: 5.3vw;
         transition: min-height .3s;
         
         &__body {

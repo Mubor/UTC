@@ -88,10 +88,6 @@ html {
   color: #B2B2B2;
 }
 
-.header__text {
-  border-right: 5px solid #B2B2B2;
-}
-
 .header__menu-button, .header__link {
   font-family: AndaleMono;
   color: #E46D29;
@@ -147,6 +143,8 @@ html {
   }
   .open > .header__menu {
     visibility: visible;
+    -webkit-transition: all 1s;
+    transition: all 1s;
   }
   .open .header__logo,
   .open .spec-violet {

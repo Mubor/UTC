@@ -80,7 +80,7 @@ html {
     
 
     &__text{
-        border-right: 5px solid #B2B2B2;
+        // border-right: 5px solid #B2B2B2;
     }
 
     // &__line {
@@ -133,6 +133,7 @@ html {
     
     .header__menu {
         visibility: hidden;
+        // opacity: 0;
         width: 100%;
         height: 0;
     }
@@ -157,6 +158,8 @@ html {
     
     .open > .header__menu {
         visibility: visible;
+        // opacity: 1;
+        transition: all 1s;
     }
     
     .open .header__logo,

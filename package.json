@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "netlify-cli": "^11.5.0"
+    "netlify-cli": "^11.5.0",
+    "typed.js": "^2.0.12"
   }
 }

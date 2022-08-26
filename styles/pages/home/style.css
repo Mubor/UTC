@@ -135,10 +135,6 @@ html {
   color: #B2B2B2;
 }
 
-.header__text {
-  border-right: 5px solid #B2B2B2;
-}
-
 .header__menu-button, .header__link {
   font-family: AndaleMono;
   color: #E46D29;

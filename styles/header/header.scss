@@ -148,6 +148,11 @@ html {
     .header.open~*{
         display: none;
     }
+    .open .header__logo,
+    .open .header__menu-button {
+        animation: prompt 1s;
+        animation-iteration-count: 1;
+    }
 
     .header.open {
         position: fixed;

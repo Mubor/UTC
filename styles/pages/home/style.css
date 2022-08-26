@@ -181,7 +181,7 @@ html {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 830px) {
   .header.open ~ * {
     display: none;
   }
@@ -396,7 +396,7 @@ html {
   transition: color .3s;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 830px) {
   .nav {
     display: none;
   }
@@ -423,7 +423,7 @@ html {
     position: static;
     padding: 5% 5% 0 5%;
     width: 100%;
-    font-size: 40px;
+    font-size: 10.7vw;
     letter-spacing: normal;
     word-spacing: 20px;
     text-align: justify;
@@ -443,7 +443,7 @@ html {
     margin-top: 13%;
     padding-bottom: 3%;
     width: 100%;
-    font-size: 24px;
+    font-size: 6.4vw;
     line-height: 1;
   }
   .language__elem {

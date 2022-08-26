@@ -1,33 +1,32 @@
 .main {
     position: relative;
+    justify-content: space-between;
     width: 100%;
 }
 
-.language {
-    width: 40.5%;
-}
-
 .team {
-    padding: 1% 0 0 1%;
+    flex-direction: column;
+    justify-content: space-between;
+    // padding-top: 1%;
+    width: 50%;
 
-    &__container {
-        display: flex;
-        justify-content: center;
-        width: 40.5%;
+    &__media {
+        width: 82%;
+        margin: auto;
     }
-
-    &__media, &__media>img {
+    &__media>img {
         width: 100%;
     }
 
     &__message {
-        padding: 9% 0 0 2%;
-        width: 29%;
+        position: absolute;
+        top:21%;
+        left:47%;
+        width: 24%;
         font-family: Varela;
-        font-size: 4rem;
+        font-size: 2.2vw;
         text-transform: uppercase;
         word-spacing: 10px;
-        letter-spacing: 4px;
         line-height: 1.1;
     }
 
@@ -42,14 +41,14 @@
     .indent-br {
         display: block;
     }
-
 }
 
 .language {
     justify-content: center;
-    padding: 0.3% 0 0 1%;
+    margin: 0 auto;
+    padding-bottom: 1%;
     font-family: Varela;
-    font-size: 3.6rem;
+    font-size: 4.5vh;
     text-transform: uppercase;
     color: #AFAFAF;
     
@@ -85,23 +84,20 @@
     }
 }
 
-menu {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding-right: 1%;
-    max-height: 100%;
-}
 
 .nav {
-    width: 100%;
-    font-family: Varela;
-    font-size: 16rem;
-    letter-spacing: 16px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5% 2% 0 0;
+    // padding-right: 1%;
+    height: 90.5vh;
     text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: Varela;
+    font-size: 9vw;
+    font-weight: 100;
 
     &>li {
-        padding: 3.3% 0;
         text-align: right;
     }
 
@@ -111,6 +107,7 @@ menu {
     
     &__link {
         transition: color .3s;
+        // line-height: -1; 
     }
 
     &__link:hover {
@@ -119,86 +116,34 @@ menu {
     }
 }
 
-@mixin mediaQueryDesktopContentResizing($mainTextSize, $ptTeam, $ptLang, $liPadding, $ls) {
-    html {
-        font-size: $mainTextSize;
-    }
-    
+@media  screen and (max-width: 1601px) {
+
+}
+
+@media screen and (max-width: 1700px) {
     .team {
-        padding-top: $ptTeam;
-    }
-    
-    .language {
-        padding-top: $ptLang;
-    }
-    
-    .nav {
-        letter-spacing: $ls;
-        &>li:not(li:last-child) {
-            padding: $liPadding;
-        }
-        
-    }
-}
 
-@media  screen and (max-width: 1700px) {
-    @include mediaQueryDesktopContentResizing(9px, 5%, 3%, 4% 0, 15px);
-}
-@media  screen and (max-width: 1550px) {
-    @include mediaQueryDesktopContentResizing(8px, 5%, 4%, 4% 0, 13px);
-}
-@media  screen and (max-width: 1441px) {
-    .team {
-        padding-top: 1%;
     }
 
-    .team__container, 
-    .language {
-        width: 39%;
-    }
-
-    .language {
-        padding-top: 1%;
-    }
-    
-    menu * {
-        font-size: 15vh ;
-    }
-
-    .nav>li:not(li:last-child) {
-        padding: 4vh 0;
-    }
-}
-
-// @media  screen and (max-width: 1260px) {
-//     @include mediaQueryDesktopContentResizing(5px, 6%, 3%, 6% 0, 8px);
-//     .team__message {
-//         font-size: 23px;
-//         word-spacing: normal;
-//         width: 30%;
-//     }
-// }
-@media  screen and (max-width: 1100px) {
-    menu * {
-        font-size: 16rem;
-    }
-    @include mediaQueryDesktopContentResizing(4px, 6%, 3%, 7% 0, 8px);
     .team__message {
-        font-size: 19px;
+        // width: 24%;
+    }
+
+    .nav {
+
     }
 }
 
 @media  screen and (max-width: 800px) {
-    menu {
+    .nav {
         display: none;
     }
     
 
     .team {
-        display: block;
         width: 100%;
 
-        &__container:not(&__message>&__container) {
+        &>&__media  {
             display: none
         }
 

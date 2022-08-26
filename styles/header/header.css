@@ -60,7 +60,7 @@ html {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 1% 1.5%;
-  font-size: 28px;
+  font-size: 1.6vw;
   letter-spacing: 2.6px;
   background-color: black;
   color: #B2B2B2;
@@ -88,13 +88,8 @@ html {
   color: #B2B2B2;
 }
 
-.header__line {
-  margin: 0.2% 0 0 8px;
-  width: 10px;
-  height: 24px;
-  background-color: #B2B2B2;
-  -webkit-animation: 1.1s infinite prompt;
-          animation: 1.1s infinite prompt;
+.header__text {
+  border-right: 5px solid #B2B2B2;
 }
 
 .header__menu-button, .header__link {

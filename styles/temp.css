@@ -193,8 +193,11 @@ html {
 }
 
 @media screen and (max-width: 800px) {
+  .header.open ~ * {
+    display: none;
+  }
   .header.open {
-    position: absolute;
+    position: fixed;
     top: 0;
     min-height: 100vh;
     -webkit-transition: min-height .3s;

@@ -22,15 +22,38 @@ menuButton.addEventListener('click', switchMenu);
 
 //type effect
 
+const initTypeAnimation = () => {
+    return new Typed('#type-container', {
+        strings: ['hello dude ', 'hello dude '],
+        // stringsElement:null,
+        loop:true,
+        loopCount: Infinity,
+        typeSpeed: 200,
+        backSpeed: 60,
+        backDelay: 6000
+    });
+}
 
-const type = new Typed('#type-container', {
-    strings: ['hello dude ', 'hello dude '],
-    // stringsElement:null,
-    loop:true,
-    loopCount: Infinity,
-    typeSpeed: 200,
-    backSpeed: 60,
-    backDelay: 6000
-});
-type.start();
+let typeAnimation;
+let animationCanStart = true;
+
+if(document.documentElement.clientWidth > 830) {
+    typeAnimation = initTypeAnimation()
+    typeAnimation.start();
+    animationCanStart = false;
+}
+
+window.addEventListener('resize', () => {
+    console.log(document.documentElement.clientWidth);
+    if(document.documentElement.clientWidth <= 831 && typeAnimation) {
+        typeAnimation.destroy();
+        animationCanStart = true
+    }
+    else if (animationCanStart) {
+        typeAnimation = initTypeAnimation();
+        typeAnimation.start();
+        animationCanStart = false;
+    }
+})
+
 

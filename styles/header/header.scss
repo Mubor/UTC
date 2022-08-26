@@ -77,11 +77,6 @@ html {
     &__text>a {
         color: #B2B2B2;
     }
-    
-
-    &__text{
-        // border-right: 5px solid #B2B2B2;
-    }
 
     // &__line {
     //     margin: 0.2% 0 0 8px;
@@ -119,41 +114,12 @@ html {
     }
 }
 
-// @media  screen and (max-width: 1440px) {
-//      .header * {
-//          font-size: 24px;
-//      }
-// }
-
-@media  screen and (max-width: 801px) {
-    .header__menu--homepage {
-        display: block;
-        height: 0;
-    }
-    
-    .header__menu {
-        visibility: hidden;
-        // opacity: 0;
-        width: 100%;
-        height: 0;
-    }
-}
-
 @media  screen and (max-width: 830px) {
-
-    // body.overflow{
-    //     overflow: hidden;
-    // }
-
-    .header.open~*{
-        display: none;
-    }
     .open .header__logo,
     .open .header__menu-button {
         animation: prompt 1s;
-        animation-iteration-count: 1;
     }
-
+    
     .header.open {
         position: fixed;
         top: 0;
@@ -163,8 +129,7 @@ html {
     
     .open > .header__menu {
         visibility: visible;
-        // opacity: 1;
-        transition: all 1s;
+        animation: prompt 1s;
     }
     
     .open .header__logo,
@@ -173,14 +138,16 @@ html {
     }
     
     .header__text,
-    .header__line {
+    .header__line,
+    .header.open~* {
         display: none;
     }
     
     .header__menu-button,
     .header__menu-top,
     .header__list,
-    .header__link--current {
+    .header__link--current,
+    .header__menu--homepage {
         display: block;
     }
     
@@ -201,6 +168,20 @@ html {
         &__logo, &__menu-button {
             letter-spacing: normal;
             word-spacing: normal;
+        }
+
+        &:not(.open) > &__menu {
+            opacity: 0;
+        }
+
+        &__menu {
+            width: 100%;
+            height: 0;
+            visibility: hidden;
+
+            &--homepage {
+                height: 0;
+            }
         }
 
         &__menu-button {

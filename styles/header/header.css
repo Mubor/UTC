@@ -168,6 +168,9 @@ html {
   .type-cursor {
     display: none;
   }
+  .typed-cursor {
+    display: none;
+  }
   .open .header__logo,
   .open .header__menu-button {
     -webkit-animation: prompt 1s;

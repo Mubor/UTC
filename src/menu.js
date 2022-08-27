@@ -30,8 +30,6 @@ const initTypeAnimation = (typeText, isLooped = true) => {
         typeSpeed: 200,
         backSpeed: 60,
         backDelay: 6000,
-        // contentType: 'html'
-        
     });
 }
 

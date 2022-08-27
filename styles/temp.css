@@ -102,12 +102,16 @@ html {
   background-color: #4AE54B;
 }
 
+#type-source {
+  display: none;
+}
+
 .header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 1% 1.5%;
-  font-size: 28px;
+  font-size: 1.7vw;
   letter-spacing: 2.6px;
   background-color: black;
   color: #B2B2B2;
@@ -133,15 +137,6 @@ html {
 
 .header__text > a {
   color: #B2B2B2;
-}
-
-.header__line {
-  margin: 0.2% 0 0 8px;
-  width: 10px;
-  height: 24px;
-  background-color: #B2B2B2;
-  -webkit-animation: 1.1s infinite prompt;
-          animation: 1.1s infinite prompt;
 }
 
 .header__menu-button, .header__link {
@@ -174,27 +169,11 @@ html {
   width: 100%;
 }
 
-@media screen and (max-width: 1440px) {
-  .header * {
-    font-size: 24px;
-  }
-}
-
-@media screen and (max-width: 801px) {
-  .header__menu--homepage {
-    display: block;
-    height: 0;
-  }
-  .header__menu {
-    visibility: hidden;
-    width: 100%;
-    height: 0;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .header.open ~ * {
-    display: none;
+@media screen and (max-width: 830px) {
+  .open .header__logo,
+  .open .header__menu-button {
+    -webkit-animation: prompt 1s;
+            animation: prompt 1s;
   }
   .header.open {
     position: fixed;
@@ -205,19 +184,23 @@ html {
   }
   .open > .header__menu {
     visibility: visible;
+    -webkit-animation: prompt 1s;
+            animation: prompt 1s;
   }
   .open .header__logo,
   .open .spec-violet {
     color: black;
   }
   .header__text,
-  .header__line {
+  .header__line,
+  .header.open ~ * {
     display: none;
   }
   .header__menu-button,
   .header__menu-top,
   .header__list,
-  .header__link--current {
+  .header__link--current,
+  .header__menu--homepage {
     display: block;
   }
   .header {
@@ -231,7 +214,8 @@ html {
     padding: 4.5% 5%;
     width: 100%;
     min-height: 0vh;
-    font-size: 20px;
+    word-spacing: 20px;
+    font-size: 5.3vw;
     -webkit-transition: min-height .3s;
     transition: min-height .3s;
   }
@@ -243,6 +227,17 @@ html {
   .header__logo, .header__menu-button {
     letter-spacing: normal;
     word-spacing: normal;
+  }
+  .header:not(.open) > .header__menu {
+    opacity: 0;
+  }
+  .header__menu {
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+  }
+  .header__menu--homepage {
+    height: 0;
   }
   .header__menu-button {
     text-transform: uppercase;

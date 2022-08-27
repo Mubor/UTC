@@ -55,6 +55,10 @@ html {
   background-color: #4AE54B;
 }
 
+#type-source {
+  display: none;
+}
+
 .header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -107,6 +111,10 @@ html {
 
 .header__menu-top > a {
   border-bottom: 2px solid #3FED41;
+}
+
+.header__menu-top > a:hover {
+  border-bottom-color: #E46D29;
 }
 
 .header__list {

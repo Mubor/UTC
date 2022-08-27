@@ -70,16 +70,20 @@
 .language__elem {
   padding: 1%;
   border: 2px solid white;
+  -webkit-transition: border .4s;
+  transition: border .4s;
 }
 
 .language__elem--current {
   border: 2px solid black;
 }
 
-.language__elem:not(.language__elem--current):hover {
-  border: 1px solid black;
-  -webkit-transition: border .1s;
-  transition: border .1s;
+.language__elem:hover {
+  border: 2px solid black;
+}
+
+.language__elem:hover ~ .language__elem {
+  border-color: white;
 }
 
 .language .language__elem--current > a {

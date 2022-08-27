@@ -22,11 +22,11 @@ menuButton.addEventListener('click', switchMenu);
 
 //type effect
 
-const initTypeAnimation = () => {
+const initTypeAnimation = (typeText, isLooped = true) => {
     return new Typed('#type-container', {
-        strings: ['hello dude ', 'hello dude '],
+        strings: [typeText],
         // stringsElement:null,
-        loop:true,
+        loop: isLooped,
         loopCount: Infinity,
         typeSpeed: 200,
         backSpeed: 60,
@@ -34,11 +34,12 @@ const initTypeAnimation = () => {
     });
 }
 
+const typeText = document.getElementById('type-source').innerHTML;
 let typeAnimation;
 let animationCanStart = true;
 
 if(document.documentElement.clientWidth > 830) {
-    typeAnimation = initTypeAnimation()
+    typeAnimation = initTypeAnimation(typeText)
     typeAnimation.start();
     animationCanStart = false;
 }
@@ -50,7 +51,7 @@ window.addEventListener('resize', () => {
         animationCanStart = true
     }
     else if (animationCanStart) {
-        typeAnimation = initTypeAnimation();
+        typeAnimation = initTypeAnimation(typeText);
         typeAnimation.start();
         animationCanStart = false;
     }

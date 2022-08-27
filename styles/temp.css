@@ -471,7 +471,7 @@ html {
   }
   .description__item:first-child .description__container > p {
     width: 100%;
-    background-color: #fdfdfd;
+    background-color: transparent;
   }
   .description__item:first-child .description__container > p > span {
     display: block;
@@ -499,7 +499,7 @@ html {
   }
   .description__item:last-child .description__container .description__title {
     line-height: normal;
-    background-color: #fdfdfd;
+    background-color: transparent;
   }
   .description__list {
     margin-top: 4.3vh;

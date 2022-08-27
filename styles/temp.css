@@ -136,9 +136,8 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1% 1.5%;
+  padding: 1.2% 1.5%;
   font-size: 1.7vw;
-  letter-spacing: 2.6px;
   background-color: black;
   color: #B2B2B2;
   z-index: 4;
@@ -162,7 +161,6 @@ html {
 }
 
 .header__logo {
-  word-spacing: 4px;
   color: #B2B2B2;
 }
 
@@ -176,7 +174,7 @@ html {
 }
 
 .header__menu {
-  width: 30%;
+  width: 23%;
 }
 
 .header__link {
@@ -185,6 +183,10 @@ html {
 
 .header__link--current {
   display: none;
+}
+
+.header__link:hover {
+  color: #B2B2B2;
 }
 
 .header__menu-top > a {
@@ -199,12 +201,16 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
 }
 
 @media screen and (max-width: 830px) {
+  .type-cursor {
+    display: none;
+  }
   .open .header__logo,
   .open .header__menu-button {
     -webkit-animation: prompt 1s;
@@ -315,65 +321,111 @@ html {
   src: url("../fonts/Varela.ttf");
 }
 
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 89.6vh;
+}
+
 .description {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 4% 0;
-  padding: 0 2%;
+  margin: 3.2% 0 0 0;
+  padding: 0 1.8%;
   font-size: 32px;
 }
 
 .description__title {
-  padding: .5%;
+  padding: .5% .5% .5% 1%;
   font-family: AndaleMono;
-  font-size: 36px;
+  font-size: 2.5vw;
+  font-weight: 500;
   background-color: #3FED41;
 }
 
-.description__list {
-  font-family: Varela;
-  color: #272727;
-}
-
 .description__item {
-  width: 45%;
+  width: 49%;
 }
 
 .description__container {
-  padding: 3% 55% 0 2%;
-  height: 20vw;
-  border: 1px solid black;
+  padding: 3.5% 0 0 2.5%;
+  height: 44vh;
+  border: 2px solid black;
 }
 
 .description__item:first-child .description__container {
   background: url(../media/media1.png) no-repeat;
   background-position: bottom 0 left 0;
-  background-size: contain;
+  background-size: 96% 100%;
+}
+
+.description__item:first-child .description__container > p {
+  width: 54%;
 }
 
 .description__item:last-child .description__container {
-  background: url(../media/media2.png) no-repeat 100%;
+  background: url(../media/media2.png) no-repeat;
   background-position: bottom 0 right 0;
+  background-size: contain;
 }
 
-.footer-special {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0 1%;
+.description__item:last-child .description__container .description__title:first-child {
+  padding-right: 13%;
 }
 
-.footer-special .footer__item-text {
+.description__item:last-child .description__container .description__title {
+  line-height: 1.1;
+}
+
+.description__list {
+  margin-top: 4.3vh;
   font-family: Varela;
-  font-size: 80px;
+  color: #272727;
 }
 
-.footer-special .footer__item {
-  width: 5%;
+.description__list > li {
+  padding-bottom: 1.2%;
 }
 
-.footer-special .footer__item img {
+.text__body {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  width: 96%;
+}
+
+.text__item {
+  font-family: Varela;
+  text-transform: uppercase;
+  font-size: 5.55vw;
+}
+
+.text__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 4%;
+}
+
+.text__img > svg {
   width: 100%;
+}
+
+.text__img:last-child {
+  -webkit-transform: rotateX(-180deg);
+          transform: rotateX(-180deg);
 }
 /*# sourceMappingURL=temp.css.map */

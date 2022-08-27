@@ -11,62 +11,98 @@
     src: url("../fonts/Varela.ttf");
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 89.6vh;
+}
+
 .description {
     justify-content: space-between;
-    margin: 4% 0;
-    padding: 0 2%;
+    margin: 3.2% 0 0 0;
+    padding: 0 1.8%;
     font-size: 32px;
 
     &__title {
-        padding: .5%;
-        // max-width: 60%;
+        padding: .5% .5% .5% 1%;
         font-family: AndaleMono;
-        font-size: 36px;
+        // font-size: 36px;
+        font-size: 2.5vw;
+        font-weight: 500;
         background-color: #3FED41;
     }
-
-    &__list {
-        font-family: Varela;
-        color: #272727
-    }
-
+    
     &__item {
-        width: 45%;
+        width: 49%;
     }
-
+    
     &__container {
-        padding: 3% 55% 0 2%;
-        height: 20vw;
-        border: 1px solid black;
+        padding: 3.5% 0 0 2.5%;
+        height: 44vh;
+        border: 2px solid black;
     }
-
+    
     &__item:first-child &__container{
         background: url(../media/media1.png) no-repeat;
         background-position: bottom 0 left 0;
-        background-size: contain;
+        background-size: 96% 100%;
+        
+        &>p {
+            width: 54%;
+        }
     }
+    
     &__item:last-child &__container {
-        background: url(../media/media2.png) no-repeat 100%;
+        background: url(../media/media2.png) no-repeat;
         background-position: bottom 0 right 0;
+        background-size: contain;
+        
+        & .description__title:first-child {
+            padding-right: 13%;
+        }
+        & .description__title {
+            line-height: 1.1;
+        }
     }
+    
+    &__list {
+        margin-top: 4.3vh;
+        font-family: Varela;
+        color: #272727;
 
+        &>li {
+            padding-bottom: 1.2%;
+        }
+    }
 }
 
-.footer-special {
-    justify-content: center;
-    padding: 0 1%;
+.text {
+    
+    &__body {
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 96%;
+    }
 
-    .footer__item-text {
+    &__item {
         font-family: Varela;
-        font-size: 80px;
+        text-transform: uppercase;
+        font-size: 5.55vw;
     }
 
-    .footer__item {
-        width: 5%;
+    &__img {
+        display: flex;
+        align-items: center;
+        width: 4%;
     }
 
-    .footer__item img {
+    &__img>svg {
         width: 100%;
+    }
+
+    &__img:last-child {
+        transform: rotateX(-180deg);
     }
 }
 

@@ -62,10 +62,9 @@ html {
 
 .header {
     justify-content: space-between;
-    padding: 1% 1.5%;
+    padding: 1.2% 1.5%;
     font-size: 1.7vw;
-    // font-size: 28px;
-    letter-spacing: 2.6px;
+    // letter-spacing: 2.6px;
     background-color: black;
     color: #B2B2B2;
     z-index: 4;
@@ -89,7 +88,7 @@ html {
     }
 
     &__logo {
-        word-spacing: 4px;
+        
         color: #B2B2B2;
     }
 
@@ -111,7 +110,7 @@ html {
     }
 
     &__menu {
-        width: 30%;
+        width: 23%;
     }
 
     &__link {
@@ -120,6 +119,10 @@ html {
         &--current {
             display: none;
         }
+    }
+
+    &__link:hover {
+        color: #B2B2B2;
     }
 
     &__menu-top>a {
@@ -132,12 +135,15 @@ html {
 
     &__list {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         width: 100%;
     }
 }
 
 @media  screen and (max-width: 830px) {
+    .type-cursor {
+        display: none;
+    }
     .open .header__logo,
     .open .header__menu-button {
         animation: prompt 1s;

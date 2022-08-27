@@ -89,9 +89,8 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 1% 1.5%;
+  padding: 1.2% 1.5%;
   font-size: 1.7vw;
-  letter-spacing: 2.6px;
   background-color: black;
   color: #B2B2B2;
   z-index: 4;
@@ -115,7 +114,6 @@ html {
 }
 
 .header__logo {
-  word-spacing: 4px;
   color: #B2B2B2;
 }
 
@@ -129,7 +127,7 @@ html {
 }
 
 .header__menu {
-  width: 30%;
+  width: 23%;
 }
 
 .header__link {
@@ -138,6 +136,10 @@ html {
 
 .header__link--current {
   display: none;
+}
+
+.header__link:hover {
+  color: #B2B2B2;
 }
 
 .header__menu-top > a {
@@ -152,12 +154,16 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
 }
 
 @media screen and (max-width: 830px) {
+  .type-cursor {
+    display: none;
+  }
   .open .header__logo,
   .open .header__menu-button {
     -webkit-animation: prompt 1s;

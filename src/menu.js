@@ -42,6 +42,8 @@ if(document.documentElement.clientWidth > 830) {
     typeAnimation = initTypeAnimation(typeText, isLooped)
     typeAnimation.start();
     animationCanStart = false;
+} else {
+    typeAnimation.destroy();
 }
 
 window.addEventListener('resize', () => {

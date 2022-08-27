@@ -59,6 +59,10 @@ html {
   max-width: 100%;
 }
 
+.main {
+  background-color: #fdfdfd;
+}
+
 .spec-violet {
   color: #6261F8;
 }
@@ -187,7 +191,8 @@ html {
   }
   .header__text,
   .header__line,
-  .header.open ~ * {
+  .header.open ~ *,
+  .header__mobile-hidden {
     display: none;
   }
   .header__menu-button,

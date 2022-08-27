@@ -106,6 +106,10 @@ html {
   max-width: 100%;
 }
 
+.main {
+  background-color: #fdfdfd;
+}
+
 .spec-violet {
   color: #6261F8;
 }
@@ -234,7 +238,8 @@ html {
   }
   .header__text,
   .header__line,
-  .header.open ~ * {
+  .header.open ~ *,
+  .header__mobile-hidden {
     display: none;
   }
   .header__menu-button,
@@ -378,12 +383,17 @@ html {
   background-size: contain;
 }
 
+.description__item:last-child .description__container .description__title {
+  display: block;
+}
+
 .description__item:last-child .description__container .description__title:first-child {
-  padding-right: 13%;
+  width: 55%;
 }
 
 .description__item:last-child .description__container .description__title {
-  line-height: 1.1;
+  margin: 0;
+  width: 58%;
 }
 
 .description__list {
@@ -427,5 +437,95 @@ html {
 .text__img:last-child {
   -webkit-transform: rotateX(-180deg);
           transform: rotateX(-180deg);
+}
+
+@media screen and (max-width: 830px) {
+  .line-indent {
+    display: none;
+  }
+  .description {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 9%;
+  }
+  .description__item {
+    width: 95%;
+  }
+  .description__container {
+    padding: 4% 0 0 3%;
+    height: 41.5vh;
+  }
+  .description__container > p > span {
+    display: block;
+  }
+  .description__title {
+    font-size: 8.53vw;
+  }
+  .description__item:first-child .description__container {
+    background-size: contain;
+  }
+  .description__item:first-child .description__container > p {
+    width: 100%;
+    background-color: #fdfdfd;
+  }
+  .description__item:first-child .description__container > p > span {
+    display: block;
+  }
+  .description__item:first-child .description__container > p > span:first-child {
+    padding: 1% 0 1% 1%;
+    width: 77%;
+    background-color: #3FED41;
+  }
+  .description__item:first-child .description__container > p > span:last-child {
+    margin: 0;
+    padding-left: 20%;
+  }
+  .description__item:last-child {
+    margin-top: 21%;
+  }
+  .description__item:last-child .description__container {
+    background: url(../media/media2_mobile.png) no-repeat;
+    background-position: bottom 0 right 0;
+    background-size: 75%;
+  }
+  .description__item:last-child .description__container .description__title:first-child {
+    padding-right: 0;
+    width: 76%;
+  }
+  .description__item:last-child .description__container .description__title {
+    line-height: normal;
+    background-color: #fdfdfd;
+  }
+  .description__list {
+    margin-top: 4.3vh;
+  }
+  .description__list > li {
+    font-size: 6.4vw;
+    padding-bottom: 2%;
+  }
+  .text {
+    padding-top: 10%;
+  }
+  .text__body {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .text__item {
+    width: 70%;
+    font-size: 17.06vw;
+    text-align: center;
+  }
+  .text__item > span {
+    display: none;
+  }
+  .text__img {
+    width: 11%;
+  }
 }
 /*# sourceMappingURL=temp.css.map */

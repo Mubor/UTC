@@ -11,15 +11,17 @@
     <div class="wrapper">
         <header class="header df">
             <div class="header__body df">
+                <div id="type-source"></div>
+                <div id="type-loop">true</div>
                 <div class="header__logo">
                     <a href="../index.html">utc@film</a>:
                     <span class="spec-violet">~</span> $ 
                     <span class="header__text">
                         <a href="../index.html">HOME</a> ->
                     </span>
-                    SERVICES
+                    <a href=".">SERVICES</a>
+                    <span class="type-cursor">|</span>
                 </div>
-                <div class="header__line"></div>
                 <div class="header__menu-button">
                     <span id="menu-button">menu</span>
                 </div>
@@ -30,8 +32,8 @@
                 </div>
                 <ul class="header__list">
                     <li><a href="#" class="header__link">works</a></li>
-                    <li class="header__link--current"><a href="#" class="header__link">services</a></li>
                     <li><a href="#" class="header__link">team</a></li>
+                    <li class="header__link--current"><a href="#" class="header__link">services</a></li>
                     <li><a href="#" class="header__link">contacts</a></li>
                 </ul>
             </nav>
@@ -79,6 +81,7 @@
             </div>
         </footer>
     </div>
-    <script src="src/menu.js"></script>
+    <script src="../src/lib/typed.js"></script>
+    <script src="../src/menu.js"></script>
 </body>
 </html>

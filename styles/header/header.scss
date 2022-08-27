@@ -173,7 +173,8 @@ html {
     .header__text,
     .header__line,
     .header.open~*,
-    .header__mobile-hidden {
+    .header__mobile-hidden,
+    .header.open .header__logo>a:first-child~* {
         display: none;
     }
     

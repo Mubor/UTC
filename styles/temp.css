@@ -496,6 +496,7 @@ html {
   .description__item:last-child .description__container .description__title:first-child {
     padding-right: 0;
     width: 76%;
+    background-color: #3FED41;
   }
   .description__item:last-child .description__container .description__title {
     line-height: normal;

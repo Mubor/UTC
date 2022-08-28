@@ -19,22 +19,23 @@
 }
 
 .description {
-    justify-content: space-between;
-    margin: 3.2% 0 0 0;
+    justify-content: space-around;
+    // margin: 3.2% 0 0 0;
+    margin: 5.4vh 0 0 0;
     padding: 0 1.8%;
-    font-size: 32px;
+    font-size: 3.55vh;
 
     &__title {
         padding: .5% .5% .5% 1%;
         font-family: AndaleMono;
         // font-size: 36px;
-        font-size: 2.5vw;
+        font-size: 4vh;
         font-weight: 500;
         background-color: #3FED41;
     }
     
     &__item {
-        width: 49%;
+        width: 76vh;
     }
     
     &__container {
@@ -90,9 +91,12 @@
     }
 
     &__item {
+        // margin: 0 1.4%;
         font-family: Varela;
         text-transform: uppercase;
-        font-size: 5.55vw;
+        // font-size: 5.55vw;
+        // font-size: 8.89vh;
+        font-size: 80px;
     }
 
     &__img {
@@ -125,7 +129,7 @@
 
         &__container {
             padding: 4% 0 0 3%;
-            height: 41.5vh;
+            height: 90vw;
 
             &>p>span {
                 display: block;
@@ -192,6 +196,7 @@
 
     .text {
         padding-top: 10%;
+        padding-bottom: 10%;
         
         &__body {
             justify-content: center;

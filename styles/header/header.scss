@@ -86,13 +86,18 @@ html {
             color: #B2B2B2;
         }
     }
+
+    &__logo > a:not(a:first-child):hover,
+    &__logo > &__text a:hover {
+        color: #E46D29;
+        transition: color .3s;
+    }
     
     &__logo *, &__logo {
         font-family: AndaleMono;
     }
 
     &__logo {
-        
         color: #B2B2B2;
     }
 
@@ -119,6 +124,7 @@ html {
 
     &__link {
         text-transform: uppercase;
+        transition: color .3s;
 
         &--current {
             display: none;
@@ -126,7 +132,8 @@ html {
     }
 
     &__link:hover {
-        color: #B2B2B2;
+        color: #3FED41;
+        transition: color .3s;
     }
 
     &__menu-top>a {

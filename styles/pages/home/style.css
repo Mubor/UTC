@@ -160,6 +160,13 @@ html {
   color: #B2B2B2;
 }
 
+.header__logo > a:not(a:first-child):hover,
+.header__logo > .header__text a:hover {
+  color: #E46D29;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+}
+
 .header__logo *, .header__logo {
   font-family: AndaleMono;
 }
@@ -183,6 +190,8 @@ html {
 
 .header__link {
   text-transform: uppercase;
+  -webkit-transition: color .3s;
+  transition: color .3s;
 }
 
 .header__link--current {
@@ -190,7 +199,9 @@ html {
 }
 
 .header__link:hover {
-  color: #B2B2B2;
+  color: #3FED41;
+  -webkit-transition: color .3s;
+  transition: color .3s;
 }
 
 .header__menu-top > a {

@@ -355,9 +355,15 @@ html {
   height: 89.6vh;
 }
 
+.container {
+  margin: 0 auto;
+  width: 160vh;
+}
+
 .description {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 5.4vh 0 0 0;
   padding: 0 1.8%;
   font-size: 3.55vh;
@@ -421,18 +427,18 @@ html {
 }
 
 .text__body {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin: 0 auto;
-  width: 96%;
+  width: 157vh;
 }
 
 .text__item {
-  margin: 0 1.4%;
+  margin: 0;
   font-family: Varela;
   text-transform: uppercase;
-  font-size: 80px;
+  text-align: center;
+  font-size: 8.89vh;
 }
 
 .text__img {
@@ -442,7 +448,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 4%;
+  width: 6.4vh;
 }
 
 .text__img > svg {

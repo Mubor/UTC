@@ -18,8 +18,13 @@
     height: 89.6vh;
 }
 
+.container {
+    margin: 0 auto;
+    width: 160vh;
+}
+
 .description {
-    justify-content: space-around;
+    justify-content: space-between;
     // margin: 3.2% 0 0 0;
     margin: 5.4vh 0 0 0;
     padding: 0 1.8%;
@@ -85,24 +90,24 @@
 
 .text {
     &__body {
-        justify-content: center;
+        justify-content: space-around;
         margin: 0 auto;
-        width: 96%;
+        width: 157vh;
     }
 
     &__item {
-        margin: 0 1.4%;
+        margin: 0 ;
         font-family: Varela;
         text-transform: uppercase;
+        text-align: center;
         // font-size: 5.55vw;
-        // font-size: 8.89vh;
-        font-size: 80px;
+        font-size: 8.89vh;
     }
 
     &__img {
         display: flex;
         align-items: center;
-        width: 4%;
+        width: 6.4vh;
     }
 
     &__img>svg {

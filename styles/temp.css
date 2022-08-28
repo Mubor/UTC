@@ -464,6 +464,9 @@ html {
   .line-indent {
     display: none;
   }
+  .container {
+    width: 100%;
+  }
   .description {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -538,6 +541,7 @@ html {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    width: 100%;
   }
   .text__item {
     width: 70%;

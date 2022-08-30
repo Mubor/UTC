@@ -170,7 +170,7 @@
     margin-top: 21%;
   }
   .description__item:last-child .description__container {
-    background: url(../media/media2_mobile.png) no-repeat;
+    background: url(../../../media/media2_mobile.png) no-repeat;
     background-position: bottom 0 right 0;
     background-size: 75%;
   }

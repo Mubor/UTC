@@ -1,6 +1,9 @@
+const mediaContainer = document.getElementById('scroll-media');
 const menuButton = document.getElementById('menu-button');
 const header = document.querySelector('header');
 const menu = document.querySelector('.header__menu');
+const scrollCenter = 989/2 - mediaContainer.clientWidth/2;
+mediaContainer.scrollTo(scrollCenter, 0);
 
 const changeContent = (element, content) => {
     element.innerHTML = content;
@@ -56,6 +59,7 @@ window.addEventListener('resize', () => {
         typeAnimation.start();
         animationCanStart = false;
     }
-})
+});
+
 
 

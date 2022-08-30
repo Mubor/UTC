@@ -546,7 +546,7 @@ html {
     line-height: 1.2;
   }
   .info__text:first-child {
-    background-color: #3FED41;
+    background-color: #4AE64B;
   }
   .info__text > .keytext {
     word-spacing: 9px !important;

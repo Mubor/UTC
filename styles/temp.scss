@@ -11,10 +11,6 @@
     src: url("../fonts/Varela.ttf");
 }
 
-// .wrapper {
-//     position: relative;
-// }
-
 .main {
     position: relative;
     font-size: 3.628vh;
@@ -52,9 +48,6 @@
     
     &__link {
         border-bottom: 2px solid black;
-        // text-decoration: underline;
-        // text-decoration-skip-ink: none;
-        // text-decoration-thickness: 2px;
     }
     
     &__text {
@@ -79,11 +72,6 @@
         font-family: Varela;
         text-align: center;
     }
-
-    // &__container{
-    //     width: 100%;
-        
-    // }
     
     &__media{
         width: 112vh;
@@ -222,7 +210,7 @@
             line-height: 1.2;
 
             &:first-child{
-                background-color: #3FED41;
+                background-color: #4AE64B;
             }
 
             &:last-child {

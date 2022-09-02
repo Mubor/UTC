@@ -14,7 +14,7 @@
   [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "script-src 'self' apis.google.com;"
+    Content-Security-Policy = "script-src 'unsafe-inline' apis.google.com;"
 
   ## (optional) Settings for Netlify Dev
   ## https://github.com/netlify/cli/blob/main/docs/netlify-dev.md#project-detection

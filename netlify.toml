@@ -14,7 +14,7 @@
   [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'unsafe-inline'"
+    Content-Security-Policy = "script-src-elem 'self'; script-src 'unsafe-inline'"
 
   ## (optional) Settings for Netlify Dev
   ## https://github.com/netlify/cli/blob/main/docs/netlify-dev.md#project-detection

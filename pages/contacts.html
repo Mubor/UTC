@@ -116,7 +116,7 @@
 
         const API_KEY="AIzaSyAkNxg2T7rsh-8G7JN4qwo8RdNCBVFPEeY";
         const CLIENT_ID = '746165622418-7iti7bii38rum9d9ibqqrheabp1coh4k.apps.googleusercontent.com'
-        const SCOPES = ['https://www.googleapis.com/auth/calendar','https://www.googleapis.com/auth/calendar.events'];
+        const SCOPES = 'https://www.googleapis.com/auth/calendar';
         const CALENDAR_ID ="hu6ioahhamk7m480jtm1sdm4n0@group.calendar.google.com";
 
         let tokenClient;
@@ -142,7 +142,7 @@
        */
       function gisLoaded() {
         tokenClient = google.accounts.oauth2.initTokenClient({
-          client_id: WEB_CLIENT.client_id,
+          client_id: CLIENT_ID,
           scope: SCOPES,
           callback: '', // defined later
         });

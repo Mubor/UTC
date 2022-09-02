@@ -96,7 +96,7 @@
         background: #C3C3C3;
         box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
         
-        & a:not(.info__pic){
+        & span:not(.info__pic){
             padding: 0 2%;
             line-height: 1.1;
         }

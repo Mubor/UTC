@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="746165622418-7iti7bii38rum9d9ibqqrheabp1coh4k.apps.googleusercontent.com">
     <title>Services</title>
     <link rel="stylesheet" href="../styles/temp.css">
 </head>
@@ -75,7 +76,7 @@
                 <img src="../media/roof.png" alt="roof">
                 <div class="info__button df">
                     <div class="info__pic"><img src="../media/heart.png" alt="heart"></div>
-                    <a href="https://calendar.google.com/calendar/u/0?cid=YXBoYW0zbmpvZWRzYmVxZXNvOGsxNm05aG9AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ">invite for a date</a>
+                    <div class="g-signin2" data-onsuccess="onSignIn">Invite for a date</div>
                     <div class="info__pic"><img src="../media/heart.png" alt="heart"></div>
                 </div>
             </div>
@@ -89,6 +90,7 @@
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M36.3243 43.8918L19.6757 43.8918L19.6757 40.8648L36.3243 40.8648L36.3243 43.8918ZM16.6487 37.8378L19.6757 37.8378L19.6757 40.8648L16.6487 40.8648L16.6487 37.8378ZM16.6487 37.8378L13.6216 37.8378L13.6216 34.8108L16.6487 34.8108L16.6487 37.8378ZM42.3784 37.8378L39.3514 37.8378L39.3514 34.8108L42.3784 34.8108L42.3784 37.8378ZM39.3514 37.8378L39.3514 40.8648L36.3243 40.8648L36.3243 37.8378L39.3514 37.8378Z" fill="black"/>
             </svg>
            </div>
+           <div class="content" id="content"></div>
         </section>
         <footer class="footer">
             <div class="footer__body">
@@ -99,6 +101,18 @@
             </div>
         </footer>
     </div>
-    <script defer src="../dist/contacts.js"></script>
+    <script async defer src="https://apis.google.com/js/api.js"></script>
+    <script async defer src="https://accounts.google.com/gsi/client"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+        }
+    </script>
+    <script src="../dist/contacts.js"></script>
 </body>
 </html>

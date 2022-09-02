@@ -3,8 +3,11 @@
     "@google-cloud/local-auth": "^2.1.0",
     "dotenv-webpack": "^8.0.1",
     "express.js": "^1.0.0",
+    "gapi": "^0.0.3",
+    "google-auth-library": "^8.5.1",
     "netlify-cli": "^11.5.0",
     "process": "^0.11.10",
+    "scriptjs": "^2.5.9",
     "typed.js": "^2.0.12"
   },
   "scripts": {

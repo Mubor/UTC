@@ -17,6 +17,7 @@ const initTypeAnimation = (typeText, isLooped = true) => {
     });
 }
 
+
 // start/destroy animation when browser size is desktop/mobile width
 if (document.documentElement.clientWidth > 830) {
     typeAnimation = initTypeAnimation(typeText, isLooped)

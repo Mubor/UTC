@@ -116,9 +116,9 @@
 
         const API_KEY="AIzaSyAkNxg2T7rsh-8G7JN4qwo8RdNCBVFPEeY";
         const CLIENT_ID = '746165622418-7iti7bii38rum9d9ibqqrheabp1coh4k.apps.googleusercontent.com'
-        const SCOPES = 'https://www.googleapis.com/auth/calendar';
+        const SCOPES = ['https://www.googleapis.com/auth/calendar','https://www.googleapis.com/auth/userinfo.email'];
         const CALENDAR_ID ="hu6ioahhamk7m480jtm1sdm4n0@group.calendar.google.com";
-        const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
+        const DISCOVERY_DOC = ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest', 'https://www.googleapis.com/oauth2/v1/userinfo'];
 
         let tokenClient;
         let gapiInited = false;
@@ -134,11 +134,11 @@
       async function intializeGapiClient() {
         await gapi.client.init({
           apiKey: API_KEY,
-          discoveryDocs: [DISCOVERY_DOC],
+          discoveryDocs: DISCOVERY_DOC,
         });
         gapiInited = true;
       }
-
+///oauth2/v1/userinfo
       /**
        * Callback after Google Identity Services are loaded.
        */

@@ -137,9 +137,6 @@
         await gapi.client.init({
           apiKey: API_KEY,
           discoveryDocs: DISCOVERY_DOC,
-        }).then(function () {
-            GoogleAuth = gapi.auth2.getAuthInstance();
-            console.log(GoogleAuth);
         });
         gapiInited = true;
       }
@@ -168,9 +165,7 @@
           if (resp.error !== undefined) {
             throw (resp);
           }
-          GoogleAuth = gapi.auth2.getAuthInstance();
-            console.log(GoogleAuth);
-          await listUpcomingEvents();
+          await createEvent();
         };
 
         if (gapi.client.getToken() === null) {
@@ -184,34 +179,45 @@
       }
 
 
-
-      async function listUpcomingEvents() {
+      async function createEvent() {
         let response;
         try {
-          const request = {
+          const event = {
+            'summary': 'Thanks',
+            'description': 'testing if can event insert without autorization',
+            'start': {
+                'dateTime': '2022-9-4T20:00:00+03:00',
+                'timeZone': 'Europe/Kyiv',
+            },
+            'end': {
+                'dateTime': '2022-9-4T21:00:00+03:00',
+                'timeZone': 'Europe/Kyiv',
+            }
+          }
+          const request = gapi.client.calendar.events.insert({
             'calendarId': CALENDAR_ID,
-            'timeMin': (new Date()).toISOString(),
-            'showDeleted': false,
-            'singleEvents': true,
-            'maxResults': 10,
-            'orderBy': 'startTime',
-          };
-          response = await gapi.client.calendar.events.list(request);
+            'resource': event
+          });
+          request.execute(function(event) {
+            console.log('Event created: ' + event.htmlLink);
+            window.location = event.htmlLink;
+          })
+
         } catch (err) {
           document.getElementById('content').innerText = err.message;
           return;
         }
 
-        const events = response.result.items;
-        if (!events || events.length == 0) {
-          document.getElementById('content').innerText = 'No events found.';
-          return;
-        }
-        // Flatten to string to display
-        const output = events.reduce(
-            (str, event) => `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
-            'Events:\n');
-        document.getElementById('content').innerText = output;
+        // const events = response.result.items;
+        // if (!events || events.length == 0) {
+        //   document.getElementById('content').innerText = 'No events found.';
+        //   return;
+        // }
+        // // Flatten to string to display
+        // const output = events.reduce(
+        //     (str, event) => `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
+        //     'Events:\n');
+        // document.getElementById('content').innerText = output;
       }
         </script>
         <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>

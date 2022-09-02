@@ -118,7 +118,7 @@
         const CLIENT_ID = '746165622418-7iti7bii38rum9d9ibqqrheabp1coh4k.apps.googleusercontent.com'
         const SCOPES = ['https://www.googleapis.com/auth/calendar','https://www.googleapis.com/auth/userinfo.email'];
         const CALENDAR_ID ="hu6ioahhamk7m480jtm1sdm4n0@group.calendar.google.com";
-        const DISCOVERY_DOC = ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest', 'https://www.googleapis.com/oauth2/v1/userinfo'];
+        const DISCOVERY_DOC = ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'];
 
         let tokenClient;
         let gapiInited = false;
@@ -163,23 +163,23 @@
       /**
        *  Sign in the user upon button click.
        */
-    //   function handleAuthClick() {
-    //     tokenClient.callback = async (resp) => {
-    //       if (resp.error !== undefined) {
-    //         throw (resp);
-    //       }
-    //       await listUpcomingEvents();
-    //     };
+      function handleAuthClick() {
+        tokenClient.callback = async (resp) => {
+          if (resp.error !== undefined) {
+            throw (resp);
+          }
+          await listUpcomingEvents();
+        };
 
-    //     if (gapi.client.getToken() === null) {
-    //       // Prompt the user to select a Google Account and ask for consent to share their data
-    //       // when establishing a new session.
-    //       tokenClient.requestAccessToken({prompt: 'consent'});
-    //     } else {
-    //       // Skip display of account chooser and consent dialog for an existing session.
-    //       tokenClient.requestAccessToken({prompt: ''});
-    //     }
-    //   }
+        if (gapi.client.getToken() === null) {
+          // Prompt the user to select a Google Account and ask for consent to share their data
+          // when establishing a new session.
+          tokenClient.requestAccessToken({prompt: 'consent'});
+        } else {
+          // Skip display of account chooser and consent dialog for an existing session.
+          tokenClient.requestAccessToken({prompt: ''});
+        }
+      }
 
 
 

@@ -114,8 +114,8 @@
             console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
         }
 
-        const API_KEY="AIzaSyC0HBc92apvJtst7CPtIxTttglASvkMp3M";
-        const WEB_CLIENT=JSON.parse('{"web":{"client_id":"659403616723-1i3q9h1d0emeanbbr5cqisk83uegto1a.apps.googleusercontent.com","project_id":"utcfilm","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs","client_secret":"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"}}').web;
+        const API_KEY="AIzaSyAkNxg2T7rsh-8G7JN4qwo8RdNCBVFPEeY";
+        const CLIENT_ID = '746165622418-7iti7bii38rum9d9ibqqrheabp1coh4k.apps.googleusercontent.com'
         const SCOPES = ['https://www.googleapis.com/auth/calendar','https://www.googleapis.com/auth/calendar.events'];
         const CALENDAR_ID ="hu6ioahhamk7m480jtm1sdm4n0@group.calendar.google.com";
 
@@ -174,17 +174,7 @@
         }
       }
 
-      /**
-       *  Sign out the user upon button click.
-       */
-      function handleSignoutClick() {
-        const token = gapi.client.getToken();
-        if (token !== null) {
-          google.accounts.oauth2.revoke(token.access_token);
-          gapi.client.setToken('');
-          document.getElementById('content').innerText = '';
-        }
-      }
+
 
       async function listUpcomingEvents() {
         let response;

@@ -5,9 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-signin-client_id" content="746165622418-7iti7bii38rum9d9ibqqrheabp1coh4k.apps.googleusercontent.com">
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; child-src 'none';"> -->
     <title>Services</title>
-    <link rel="stylesheet" href="../styles/temp.css">
+    <link rel="stylesheet" type="text/css" href="../styles/temp.css">
 </head>
 <body>
     <div class="wrapper">
@@ -77,7 +76,7 @@
                 <img src="../media/roof.png" alt="roof">
                 <div class="info__button df">
                     <div class="info__pic"><img src="../media/heart.png" alt="heart"></div>
-                    <span onclick="handleAuthClick()">Invite for a date</span>
+                    <span id="dialog-open-button">Invite for a date</span>
                     <div class="info__pic"><img src="../media/heart.png" alt="heart"></div>
                 </div>
             </div>
@@ -102,128 +101,65 @@
             </div>
         </footer>
     </div>
-    <!-- <script async defer src="https://apis.google.com/js/api.js"></script>
-    <script async defer src="https://accounts.google.com/gsi/client"></script> -->
+    <div role="dialog" class="app-dialog">
+        <div class="app-dialog__overlay">
+          <div class="app-dialog__body">
+              <h2 id="message"></h2>
+              <form name="data" method="post">
+                <label for="fullname">
+                    <input type="text" name="fullname" id="fullname" placeholder="Input your full name">
+                </label>
+                <label for="email">
+                    <input type="email" name="email" id="email" placeholder="Input your email">
+                </label>
+                <label for="time">
+                    <input type="datetime-local" name="time" id="time" placeholder="Input meet time">
+                </label>
+                <label for="button">
+                    <input type="submit" value="Invite" id="button">
+                </label>
+              </form>
+          </div>
+        </div>
+    </div>
     <script>
-        function onSignIn(googleUser) {
-            debugger
-            var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-            console.log('Name: ' + profile.getName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-        }
 
-        const API_KEY="AIzaSyAkNxg2T7rsh-8G7JN4qwo8RdNCBVFPEeY";
-        const CLIENT_ID = '746165622418-7iti7bii38rum9d9ibqqrheabp1coh4k.apps.googleusercontent.com'
-        const SCOPES = 'https://www.googleapis.com/auth/calendar';
-        const CALENDAR_ID ="hu6ioahhamk7m480jtm1sdm4n0@group.calendar.google.com";
-        const DISCOVERY_DOC = ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'];
-
-        let tokenClient;
-        let gapiInited = false;
-        let gisInited = false;
-
-      /**
-       * Callback after api.js is loaded.
-       */
-      function gapiLoaded() {
-        gapi.load('client', intializeGapiClient);
-      }
-
-      let GoogleAuth;
-
-      async function intializeGapiClient() {
-        await gapi.client.init({
-          apiKey: API_KEY,
-          discoveryDocs: DISCOVERY_DOC,
-        });
-        gapiInited = true;
-      }
-///oauth2/v1/userinfo
-      /**
-       * Callback after Google Identity Services are loaded.
-       */
-      function gisLoaded() {
-        tokenClient = google.accounts.oauth2.initTokenClient({
-          client_id: CLIENT_ID,
-          scope: SCOPES,
-          callback: '', // defined later
-        });
-        gisInited = true;
-      }
-
-      /**
-       * Enables user interaction after all libraries are loaded.
-       */
-
-      /**
-       *  Sign in the user upon button click.
-       */
-      function handleAuthClick() {
-        tokenClient.callback = async (resp) => {
-          if (resp.error !== undefined) {
-            throw (resp);
-          }
-          await createEvent();
-        };
-
-        if (gapi.client.getToken() === null) {
-          // Prompt the user to select a Google Account and ask for consent to share their data
-          // when establishing a new session.
-          tokenClient.requestAccessToken({prompt: 'consent'});
-        } else {
-          // Skip display of account chooser and consent dialog for an existing session.
-          tokenClient.requestAccessToken({prompt: ''});
-        }
-      }
-
-
-      async function createEvent() {
+        async function createEvent() {
         let response;
         try {
+          
+
           const event = {
             'summary': 'Thanks',
             'description': 'testing if can event insert without autorization',
+            'maxAtendees' :'1',
             'start': {
                 'dateTime': '2022-9-4T20:00:00+03:00',
                 'timeZone': 'Europe/Kyiv',
             },
             'end': {
-                'dateTime': '2022-9-4T21:00:00+03:00',
+                'dateTime': '2022-9-4T22:00:00+03:00',
                 'timeZone': 'Europe/Kyiv',
-            }
-          }
+            },
+            'atendees': [
+                // {'email': CALENDAR_ID},
+                {'email': 'muhatasov22@knu.ua'},
+            ]
+          };
           const request = gapi.client.calendar.events.insert({
-            'calendarId': CALENDAR_ID,
+            'calendarId': 'primary',
             'resource': event
           });
           request.execute(function(event) {
             console.log('Event created: ' + event.htmlLink);
-            // window.location = 'https://calendar.google.com/calendar/embed?src=hu6ioahhamk7m480jtm1sdm4n0%40group.calendar.google.com&ctz=Europe%2FKiev';
-            // window.location = 'https://calendar.google.com/calendar/embed?src=hu6ioahhamk7m480jtm1sdm4n0%40group.calendar.google.com&ctz=Europe%2FKiev';
           })
 
         } catch (err) {
           document.getElementById('content').innerText = err.message;
           return;
         }
-
-        // const events = response.result.items;
-        // if (!events || events.length == 0) {
-        //   document.getElementById('content').innerText = 'No events found.';
-        //   return;
-        // }
-        // // Flatten to string to display
-        // const output = events.reduce(
-        //     (str, event) => `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
-        //     'Events:\n');
-        // document.getElementById('content').innerText = output;
       }
         </script>
-        <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
-        <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
-        <!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
     <script src="../dist/contacts.js"></script>
 </body>
 </html>

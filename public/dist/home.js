@@ -19,25 +19,25 @@ eval("/*!\n * \n *   typed.js - A JavaScript Typing Animation Library\n *   Auth
 
 /***/ }),
 
-/***/ "./src/app/home/home.js":
-/*!******************************!*\
-  !*** ./src/app/home/home.js ***!
-  \******************************/
+/***/ "./public/src/app/home/home.js":
+/*!*************************************!*\
+  !*** ./public/src/app/home/home.js ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../lib/menu */ \"./src/lib/menu.js\");\n/* harmony import */ var typed_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! typed.js */ \"./node_modules/typed.js/lib/typed.js\");\n/* harmony import */ var typed_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typed_js__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\nconst typeText = document.getElementById('type-source').innerHTML;\r\nconst isLooped = JSON.parse(document.getElementById('type-loop').innerHTML);\r\nlet typeAnimation;\r\nlet animationCanStart = true;\r\n\r\nconst initTypeAnimation = (typeText, isLooped = true) => {\r\n    return new (typed_js__WEBPACK_IMPORTED_MODULE_1___default())('#type-container', {\r\n        strings: [typeText],\r\n        loop: isLooped,\r\n        loopCount: Infinity,\r\n        typeSpeed: 200,\r\n        backSpeed: 60,\r\n        backDelay: 6000,\r\n    });\r\n}\r\n\r\n\r\n// start/destroy animation when browser size is desktop/mobile width\r\nif (document.documentElement.clientWidth > 830) {\r\n    typeAnimation = initTypeAnimation(typeText, isLooped)\r\n    typeAnimation.start();\r\n    animationCanStart = false;\r\n} else {\r\n    if(typeAnimation) {\r\n        typeAnimation.destroy();\r\n    }\r\n}\r\n\r\n// start/destroy animation when browser resized to desktop/mobile width\r\nwindow.addEventListener('resize', () => {\r\n    if(document.documentElement.clientWidth <= 831 && typeAnimation) {\r\n        if(typeAnimation) {\r\n            typeAnimation.destroy();\r\n            animationCanStart = true;\r\n        }\r\n    }\r\n    else if (animationCanStart) {\r\n        typeAnimation = initTypeAnimation(typeText, isLooped);\r\n        typeAnimation.start();\r\n        animationCanStart = false;\r\n    }\r\n});\r\n\r\n//menu activate\r\n(0,_lib_menu__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('menu-button', 'header');\r\n\n\n//# sourceURL=webpack:///./src/app/home/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../lib/menu */ \"./public/src/lib/menu.js\");\n/* harmony import */ var typed_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! typed.js */ \"./node_modules/typed.js/lib/typed.js\");\n/* harmony import */ var typed_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(typed_js__WEBPACK_IMPORTED_MODULE_1__);\n\r\n\r\n\r\nconst typeText = document.getElementById('type-source').innerHTML;\r\nconst isLooped = JSON.parse(document.getElementById('type-loop').innerHTML);\r\nlet typeAnimation;\r\nlet animationCanStart = true;\r\n\r\nconst initTypeAnimation = (typeText, isLooped = true) => {\r\n    return new (typed_js__WEBPACK_IMPORTED_MODULE_1___default())('#type-container', {\r\n        strings: [typeText],\r\n        loop: isLooped,\r\n        loopCount: Infinity,\r\n        typeSpeed: 200,\r\n        backSpeed: 60,\r\n        backDelay: 6000,\r\n    });\r\n}\r\n\r\n\r\n// start/destroy animation when browser size is desktop/mobile width\r\nif (document.documentElement.clientWidth > 830) {\r\n    typeAnimation = initTypeAnimation(typeText, isLooped)\r\n    typeAnimation.start();\r\n    animationCanStart = false;\r\n} else {\r\n    if(typeAnimation) {\r\n        typeAnimation.destroy();\r\n    }\r\n}\r\n\r\n// start/destroy animation when browser resized to desktop/mobile width\r\nwindow.addEventListener('resize', () => {\r\n    if(document.documentElement.clientWidth <= 831 && typeAnimation) {\r\n        if(typeAnimation) {\r\n            typeAnimation.destroy();\r\n            animationCanStart = true;\r\n        }\r\n    }\r\n    else if (animationCanStart) {\r\n        typeAnimation = initTypeAnimation(typeText, isLooped);\r\n        typeAnimation.start();\r\n        animationCanStart = false;\r\n    }\r\n});\r\n\r\n//menu activate\r\n(0,_lib_menu__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('menu-button', 'header');\r\n\n\n//# sourceURL=webpack:///./public/src/app/home/home.js?");
 
 /***/ }),
 
-/***/ "./src/lib/menu.js":
-/*!*************************!*\
-  !*** ./src/lib/menu.js ***!
-  \*************************/
+/***/ "./public/src/lib/menu.js":
+/*!********************************!*\
+  !*** ./public/src/lib/menu.js ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\nconst menuActivator = (buttonSelector, moveDownElementSelector) => {\r\n    const menuButton = document.getElementById(buttonSelector);\r\n    const header = document.querySelector(moveDownElementSelector);\r\n\r\n    const switchMenu = () => {\r\n        header.classList.toggle('open');\r\n        document.body.classList.toggle('overflow');\r\n        \r\n        if (header.classList[header.classList.length-1] === 'open') {\r\n            menuButton.innerHTML = 'close menu';\r\n        }\r\n        else {\r\n            menuButton.innerHTML = 'menu';\r\n        }\r\n    }\r\n\r\n    menuButton.addEventListener('click', switchMenu);\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menuActivator);\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/lib/menu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\nconst menuActivator = (buttonSelector, moveDownElementSelector) => {\r\n    const menuButton = document.getElementById(buttonSelector);\r\n    const header = document.querySelector(moveDownElementSelector);\r\n\r\n    const switchMenu = () => {\r\n        header.classList.toggle('open');\r\n        document.body.classList.toggle('overflow');\r\n        \r\n        if (header.classList[header.classList.length-1] === 'open') {\r\n            menuButton.innerHTML = 'close menu';\r\n        }\r\n        else {\r\n            menuButton.innerHTML = 'menu';\r\n        }\r\n    }\r\n\r\n    menuButton.addEventListener('click', switchMenu);\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menuActivator);\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./public/src/lib/menu.js?");
 
 /***/ })
 
@@ -113,7 +113,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/app/home/home.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./public/src/app/home/home.js");
 /******/ 	
 /******/ })()
 ;

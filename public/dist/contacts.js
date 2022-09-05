@@ -10,23 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/app/contacts/contacts.js":
-/*!**************************************!*\
-  !*** ./src/app/contacts/contacts.js ***!
-  \**************************************/
+/***/ "./public/src/app/contacts/contacts.js":
+/*!*********************************************!*\
+  !*** ./public/src/app/contacts/contacts.js ***!
+  \*********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../lib/menu */ \"./src/lib/menu.js\");\n\r\n\r\n\r\nconst API_KEY=\"AIzaSyC0HBc92apvJtst7CPtIxTttglASvkMp3M\";\r\nconst WEB_CLIENT=JSON.parse('{\"web\":{\"client_id\":\"659403616723-1i3q9h1d0emeanbbr5cqisk83uegto1a.apps.googleusercontent.com\",\"project_id\":\"utcfilm\",\"auth_uri\":\"https://accounts.google.com/o/oauth2/auth\",\"token_uri\":\"https://oauth2.googleapis.com/token\",\"auth_provider_x509_cert_url\":\"https://www.googleapis.com/oauth2/v1/certs\",\"client_secret\":\"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\"}}').web;\r\nconst SCOPES = ['https://www.googleapis.com/auth/calendar','https://www.googleapis.com/auth/profile'];\r\nconst DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';\r\n\r\n        \r\nconst mediaContainer = document.getElementById('scroll-media');\r\nconst scrollCenter = 989/2 - mediaContainer.clientWidth/2;\r\nmediaContainer.scrollTo(scrollCenter, 0);\r\n\r\n(0,_lib_menu__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('menu-button', 'header');\r\n\r\n\n\n//# sourceURL=webpack:///./src/app/contacts/contacts.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../lib/menu */ \"./public/src/lib/menu.js\");\n\r\n\r\n\r\nconst API_KEY=\"AIzaSyC0HBc92apvJtst7CPtIxTttglASvkMp3M\";\r\nconst WEB_CLIENT=JSON.parse('{\"web\":{\"client_id\":\"659403616723-1i3q9h1d0emeanbbr5cqisk83uegto1a.apps.googleusercontent.com\",\"project_id\":\"utcfilm\",\"auth_uri\":\"https://accounts.google.com/o/oauth2/auth\",\"token_uri\":\"https://oauth2.googleapis.com/token\",\"auth_provider_x509_cert_url\":\"https://www.googleapis.com/oauth2/v1/certs\",\"client_secret\":\"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\"}}').web;\r\nconst SCOPES = ['https://www.googleapis.com/auth/calendar','https://www.googleapis.com/auth/calendar.events'];\r\nconst CALENDAR_ID =\"hu6ioahhamk7m480jtm1sdm4n0@group.calendar.google.com\";\r\n\r\n        \r\nconst mediaContainer = document.getElementById('scroll-media');\r\nconst scrollCenter = 989/2 - mediaContainer.clientWidth/2;\r\nmediaContainer.scrollTo(scrollCenter, 0);\r\n\r\n(0,_lib_menu__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('menu-button', 'header');\r\n\r\n\n\n//# sourceURL=webpack:///./public/src/app/contacts/contacts.js?");
 
 /***/ }),
 
-/***/ "./src/lib/menu.js":
-/*!*************************!*\
-  !*** ./src/lib/menu.js ***!
-  \*************************/
+/***/ "./public/src/lib/menu.js":
+/*!********************************!*\
+  !*** ./public/src/lib/menu.js ***!
+  \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\nconst menuActivator = (buttonSelector, moveDownElementSelector) => {\r\n    const menuButton = document.getElementById(buttonSelector);\r\n    const header = document.querySelector(moveDownElementSelector);\r\n\r\n    const switchMenu = () => {\r\n        header.classList.toggle('open');\r\n        document.body.classList.toggle('overflow');\r\n        \r\n        if (header.classList[header.classList.length-1] === 'open') {\r\n            menuButton.innerHTML = 'close menu';\r\n        }\r\n        else {\r\n            menuButton.innerHTML = 'menu';\r\n        }\r\n    }\r\n\r\n    menuButton.addEventListener('click', switchMenu);\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menuActivator);\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/lib/menu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\nconst menuActivator = (buttonSelector, moveDownElementSelector) => {\r\n    const menuButton = document.getElementById(buttonSelector);\r\n    const header = document.querySelector(moveDownElementSelector);\r\n\r\n    const switchMenu = () => {\r\n        header.classList.toggle('open');\r\n        document.body.classList.toggle('overflow');\r\n        \r\n        if (header.classList[header.classList.length-1] === 'open') {\r\n            menuButton.innerHTML = 'close menu';\r\n        }\r\n        else {\r\n            menuButton.innerHTML = 'menu';\r\n        }\r\n    }\r\n\r\n    menuButton.addEventListener('click', switchMenu);\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menuActivator);\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./public/src/lib/menu.js?");
 
 /***/ })
 
@@ -90,7 +90,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/app/contacts/contacts.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./public/src/app/contacts/contacts.js");
 /******/ 	
 /******/ })()
 ;

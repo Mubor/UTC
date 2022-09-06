@@ -1,22 +1,24 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const { google } = require('googleapis');
+const bodyParser = require('body-parser');
 
 
 const app = express();
 const urlencodedParser = express.urlencoded({extended: false});
 dotenv.config();
 
+app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 app.get("/", function (request, response) {
     response.sendFile(process.cwd() + "/index.html");
 });
+
 app.listen(process.env.PORT, ()=>console.log('Server is running...' + process.cwd() +' '+process.env.PORT));
 
 
-app.post("/pages/contacts.html", urlencodedParser, function (request, response) {
-    if(!request.body) return response.sendStatus(400);
-
+app.post("/create", function (request, response) {
+    if(!request.body || request.body === {}) return response.sendStatus(400);
     run(response, request.body);
 });
 
@@ -35,7 +37,6 @@ async function run(res, data) {
     const SCOPES = ['https://www.googleapis.com/auth/calendar', 'https://www.googleapis.com/auth/calendar.events'];
     const CALENDAR_ID = process.env.CALENDAR_ID;
     const sk = process.env.SERVICE_KEY;
-    let eventRedirectLink;
 
 
     const jwtClient = new google.auth.JWT(
@@ -82,8 +83,7 @@ async function run(res, data) {
             console.log("Something went wrong: " + error.message);
             return;
         }
-        console.log(response.data.htmlLink);   
-        res.redirect(response.data.htmlLink);
+        res.json(response.data.htmlLink);   
     }
 
     const addCalendarEvent = async () => {
@@ -93,7 +93,7 @@ async function run(res, data) {
                 calendarId: CALENDAR_ID,
                 resource: calendarEvent,
             }, 
-            operationLogger);
+            operationResponser);
         });
 
     };

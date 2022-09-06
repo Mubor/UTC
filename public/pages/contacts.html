@@ -101,16 +101,22 @@
             </div>
         </footer>
     </div>
-    <div role="dialog" class="app-dialog">
+    <div class="app-dialog" id="dialog">
         <div class="app-dialog__overlay">
           <div class="app-dialog__body">
               <h2 id="message"></h2>
               <form name="data" method="post">
+                <label>
+                    <button id="close-button">x</button>
+                </label>
                 <label for="fullname">
-                    <input type="text" name="fullname" id="fullname" placeholder="Input your full name">
+                    <input type="text" name="fullname" id="fullname" placeholder="Input your full name" required>
                 </label>
                 <label for="email">
-                    <input type="email" name="email" id="email" placeholder="Input your email">
+                    <input type="email" name="email" id="email" placeholder="Input your email" required>
+                </label>
+                <label for="phone">
+                    <input type="tel" name="phone" id="phone">
                 </label>
                 <label for="time">
                     <input type="datetime-local" name="time" id="time" placeholder="Input meet time">
@@ -122,44 +128,6 @@
           </div>
         </div>
     </div>
-    <script>
-
-        async function createEvent() {
-        let response;
-        try {
-          
-
-          const event = {
-            'summary': 'Thanks',
-            'description': 'testing if can event insert without autorization',
-            'maxAtendees' :'1',
-            'start': {
-                'dateTime': '2022-9-4T20:00:00+03:00',
-                'timeZone': 'Europe/Kyiv',
-            },
-            'end': {
-                'dateTime': '2022-9-4T22:00:00+03:00',
-                'timeZone': 'Europe/Kyiv',
-            },
-            'atendees': [
-                // {'email': CALENDAR_ID},
-                {'email': 'muhatasov22@knu.ua'},
-            ]
-          };
-          const request = gapi.client.calendar.events.insert({
-            'calendarId': 'primary',
-            'resource': event
-          });
-          request.execute(function(event) {
-            console.log('Event created: ' + event.htmlLink);
-          })
-
-        } catch (err) {
-          document.getElementById('content').innerText = err.message;
-          return;
-        }
-      }
-        </script>
     <script src="../dist/contacts.js"></script>
 </body>
 </html>

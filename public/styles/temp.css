@@ -459,7 +459,7 @@ body {
 }
 
 .app-dialog {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -474,7 +474,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 86vmin;
+  width: 30%;
   padding: 16px;
   border-radius: 8px;
   z-index: 1;
@@ -499,12 +499,30 @@ body {
 
 label {
   display: block;
+  width: 100%;
   margin: 5% 0;
   font-size: 18px;
 }
 
-input, select {
-  padding: 1%;
+label:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+label:first-child > button {
+  padding: 1% 2%;
+  margin-right: 5%;
+  font-size: 20px;
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+  padding: 2%;
   font-size: 18px;
   background-color: #fff;
   border: 1px solid gray;

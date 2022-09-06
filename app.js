@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const { google } = require('googleapis');
 
+
 const app = express();
 const urlencodedParser = express.urlencoded({extended: false});
 dotenv.config();
@@ -15,8 +16,8 @@ app.listen(process.env.PORT, ()=>console.log('Server is running...' + process.cw
 
 app.post("/pages/contacts.html", urlencodedParser, function (request, response) {
     if(!request.body) return response.sendStatus(400);
-    run(request.body);
-    // response.sendStatus(200);
+
+    run(response, request.body);
 });
 
 
@@ -30,10 +31,11 @@ function getEndDate(date) {
     return (new Date(eventDate - dateOffset).toISOString().slice(0, -1).split('.')[0]);
 }
 
-async function run(data) {
+async function run(res, data) {
     const SCOPES = ['https://www.googleapis.com/auth/calendar', 'https://www.googleapis.com/auth/calendar.events'];
     const CALENDAR_ID = process.env.CALENDAR_ID;
     const sk = process.env.SERVICE_KEY;
+    let eventRedirectLink;
 
 
     const jwtClient = new google.auth.JWT(
@@ -74,19 +76,18 @@ async function run(data) {
         },
     };
     
-    console.log(calendarEvent);
 
-    const operationLogger = (error, response) => {
+    const operationResponser = (error, response) => {
         if (error) {
             console.log("Something went wrong: " + error.message);
             return;
         }
-        console.log("Created event details: ", response.data);
+        console.log(response.data.htmlLink);   
+        res.redirect(response.data.htmlLink);
     }
 
     const addCalendarEvent = async () => {
         auth.getClient().then((auth) => {
-            console.log(auth);
             calendar.events.insert({
                 auth: auth,
                 calendarId: CALENDAR_ID,
@@ -94,11 +95,13 @@ async function run(data) {
             }, 
             operationLogger);
         });
+
     };
 
     try {
         await addCalendarEvent();
     }catch(err) {
         console.log(err.message);
+        res.sendStatus(400);
     }
 }

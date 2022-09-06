@@ -2,13 +2,14 @@
 [build]
   command = "# no build command"
   functions = "netlify/functions"
-  publish = "."
+  base = "."
+  publish = "public/"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
   #[[redirects]]
   #  from = "/*"
-  #  to = "/public/index.html"
+  #  to = "/index.html"
   #  status = 200
 
   ## (optional) Settings for Netlify Dev

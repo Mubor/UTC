@@ -1,5 +1,6 @@
 import menuActivator from "../../lib/menu";
 import Typed from "typed.js";
+import generate from "../../lib/generate";
 
 const typeText = document.getElementById('type-source').innerHTML;
 const isLooped = JSON.parse(document.getElementById('type-loop').innerHTML);
@@ -44,5 +45,7 @@ window.addEventListener('resize', () => {
     }
 });
 
+//generate random teammate from sample after reload
+window.onload = generate;
 //menu activate
 menuActivator('menu-button', 'header');

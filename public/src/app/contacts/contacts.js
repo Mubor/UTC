@@ -31,8 +31,6 @@ document.forms.data.addEventListener('submit', async (e) => {
         request[formDataArr[i].name] = formDataArr[i].value;
     }
 
-    console.log(request);
-
     let response = await fetch('/create', {
         method: 'POST',
         headers: new Headers({'content-type': 'application/json'}),

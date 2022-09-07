@@ -22,7 +22,7 @@
         position: absolute;
         top:21%;
         left:45%;
-        width: 24%;
+        width: 26%;
         font-family: Varela;
         font-size: 2.1vw;
         text-transform: uppercase;
@@ -34,7 +34,7 @@
         display: none;
     }
 
-    .indent {
+    .indent, .indent-team3 {
         padding-left: 60px;
     }
 
@@ -111,7 +111,6 @@
     
     &__link {
         transition: color .3s;
-        // line-height: -1; 
     }
 
     &__link:hover {
@@ -124,7 +123,6 @@
     .nav {
         display: none;
     }
-
     .team {
         width: 100%;
         padding: 0;
@@ -140,7 +138,12 @@
             margin: 8% 0;
             width: 100%;
         }
-
+        &__media {
+            width: 84%;
+        }
+        &__picture {
+            width: 8%;
+        }
         &__message {
             position: static;
             padding: 5% 5% 0 5%;
@@ -148,22 +151,23 @@
             // font-size: 40px;
             font-size: 10.7vw;
             letter-spacing: normal;
-            word-spacing: 20px;
-            text-align: justify;
+            word-spacing: 15px;
+            // text-align: justify;
             font-weight: 500;
             line-height: 1.2;
         }
-
         span {
             padding: 0%;
         }
-
         .indent {
-            padding-left: 2px;
+            padding-left: 2%;
         }
-        
         & .indent-br {
             display: unset;
+        }
+
+        .indent-team3 {
+            padding-left: 9%;
         }
     }
 

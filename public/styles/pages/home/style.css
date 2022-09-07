@@ -363,7 +363,7 @@ html {
   position: absolute;
   top: 21%;
   left: 45%;
-  width: 24%;
+  width: 26%;
   font-family: Varela;
   font-size: 2.1vw;
   text-transform: uppercase;
@@ -375,7 +375,7 @@ html {
   display: none;
 }
 
-.team .indent {
+.team .indent, .team .indent-team3 {
   padding-left: 60px;
 }
 
@@ -489,14 +489,19 @@ html {
     margin: 8% 0;
     width: 100%;
   }
+  .team__media {
+    width: 84%;
+  }
+  .team__picture {
+    width: 8%;
+  }
   .team__message {
     position: static;
     padding: 5% 5% 0 5%;
     width: 100%;
     font-size: 10.7vw;
     letter-spacing: normal;
-    word-spacing: 20px;
-    text-align: justify;
+    word-spacing: 15px;
     font-weight: 500;
     line-height: 1.2;
   }
@@ -504,10 +509,13 @@ html {
     padding: 0%;
   }
   .team .indent {
-    padding-left: 2px;
+    padding-left: 2%;
   }
   .team .indent-br {
     display: unset;
+  }
+  .team .indent-team3 {
+    padding-left: 9%;
   }
   .language {
     margin-top: 13%;

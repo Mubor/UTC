@@ -1,12 +1,19 @@
 import menuActivator from "../../lib/menu";
         
+const calendarURL = "https://calendar.google.com/calendar/u/4?cid=dXQ5bWVsMmUxNmNpOW1lcTJ1dWJoZTBsMmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ";
 const mediaContainer = document.getElementById('scroll-media');
 const dialogButton = document.getElementById('dialog-open-button');
 const closeButton = document.getElementById('close-button');
 const appDialog = document.getElementById('dialog');
+const form = document.forms.data;
 
 const toggleDialogVisibility = (e) => {
     e.preventDefault();
+
+    if(e.target === dialogButton && localStorage.getItem('formOpenAccess') === false) {
+        window.location = calendarURL;
+    }
+
     appDialog.hidden = !appDialog.hidden;
 }
 
@@ -20,10 +27,24 @@ menuActivator('menu-button', 'header');
 dialogButton.addEventListener('click', toggleDialogVisibility);
 closeButton.addEventListener('click', toggleDialogVisibility);
 
-document.forms.data.addEventListener('submit', async (e) => {
+
+const validateDate = (date) => {
+    const inputedDate = new Date(date);
+    
+    if(inputedDate <= Date.now()){
+        return false;
+    }
+    else return true;
+}
+
+form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const formDataArr = [...document.forms.data.querySelectorAll('input:not(input#button)')];
+    if( !validateDate(form.time.value) ) {
+        form.time.nextElementSibling.innerHTML = "The specified date must be greater than now";
+    }
+
+    const formDataArr = [...form.querySelectorAll('input:not(input#button)')];
 
     let request = {};
 
@@ -37,7 +58,14 @@ document.forms.data.addEventListener('submit', async (e) => {
         body: JSON.stringify(request),
     });
   
-    let result = await response.json();
+    await response.json();
 
-    window.location = "https://calendar.google.com/calendar/u/4?cid=dXQ5bWVsMmUxNmNpOW1lcTJ1dWJoZTBsMmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ";
+    if(response.status === 200) {
+        localStorage.setItem('formOpenAccess', false);
+        window.location = calendarURL;
+    }
+    else {
+        alert("Something went wrong, please check your input.");
+    }
+
 });

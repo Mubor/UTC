@@ -67,5 +67,4 @@ form.addEventListener('submit', async (e) => {
     else {
         alert("Something went wrong, please check your input.");
     }
-
 });

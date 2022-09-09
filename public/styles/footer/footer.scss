@@ -1,0 +1,52 @@
+.footer{
+    position: relative;
+    width: 100%;
+    background-color: black;
+    
+    &__body{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 1.7vh;
+        width: 60%;
+        
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 2;
+        }
+    }
+    &__item {
+        z-index: 3;
+        a {
+            font-family: AndaleMono;
+            font-size: 3.628vh;
+            text-transform: uppercase;
+            color: #3FED41;
+            transition: color .3s;
+
+            &:hover{
+                color: #E46D29;
+                transition: color .3s;
+            }
+        }
+        
+    }
+}
+
+@media screen and (max-width: 830px){
+    .footer{
+        &__body{
+            padding: 2vh 0 10%;
+            width: 87%;
+        }
+        a{
+            font-size: 16px;
+        }
+    }
+}

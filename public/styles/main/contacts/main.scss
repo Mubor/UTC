@@ -1,0 +1,266 @@
+body {
+    position: relative;
+}
+
+.main {
+    position: relative;
+    font-size: 3.628vh;
+    height: 87vh;
+}
+
+.keytext {
+    padding: 0;
+    word-spacing: -10px;
+}
+
+.contacts .keytext {
+    padding: 0 1% 1%;
+    padding-bottom: 1%;
+    word-spacing: 4px;
+}
+
+.contacts {
+    margin: 6vh auto 0;
+    // width: 158vh;
+    width: 97%;
+    justify-content: space-between;
+    
+    &__item {
+        width: 30%;
+    }
+    
+    &__item:last-child{
+        text-align: right;
+    }
+    
+    &__title {
+        margin-bottom: 4%;
+    }
+    
+    &__link {
+        border-bottom: 2px solid black;
+    }
+    
+    &__text {
+        font-family: Varela;
+        margin-bottom: 4%;
+    }
+    
+}
+
+.info {
+    position: relative;
+    margin: 4.1vh auto 0;
+
+    width: fit-content;
+    
+    &__text:first-child>span {
+        word-spacing: normal;
+    }
+    
+    &__text{
+        margin-bottom: 1.5%;
+        font-family: Varela;
+        text-align: center;
+    }
+    
+    &__media{
+        width: 112vh;
+        margin-top: 2.2%;
+        
+        &>img{
+            width: 100%;
+        }
+    }
+    
+    &__button{
+        justify-content: space-around;
+        position: absolute;
+        top:80%;
+        left: 50%;
+        transform: translate(-50%);
+        padding: 1%;
+        width: 39%;
+        text-transform: uppercase;
+        font-family: Varela;
+        font-size: 3.175vh;
+        background: #C3C3C3;
+        box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
+        
+        & span:not(.info__pic){
+            padding: 0 2%;
+            line-height: 1.1;
+        }
+    }
+
+    &__pic{
+        width: 3.2vh;
+
+        &>img {
+            width: 100%;
+        }
+    }
+    
+}
+
+.face {
+    position: absolute;
+    bottom: -5vh;
+    left: 50%;
+    transform: translate(-50%, 4%);
+    width: 6vw;
+}
+
+.app-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.app-dialog__body {
+    display: flex;
+    flex-direction: column;
+    // width: 86vmin;
+    width: 30%;
+    padding: 16px;
+    border-radius: 8px;
+    z-index: 1;
+    background-color: #fff;
+}
+  
+.app-dialog__overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+label {
+    display: block;
+    width: 100%;
+    margin: 5% 0;
+    font-size: 18px;
+
+    &:first-child {
+        display: flex;
+        justify-content: flex-end;
+
+        &>button {
+            padding: 1% 2%;
+            margin-right: 5%;
+            font-size: 20px;
+        }
+    }
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+    padding: 2%;
+    font-size: 18px;
+    background-color: #fff;
+    border: 1px solid gray;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 0 auto 2%;
+    width: 50%;
+}
+
+
+@media screen and(max-width:830px) {
+    .main{
+        font-size: 24px;
+        height: max-content;
+        padding-bottom: 25%;
+    }
+
+    .contacts{
+        flex-direction: column;
+        margin: 4% 0 0 0;
+        width: 100%;
+        
+        &__title, &__text{
+            text-align: center;
+            // margin-top: 7%;
+        }
+
+        &__text{
+            margin-top: 7%;
+        }
+
+        &__title{
+            margin-top: 4%;
+        }
+
+        &__title>.keytext{
+            padding: 1%;
+            word-spacing: normal;
+        }
+
+        &__item{
+            margin-bottom: 13%;
+            width: 100%;
+        }
+    }
+
+    .info{
+        width: 100%;
+        margin: 0 auto;
+        
+        &__text{
+            margin: 0 auto;
+            width: 90%;
+            margin-bottom: 4%;
+            line-height: 1.2;
+
+            &:first-child{
+                background-color: #4AE64B;
+            }
+
+            &>.keytext{
+                word-spacing: 9px !important;
+            }
+        }
+
+        
+
+        &__media{
+            margin-top: 11%;
+            text-align: center;
+            width: 100%;
+            overflow: hidden;
+            overflow-x: scroll;
+            &::-webkit-scrollbar{
+                display: none;
+            }
+
+            &>img{
+                width: unset;
+            }
+        }
+
+        &__button{
+            padding: 3% 0;
+            justify-content: center;
+            width: 70%;
+            font-size: 16px;
+            top: 90%;
+        }
+
+        &__pic {
+            width: 6%;
+        }
+    }
+
+    .face {
+        width: 15vw;
+        bottom: -2.5%;
+    }
+}

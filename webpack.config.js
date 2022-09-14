@@ -6,6 +6,7 @@ module.exports = {
         home: './public/src/app/home/home.js', 
         contacts: './public/src/app/contacts/contacts.js',
         simple: './public/src/app/simple/simple_page.js',
+        works: './public/src/app/works/works.js',
     },
     output: {
       path: path.resolve(__dirname + '/public', "dist"),

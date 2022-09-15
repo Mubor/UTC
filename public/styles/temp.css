@@ -399,12 +399,59 @@ html {
   src: url("../fonts/Varela.ttf");
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .main {
   font-family: Varela;
 }
 
+.message {
+  margin: 2% auto;
+  text-align: center;
+  font-size: 5.555vw;
+  line-height: 1.2;
+}
+
+.message__pic > svg {
+  width: 3.8%;
+}
+
+.message__content {
+  padding: 0 1.5%;
+}
+
+.message--bottom {
+  padding: 0 5%;
+  text-align: left;
+}
+
+.btn {
+  display: block;
+  margin: 8% auto;
+  padding: .7% 1.4%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 3.333vw;
+  background: #C3C3C3;
+  -webkit-box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
+          box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
+}
+
+.grid__overlay > a:hover,
+.btn:hover {
+  background-color: #838383;
+  -webkit-box-shadow: inset 2px 2px 2px 0 black;
+          box-shadow: inset 2px 2px 2px 0 black;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
 .grid {
   padding: 0 0 0 1.666vw;
+  margin-bottom: 5%;
 }
 
 .grid__sizer {
@@ -461,7 +508,7 @@ html {
   position: absolute;
   top: 5%;
   left: 90%;
-  width: 6%;
+  width: 3vw;
   z-index: 3;
 }
 
@@ -492,7 +539,7 @@ html {
   opacity: 0;
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 2;
 }
 
@@ -502,6 +549,8 @@ html {
   -webkit-box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
           box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
   text-align: center;
-  background: #C3C3C3;
+  background-color: #C3C3C3;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
 /*# sourceMappingURL=temp.css.map */

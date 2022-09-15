@@ -6,6 +6,7 @@
     font-family: AndaleMono;
     src: url("../fonts/AndaleMono.ttf");
 }
+
 @font-face {
     font-family: Varela;
     src: url("../fonts/Varela.ttf");
@@ -14,15 +15,71 @@
 $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
 $grid-margin: 1.666vw;
 $grid-marginTop: 0.694vw;
-// $grid-margin: 24px;
 $gridwidth: 22.917vw;
+
+::-webkit-scrollbar{
+    display: none;
+}
 
 .main {
     font-family: Varela;
 }
 
+.message{
+    margin: 2% auto;
+    text-align: center;
+    font-size: 5.555vw;
+    line-height: 1.2;
+
+    &__pic{
+        &>svg{
+            width: 3.8%
+
+        }
+
+        &:first-child{
+            // transform: translate(-100%);
+        }
+    }
+
+    &__content{
+        padding: 0 1.5%;
+    }
+
+}
+
+.message--bottom{
+    padding: 0 5%;
+    text-align: left;
+
+}
+
+.btn {
+    display: block;
+    margin: 8% auto;
+    padding: .7% 1.4%;
+    width: fit-content;
+    font-size: 3.333vw;
+    background: #C3C3C3;
+    box-shadow: $shadow;
+}
+
+// .btn:hover{
+//     background-color: #838383;
+//     box-shadow: inset 2px 2px 2px 0 black;
+//     transition: all .3s;
+// }
+
+.grid__overlay>a:hover, 
+.btn:hover{
+    background-color: #838383;
+    box-shadow: inset 2px 2px 2px 0 black;
+    transition: all .3s;
+}
+
 .grid {
     padding: 0 0 0 $grid-margin;
+    margin-bottom: 5%;
 
     &__sizer {
         width: $gridwidth + $grid-margin/2;
@@ -74,7 +131,7 @@ $gridwidth: 22.917vw;
         position: absolute;
         top: 5%;
         left: 90%;
-        width: 6%;
+        width: 3vw;
         z-index: 3;
 
         &>img {
@@ -98,7 +155,7 @@ $gridwidth: 22.917vw;
         align-items: center;
         opacity: 0;
         transition: opacity 1s;
-        background-color: rgba(black, .3);
+        background-color: rgba(black, .5);
         z-index: 2;
 
         &>a {
@@ -106,7 +163,8 @@ $gridwidth: 22.917vw;
             width: 10.209vw;
             box-shadow: $shadow;
             text-align: center;
-            background: #C3C3C3;
+            background-color: #C3C3C3;
+            transition: all .3s;
         }
     }
     

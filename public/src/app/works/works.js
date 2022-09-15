@@ -9,13 +9,9 @@ const grid = document.querySelector('.grid');
 window.onload = () => {
     const masonry = new Masonry(grid, {
         itemSelector: '.grid__item',
-        // isFitWidth: true,
         columnWidth: '.grid__sizer',
-        // columnWidth: 330,
-        // gutter: 12,
         gutter: '.grid__gutter-sizer',
-        percentPosition: true,
-
+        percentPosition: true
     });
 }
 

@@ -544,8 +544,8 @@ html {
 }
 
 .grid__overlay > a {
-  padding: .8vw 0;
-  width: 10.209vw;
+  padding: 2vw 0;
+  width: 30.209vw;
   -webkit-box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
           box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
   text-align: center;
@@ -555,6 +555,41 @@ html {
 }
 
 @media screen and (max-width: 830px) {
+  .message {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 8.533vw;
+    padding: 5% 4%;
+  }
+  .message__pic {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 9%;
+  }
+  .message__pic > svg {
+    width: 100%;
+  }
+  .message__content {
+    padding: 0 3%;
+    width: 90% !important;
+  }
+  .message--bottom {
+    margin: 0;
+    padding: 11%;
+    text-align: center;
+  }
+  .btn {
+    padding: 2.5% 5%;
+    font-size: 8.533vw;
+  }
   .grid {
     padding: 0 0 0 3.332vw;
   }

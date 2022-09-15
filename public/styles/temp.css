@@ -603,11 +603,14 @@ html {
     margin: 1.388vw 0;
     width: 45.834vw;
   }
-  .grid .grid__item--middlewidth {
+  .grid .grid__item--middlewidth,
+  .grid .grid__item--maxwidth {
     width: 95vw;
   }
-  .grid .grid__item--maxwidth {
-    width: 144.166vw;
+  .grid__hot-pic {
+    width: 7%;
+    top: 8%;
+    left: 89%;
   }
 }
 /*# sourceMappingURL=temp.css.map */

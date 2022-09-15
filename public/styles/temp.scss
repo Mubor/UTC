@@ -221,11 +221,15 @@ $gridwidth: 22.917vw;
             width: $gridwidth;        
 
         }
-        & &__item--middlewidth {
+        & &__item--middlewidth,
+        & &__item--maxwidth {
             width: $gridwidth*2 + $grid-margin;
         }
-        & &__item--maxwidth {
-            width: $gridwidth*3 + $grid-margin*2;
+
+        &__hot-pic {
+            width: 7%;
+            top: 8%;
+            left: 89%;
         }
     }
 

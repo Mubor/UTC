@@ -553,4 +553,26 @@ html {
   -webkit-transition: all .3s;
   transition: all .3s;
 }
+
+@media screen and (max-width: 830px) {
+  .grid {
+    padding: 0 0 0 3.332vw;
+  }
+  .grid__sizer {
+    width: 47.5vw;
+  }
+  .grid__gutter-sizer {
+    width: 1.666vw;
+  }
+  .grid__item {
+    margin: 1.388vw 0;
+    width: 45.834vw;
+  }
+  .grid .grid__item--middlewidth {
+    width: 95vw;
+  }
+  .grid .grid__item--maxwidth {
+    width: 144.166vw;
+  }
+}
 /*# sourceMappingURL=temp.css.map */

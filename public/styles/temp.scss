@@ -167,5 +167,33 @@ $gridwidth: 22.917vw;
             transition: all .3s;
         }
     }
+}
+
+@media screen and (max-width:830px) {
+    $grid-margin: 1.666vw*2;
+    $grid-marginTop: 0.694vw*2;
+    $gridwidth: 22.917vw*2;
+
+    .grid{
+        padding: 0 0 0 $grid-margin;
+        &__sizer {
+            width: $gridwidth + $grid-margin/2;
+        }
     
+        &__gutter-sizer {
+            width: $grid-margin/2;
+        }
+
+        &__item {
+            margin: $grid-marginTop 0;
+            width: $gridwidth;        
+
+        }
+        & &__item--middlewidth {
+            width: $gridwidth*2 + $grid-margin;
+        }
+        & &__item--maxwidth {
+            width: $gridwidth*3 + $grid-margin*2;
+        }
+    }
 }

@@ -169,69 +169,69 @@ $gridwidth: 22.917vw;
     }
 }
 
-// @media screen and (max-width:830px) {
-//     $grid-margin: 1.666vw*2;
-//     $grid-marginTop: 0.694vw*2;
-//     $gridwidth: 22.917vw*2;
+@media screen and (max-width:830px) {
+    $grid-margin: 1.666vw*2;
+    $grid-marginTop: 0.694vw*2;
+    $gridwidth: 22.917vw*2;
 
-//     .message {
-//         display: flex;
-//         font-size: 8.533vw;
-//         padding: 5% 4%;
+    .message {
+        display: flex;
+        font-size: 8.533vw;
+        padding: 5% 4%;
 
-//         &__pic{
-//             display: flex;
-//             justify-content: center;
-//             align-items: center;
-//             width: 9%;
-//             &>svg{
-//                 width: 100%;
-//             }
-//         }
+        &__pic{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 9%;
+            &>svg{
+                width: 100%;
+            }
+        }
 
-//         &__content {
-//             padding: 0 3%;
-//             width: 90% !important;
-//         }
-//     }
+        &__content {
+            padding: 0 3%;
+            width: 90% !important;
+        }
+    }
 
-//     .message--bottom {
-//         margin: 0;
-//         padding: 11% 11% 0;
-//         text-align: center;
-//     }
+    .message--bottom {
+        margin: 0;
+        padding: 11% 11% 0;
+        text-align: center;
+    }
 
-//     .btn {
-//         margin: 12% auto 14%;
-//         padding: 2.5% 5%;
-//         font-size: 8.533vw;
-//     }
+    .btn {
+        margin: 12% auto 14%;
+        padding: 2.5% 5%;
+        font-size: 8.533vw;
+    }
 
-//     .grid{
-//         padding: 0 0 0 $grid-margin;
-//         &__sizer {
-//             width: $gridwidth + $grid-margin/2;
-//         }
+    .grid{
+        padding: 0 0 0 $grid-margin;
+        &__sizer {
+            width: $gridwidth + $grid-margin/2;
+        }
     
-//         &__gutter-sizer {
-//             width: $grid-margin/2;
-//         }
+        &__gutter-sizer {
+            width: $grid-margin/2;
+        }
 
-//         &__item {
-//             margin: $grid-marginTop 0;
-//             width: $gridwidth;        
+        &__item {
+            margin: $grid-marginTop 0;
+            width: $gridwidth;        
 
-//         }
-//         & &__item--middlewidth,
-//         & &__item--maxwidth {
-//             width: $gridwidth*2 + $grid-margin;
-//         }
+        }
+        & &__item--middlewidth,
+        & &__item--maxwidth {
+            width: $gridwidth*2 + $grid-margin;
+        }
 
-//         &__hot-pic {
-//             width: 7%;
-//             top: 8%;
-//             left: 89%;
-//         }
-//     }
+        &__hot-pic {
+            width: 7%;
+            top: 8%;
+            left: 89%;
+        }
+    }
 
-// }
+}

@@ -553,4 +553,65 @@ html {
   -webkit-transition: all .3s;
   transition: all .3s;
 }
+
+@media screen and (max-width: 830px) {
+  .message {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 8.533vw;
+    padding: 5% 4%;
+  }
+  .message__pic {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 9%;
+  }
+  .message__pic > svg {
+    width: 100%;
+  }
+  .message__content {
+    padding: 0 3%;
+    width: 90% !important;
+  }
+  .message--bottom {
+    margin: 0;
+    padding: 11% 11% 0;
+    text-align: center;
+  }
+  .btn {
+    margin: 12% auto 14%;
+    padding: 2.5% 5%;
+    font-size: 8.533vw;
+  }
+  .grid {
+    padding: 0 0 0 3.332vw;
+  }
+  .grid__sizer {
+    width: 47.5vw;
+  }
+  .grid__gutter-sizer {
+    width: 1.666vw;
+  }
+  .grid__item {
+    margin: 1.388vw 0;
+    width: 45.834vw;
+  }
+  .grid .grid__item--middlewidth,
+  .grid .grid__item--maxwidth {
+    width: 95vw;
+  }
+  .grid__hot-pic {
+    width: 7%;
+    top: 8%;
+    left: 89%;
+  }
+}
 /*# sourceMappingURL=temp.css.map */

@@ -224,6 +224,12 @@ $gridwidth: 22.917vw;
         }
         & &__item--middlewidth,
         & &__item--maxwidth {
+            // width: $gridwidth*2 + $grid-margin;
+            width: $gridwidth;
+        }
+        
+        & &__item--middlewidth:first-child,
+        & &__item--maxwidth:first-child {
             width: $gridwidth*2 + $grid-margin;
         }
 

@@ -606,6 +606,10 @@ html {
   }
   .grid .grid__item--middlewidth,
   .grid .grid__item--maxwidth {
+    width: 45.834vw;
+  }
+  .grid .grid__item--middlewidth:first-child,
+  .grid .grid__item--maxwidth:first-child {
     width: 95vw;
   }
   .grid__hot-pic {

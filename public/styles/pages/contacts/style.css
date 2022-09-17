@@ -467,8 +467,10 @@ body {
   width: 30%;
   padding: 16px;
   border-radius: 8px;
+  font-size: 24px;
   z-index: 1;
-  background-color: #fff;
+  background-color: black;
+  color: white;
 }
 
 .app-dialog__overlay {
@@ -487,41 +489,33 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
-label {
-  display: block;
-  width: 100%;
-  margin: 5% 0;
-  font-size: 18px;
-}
-
-label:first-child {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-label:first-child > button {
-  padding: 1% 2%;
-  margin-right: 5%;
-  font-size: 20px;
-}
-
 input {
-  display: block;
-  margin: 0 auto;
   padding: 2%;
   font-size: 18px;
-  background-color: #fff;
-  border: 1px solid gray;
+  background-color: black;
+  color: transparent;
+  border: 0;
+  border-bottom: 1px solid #6261F8;
+}
+
+input:focus {
+  color: white;
+  border: 0;
 }
 
 input[type="submit"] {
   display: block;
   margin: 0 auto 2%;
   width: 50%;
+}
+
+#close-button {
+  padding: 1% 2%;
+  margin-right: 5%;
+  font-size: 20px;
+  border: 0;
+  background-color: transparent;
+  color: darkgoldenrod;
 }
 
 @media screen and (max-width: 830px) {
@@ -537,14 +531,14 @@ input[type="submit"] {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin: 4% 0 0 0;
+    margin: 10% 0 0 0;
     width: 100%;
   }
   .contacts__title, .contacts__text {
     text-align: center;
   }
   .contacts__text {
-    margin-top: 7%;
+    margin-top: 5%;
   }
   .contacts__title {
     margin-top: 4%;
@@ -554,7 +548,7 @@ input[type="submit"] {
     word-spacing: normal;
   }
   .contacts__item {
-    margin-bottom: 13%;
+    margin-bottom: 8%;
     width: 100%;
   }
   .info {

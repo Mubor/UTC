@@ -51,8 +51,8 @@ a {
 }
 
 @font-face {
-  font-family: Varela;
-  src: url("../../../fonts/Varela.ttf");
+  font-family: Montserrat;
+  src: url("../../../fonts/Montserrat-Regular.ttf");
 }
 
 @-webkit-keyframes prompt {
@@ -408,7 +408,7 @@ html {
 
 .description__list {
   margin-top: 4.3vh;
-  font-family: Varela;
+  font-family: Montserrat;
   color: #272727;
 }
 
@@ -425,7 +425,7 @@ html {
 
 .text__item {
   margin: 0;
-  font-family: Varela;
+  font-family: Montserrat;
   text-transform: uppercase;
   text-align: center;
   font-size: 8.89vh;

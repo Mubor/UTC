@@ -51,8 +51,8 @@ a {
 }
 
 @font-face {
-  font-family: Varela;
-  src: url("../../../fonts/Varela.ttf");
+  font-family: Montserrat;
+  src: url("../../../fonts/Montserrat-Regular.ttf");
 }
 
 @-webkit-keyframes prompt {
@@ -389,22 +389,12 @@ html {
   }
 }
 
-@font-face {
-  font-family: AndaleMono;
-  src: url("../fonts/AndaleMono.ttf");
-}
-
-@font-face {
-  font-family: Varela;
-  src: url("../fonts/Varela.ttf");
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
 
 .main {
-  font-family: Varela;
+  font-family: Montserrat;
 }
 
 .message {

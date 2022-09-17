@@ -2,6 +2,15 @@
 @import 'header/header.scss';
 @import 'footer/footer.scss';
 
+@font-face {
+    font-family: AndaleMono;
+    src: url("../fonts/AndaleMono.ttf");
+}
+@font-face {
+    font-family: Montserrat;
+    src: url("../fonts/Montserrat-Medium.ttf");
+}
+
 $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
 $grid-margin: 1.666vw;
 $grid-marginTop: 0.694vw;
@@ -39,7 +48,7 @@ $gridwidth: 22.917vw;
 }
 
 .message--bottom{
-    padding: 0 5%;
+    padding: 0 4%;
     text-align: left;
 
 }

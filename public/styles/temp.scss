@@ -36,9 +36,9 @@ $gridwidth: 22.917vw;
 
         }
 
-        &:first-child{
-            // transform: translate(-100%);
-        }
+        // &:first-child{
+        //     // transform: translate(-100%);
+        // }
     }
 
     &__content{
@@ -158,8 +158,8 @@ $gridwidth: 22.917vw;
         z-index: 2;
 
         &>a {
-            padding: 2vw 0;
-            width: 30.209vw;
+            padding: .7vw 0;
+            width: 10.209vw;
             box-shadow: $shadow;
             text-align: center;
             background-color: #C3C3C3;
@@ -223,8 +223,8 @@ $gridwidth: 22.917vw;
         }
         & &__item--middlewidth,
         & &__item--maxwidth {
-            // width: $gridwidth*2 + $grid-margin;
-            width: $gridwidth;
+            width: $gridwidth*2 + $grid-margin;
+            // width: $gridwidth;
         }
         
         & &__item--middlewidth:first-child,
@@ -236,6 +236,11 @@ $gridwidth: 22.917vw;
             width: 7%;
             top: 8%;
             left: 89%;
+        }
+
+        &__overlay>a {
+            padding: 2vw 0;
+            width: 25.209vw;
         }
     }
 

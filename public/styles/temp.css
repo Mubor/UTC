@@ -52,7 +52,7 @@ a {
 
 @font-face {
   font-family: Montserrat;
-  src: url("../../../fonts/Montserrat-Regular.ttf");
+  src: url("../../../fonts/Montserrat-Medium.ttf");
 }
 
 @-webkit-keyframes prompt {
@@ -544,8 +544,8 @@ html {
 }
 
 .grid__overlay > a {
-  padding: 2vw 0;
-  width: 30.209vw;
+  padding: .7vw 0;
+  width: 10.209vw;
   -webkit-box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
           box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
   text-align: center;
@@ -606,7 +606,7 @@ html {
   }
   .grid .grid__item--middlewidth,
   .grid .grid__item--maxwidth {
-    width: 45.834vw;
+    width: 95vw;
   }
   .grid .grid__item--middlewidth:first-child,
   .grid .grid__item--maxwidth:first-child {
@@ -616,6 +616,10 @@ html {
     width: 7%;
     top: 8%;
     left: 89%;
+  }
+  .grid__overlay > a {
+    padding: 2vw 0;
+    width: 25.209vw;
   }
 }
 /*# sourceMappingURL=temp.css.map */

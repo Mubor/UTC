@@ -464,7 +464,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 30%;
+  width: 70%;
   padding: 16px;
   border-radius: 8px;
   font-size: 24px;
@@ -489,12 +489,22 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+form {
+  padding: 0 4%;
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-size: 32px;
+  color: #b2b2b2;
+}
+
 input {
-  padding: 2%;
-  font-size: 18px;
+  font-size: 32px;
   background-color: black;
   color: transparent;
   border: 0;
+}
+
+input:not(input[type="submit"]) {
   border-bottom: 1px solid #6261F8;
 }
 
@@ -507,6 +517,7 @@ input[type="submit"] {
   display: block;
   margin: 0 auto 2%;
   width: 50%;
+  color: #4AE64B;
 }
 
 #close-button {

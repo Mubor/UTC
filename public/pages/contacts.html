@@ -103,27 +103,32 @@
     <div class="app-dialog" id="dialog">
         <div class="app-dialog__overlay">
           <div class="app-dialog__body">
+            <div class="container">
+                <button id="close-button">CLOSE</button>
+            </div>
               <h2 id="message"></h2>
               <form name="data" method="post">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius debitis unde vel laborum. Eos obcaecati quasi eaque culpa, delectus et placeat vitae fuga voluptatem maxime quod provident. Aliquam, minima temporibus!
-                  <label for="fullname">
-                      <input type="text" name="fullname" id="fullname" placeholder="Input your full name" required><span class="error"></span>
+                    <span class="app-dialog__message">HELLO! MY NAME IS</span>
+                    <label for="fullname">
+                        <input type="text" name="fullname" id="fullname" placeholder="Input your full name" required><span class="error"></span>
                     </label>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa animi vero, in architecto earum maxime voluptatibus tempore cum quas reiciendis blanditiis rem porro hic. Laborum, commodi. Eius facere impedit id.
+                    <span class="app-dialog__message">.  I am interested in your agency. It would be interesting to meet. Let's create a meeting for that date</span>
                     <label for="email">
                         <input type="email" name="email" id="email" placeholder="Input your email" required><span class="error"></span>
                     </label>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi a ut impedit, aliquam culpa voluptate fugiat laboriosam dolorem, deserunt ullam labore officiis obcaecati laudantium odio? Consequatur autem esse nisi atque.
+                    <span class="app-dialog__message">. Lorem ipsum dolor sit amet</span>
                     <label for="phone">
                         <input type="tel" name="phone" id="phone" placeholder="Input your phone number"><span class="error"></span>
                     </label>
+                    <span class="app-dialog__message">. adipiscing elit. Id orci, ut quam massa leo, tristique. Eleifend integer luctus phasellus</span>
                     <label for="time">
                         <input type="datetime-local" name="time" id="time" value="" required><span class="error"></span>
                     </label>
+                    <span class="app-dialog__message">. eu egestas velit. Feugiat molestie sed eu, leo morbi et netus elit Feugiat molestie sed.</span>
                     <label for="button">
                         <input type="submit" value="Invite" id="button">
                     </label>
-                <button id="close-button">close</button>
+                    <span class="app-dialog__message"></span>
               </form>
           </div>
         </div>

@@ -184,10 +184,6 @@ html {
   color: #E46D29;
 }
 
-.header__menu {
-  width: 23%;
-}
-
 .header__link {
   text-transform: uppercase;
   -webkit-transition: color .3s;
@@ -216,10 +212,14 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   width: 100%;
+}
+
+.header__list > li:not(li:last-child) {
+  margin-right: 9%;
 }
 
 @media screen and (max-width: 830px) {

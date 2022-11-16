@@ -120,7 +120,7 @@ html {
     }
 
     &__menu {
-        width: 23%;
+        // width: 50%;
     }
 
     &__link {
@@ -147,8 +147,12 @@ html {
 
     &__list {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         width: 100%;
+
+        &>li:not(li:last-child) {
+            margin-right: 9%;
+        }
     }
 }
 

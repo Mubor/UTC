@@ -353,10 +353,16 @@ html {
 .team__media {
   width: 82%;
   margin: auto;
+  text-align: center;
 }
 
 .team__media > img {
   width: 100%;
+}
+
+.team__media > img[src="media/team3.gif"] {
+  -webkit-transform: scale(1.2, 1.3);
+          transform: scale(1.2, 1.3);
 }
 
 .team__message {
@@ -365,7 +371,7 @@ html {
   left: 45%;
   width: 26%;
   font-family: Montserrat;
-  font-size: 2.1vw;
+  font-size: 2vw;
   text-transform: uppercase;
   word-spacing: 10px;
   line-height: 1.1;
@@ -499,7 +505,7 @@ html {
     position: static;
     padding: 5% 5% 0 5%;
     width: 100%;
-    font-size: 10.7vw;
+    font-size: 10vw;
     letter-spacing: normal;
     word-spacing: 15px;
     font-weight: 500;
@@ -514,8 +520,13 @@ html {
   .team .indent-br {
     display: unset;
   }
+  .team .indent-team2 {
+    padding-left: 0;
+    text-indent: 9%;
+    display: block;
+  }
   .team .indent-team3 {
-    padding-left: 9%;
+    padding-left: 8%;
   }
   .language {
     margin-top: 13%;

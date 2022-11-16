@@ -20,12 +20,12 @@ const generate = () => {
         {
             gif: `<img src="media/team2.gif" alt="teamgif">`,
             mesageTop: `<span class="keytext">whoever folds</span><br>
-            <span >
+            <span class="indent-team2">
                 his hands turns 
             </span> 
-            <span class="indent">to a boring stone,</span>`,
+            <span class="indent indent-team2">to a boring stone,</span>`,
             mesageBottom: `so thats why
-            <span class="indent indent-br">we always<br></span>
+            <span class="indent indent-team2">we always<br></span>
             <span class="indent-mobile">battle</span> 
             <span class="keytext">to the end</span>`,
         },
@@ -46,10 +46,12 @@ const generate = () => {
 
     const teamMessage = document.getElementById('team-message');
     const mediaContainers = [...document.querySelectorAll('.team__media')];
+    
     const teamMate = sample[ getRandomInt(sample.length) ];
 
     for (const element of mediaContainers) {
         element.innerHTML = teamMate.gif;
+
     }
     teamMessage.insertAdjacentHTML('afterbegin', teamMate.mesageTop);
     teamMessage.insertAdjacentHTML('beforeend', teamMate.mesageBottom);

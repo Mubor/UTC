@@ -445,23 +445,14 @@ html {
   height: 27.7vw;
   font-family: AndaleMono;
   background-color: white;
+  overflow: hidden;
 }
 
 .team__item:hover img {
   visibility: visible;
 }
 
-.team__item:not(.team__item:first-child) .team__front, .team__item:not(.team__item:first-child) .team__back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-transition: 1s;
-  transition: 1s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-
-.team__item:not(.team__item:first-child) .team__front::before, .team__item:not(.team__item:first-child) .team__back::before {
+.team__front::before, .team__back::before {
   content: '';
   position: absolute;
   top: 0;
@@ -470,55 +461,38 @@ html {
   height: 100%;
   -webkit-box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
           box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
-  z-index: 3;
+  z-index: 1;
 }
 
-.team__item:not(.team__item:first-child) .team__back {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-}
-
-.team__item:first-child .team__front::before, .team__item:first-child .team__back::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
-          box-shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px 0px #7E7E7E;
-  z-index: 3;
-}
-
-.team__item:first-child .team__back {
+.team__back {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 0;
   min-height: 0;
-  -webkit-transition: min-height .5s;
-  transition: min-height .5s;
+  -webkit-transition: min-height .3s;
+  transition: min-height .3s;
   background-color: black;
-  z-index: 6;
+  z-index: 1;
 }
 
-.team__item:first-child .team__back * {
+.team__back * {
   visibility: hidden;
   opacity: 0;
 }
 
-.team__item:first-child .team__open {
+.team__open {
   min-height: 100%;
-  -webkit-transition: min-height .5s;
-  transition: min-height .5s;
+  -webkit-transition: min-height .3s;
+  transition: min-height .3s;
 }
 
-.team__item:first-child .team__open * {
+.team__open * {
   visibility: visible;
   opacity: 1;
-  -webkit-transition: opacity .7s;
-  transition: opacity .7s;
+  -webkit-transition: opacity .8s;
+  transition: opacity .8s;
 }
 
 .team__back {
@@ -528,8 +502,8 @@ html {
 
 .team__button {
   position: absolute;
-  top: 0%;
-  left: 0%;
+  top: 0;
+  left: 0;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -539,7 +513,7 @@ html {
           justify-content: center;
   padding-top: 3%;
   font-size: 1.11vw;
-  z-index: 5;
+  z-index: 1;
 }
 
 .team__button > div {
@@ -598,18 +572,28 @@ html {
 }
 
 .team__item:nth-child(1) .team__gif {
-  background: url("../media/team/volodymyr-static.png") 50% 50% no-repeat;
-  background-size: 85%;
+  background: url("../media/team/volodymyr.jpg") 50% 60% no-repeat;
+  background-size: 115%;
+}
+
+.team__item:nth-child(1) .team__gif > img {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
 .team__item:nth-child(2) .team__gif {
-  background: url("../media/team/oleksandr-static.png") 50% 50% no-repeat;
+  background: url("../media/team/oleksandr-static.png") 50% 100% no-repeat;
   background-size: 80%;
 }
 
+.team__item:nth-child(2) .team__gif > img {
+  -webkit-transform: scale(1.3) translate(4%);
+          transform: scale(1.3) translate(4%);
+}
+
 .team__item:nth-child(3) .team__gif {
-  background: url("../media/team/sonya-static.png") 50% 50% no-repeat;
-  background-size: 90%;
+  background: url("../media/team/sonya.jpg") 50% 50% no-repeat;
+  background-size: 100%;
 }
 
 .team__item:nth-child(4) .team__gif {
@@ -618,8 +602,13 @@ html {
 }
 
 .team__item:nth-child(5) .team__gif {
-  background: url("../media/team/volodymyr-static.png") 50% 50% no-repeat;
-  background-size: 100%;
+  background: url("../media/team/sasha-static.jpg") 50% 50% no-repeat;
+  background-size: 110%;
+}
+
+.team__item:nth-child(5) .team__gif > img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .team__item:nth-child(6) .team__gif {
@@ -633,8 +622,14 @@ html {
 }
 
 .team__item:nth-child(8) .team__gif {
-  background: url("../media/team/oksana-static.png") 50% 50% no-repeat;
-  background-size: 85%;
+  background: url("../media/team/oksana.jpg") 50% 50% no-repeat;
+  background-size: 120%;
+  margin-top: 21.1%;
+}
+
+.team__item:nth-child(8) .team__gif > img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .team__gif {
@@ -681,7 +676,7 @@ html {
   margin: 20% 5% 0 0;
   padding: 1.5% 2%;
   border: 1px solid #E46D29;
-  z-index: 7;
+  z-index: 100;
 }
 
 .team .team__link > a {

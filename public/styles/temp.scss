@@ -20,7 +20,6 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
 .k {
     width: 2%;
     
-
     &> svg {
         width: 100%;
         height: 100%;
@@ -56,91 +55,52 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
         height: 27.7vw;
         font-family: AndaleMono;
         background-color: white;
+        overflow: hidden;
         
-        // &::before {
-        //     content: '';
-        //     position: absolute;
-        //     top:0;
-        //     left:0; 
-        //     width: 100%;
-        //     height:100%;
-        //     box-shadow: $shadow;
-        //     z-index: 3;
-        // }
-
+        &::before {
+        }
+        
         &:hover img {
             visibility: visible;
         }
     }
-
-    &__item:not(.team__item:first-child) {
-        //reset
-        .team__front, .team__back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transition: 1s;
-            backface-visibility: hidden;
-        }
-        
-        //reset
-        .team__front::before, .team__back::before {
-            content: '';
-            position: absolute;
-            top:0;
-            left:0; 
-            width: 100%;
-            height:100%;
-            box-shadow: $shadow;
-            z-index: 3;
-        }
-        .team__back{
-            transform: rotateY(180deg); //reset
     
-        }
+    &__front::before, &__back::before {
+        content: '';
+        position: absolute;
+        top:0;
+        left:0; 
+        width: 100%;
+        height:100%;
+        box-shadow: $shadow;
+        z-index: 1;
     }
 
-    &__item:first-child {
+    &__back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        min-height: 0;
+        transition: min-height .3s;
+        background-color: black;
+        z-index: 1;
 
-
-        .team__front::before, .team__back::before {
-            content: '';
-            position: absolute;
-            top:0;
-            left:0; 
-            width: 100%;
-            height:100%;
-            box-shadow: $shadow;
-            z-index: 3;
+        & * {
+            visibility: hidden;
+            opacity: 0;
         }
+    }
+    
+    &__open{
+        min-height: 100%;
+        transition: min-height .3s;
 
-        .team__back {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 0;
-            min-height: 0;
-            transition: min-height .5s;
-            // z-index: 5;
-            background-color: black;
-            z-index: 6;
-
-            & * {
-                visibility: hidden;
-                opacity: 0;
-            }
-        }
-        
-        .team__open{
-            min-height: 100%;
-            transition: min-height .5s;
-
-            & *{
-                visibility: visible;
-                opacity: 1;
-                transition: opacity .7s;
-            }
+        & *{
+            visibility: visible;
+            opacity: 1;
+            transition: opacity .8s;
         }
     }
 
@@ -152,17 +112,14 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
     
     &__button {
         position: absolute;
-        top: 0%;
-        left: 0%;
+        top: 0;
+        left: 0;
         width: 100%;
         display:flex;
         justify-content: center;
         padding-top: 3%;
         font-size: 1.11vw;
-        z-index: 5;
-        
-        
-        
+        z-index: 1;
         
         & > div {
             position: relative;
@@ -217,24 +174,36 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
     
     
     &__item:nth-child(1) &__gif {
-        background: url('../media/team/volodymyr-static.png') 50% 50% no-repeat;
-        background-size: 85%;    
+        background: url('../media/team/volodymyr.jpg') 50% 60% no-repeat;
+        background-size: 115%;
+        
+        &>img {
+            transform: scale(1.15);
+        }
     }
     &__item:nth-child(2) &__gif {
-        background: url('../media/team/oleksandr-static.png') 50% 50% no-repeat;
-        background-size: 80%;    
+        background: url('../media/team/oleksandr-static.png') 50% 100% no-repeat;
+        background-size: 80%;
+
+        &>img {
+            transform: scale(1.3) translate(4%);
+        }
     }
     &__item:nth-child(3) &__gif {
-        background: url('../media/team/sonya-static.png') 50% 50% no-repeat;
-        background-size: 90%;    
+        background: url('../media/team/sonya.jpg') 50% 50% no-repeat;
+        background-size: 100%;    
     }
     &__item:nth-child(4) &__gif {
         background: url('../media/team/volodymyr-static.png') 50% 50% no-repeat;
         background-size: 85%;    
     }
     &__item:nth-child(5) &__gif {
-        background: url('../media/team/volodymyr-static.png') 50% 50% no-repeat;
-        background-size: 100%;    
+        background: url('../media/team/sasha-static.jpg') 50% 50% no-repeat;
+        background-size: 110%;    
+
+        &>img {
+            transform: scale(1.1);
+        }
     }
     &__item:nth-child(6) &__gif {
         background: url('../media/team/volodymyr-static.png') 50% 50% no-repeat;
@@ -245,8 +214,13 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
         background-size: 85%;    
     }
     &__item:nth-child(8) &__gif {
-        background: url('../media/team/oksana-static.png') 50% 50% no-repeat;
-        background-size: 85%;    
+        background: url('../media/team/oksana.jpg') 50% 50% no-repeat;
+        background-size: 120%;    
+        margin-top: 21.1%;
+
+        &>img {
+            transform: scale(1.2);
+        }
     }
     
     
@@ -290,7 +264,7 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
         margin: 20% 5% 0 0;
         padding: 1.5% 2%;
         border: 1px solid #E46D29;
-        z-index: 7;
+        z-index: 100;
 
         &>a {
             font-size: 0.83vw;

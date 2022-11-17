@@ -43,20 +43,18 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
     &__pic {
         width: 6.25vw;
         height: 5.55vw;
-        background: url('../media/fighter_1.gif') 60% 50%;
-        background-repeat: no-repeat;
-        background-size: 145%;
     }
     
     &__pic:first-child {
-        // background-blend-mode:hue, normal;
+        background: url('../media/fighter_red.gif') 60% 50% no-repeat;
+        background-size: 100%;
         transform: translate(0, -8%);
     }
     
     &__pic:last-child {
         transform: rotateY(180deg) translate(0, -8%);
-        // background: url('../media/fighter_1.gif') 60% 50%;
-        // background-size: 145%;
+        background: url('../media/fighter_green.gif') 60% 50% no-repeat;
+        background-size: 100%;
         
     }
 

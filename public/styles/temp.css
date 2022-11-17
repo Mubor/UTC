@@ -436,12 +436,11 @@ html {
 .title__pic {
   width: 6.25vw;
   height: 5.55vw;
-  background: url("../media/fighter_1.gif") 60% 50%;
-  background-repeat: no-repeat;
-  background-size: 145%;
 }
 
 .title__pic:first-child {
+  background: url("../media/fighter_red.gif") 60% 50% no-repeat;
+  background-size: 100%;
   -webkit-transform: translate(0, -8%);
           transform: translate(0, -8%);
 }
@@ -449,6 +448,8 @@ html {
 .title__pic:last-child {
   -webkit-transform: rotateY(180deg) translate(0, -8%);
           transform: rotateY(180deg) translate(0, -8%);
+  background: url("../media/fighter_green.gif") 60% 50% no-repeat;
+  background-size: 100%;
 }
 
 .team {

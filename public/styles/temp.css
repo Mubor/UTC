@@ -366,7 +366,7 @@ html {
 
 .footer__item a {
   font-family: AndaleMono;
-  font-size: 3.628vh;
+  font-size: 2.222vw;
   text-transform: uppercase;
   color: #3FED41;
   -webkit-transition: color .3s;
@@ -377,6 +377,10 @@ html {
   color: #E46D29;
   -webkit-transition: color .3s;
   transition: color .3s;
+}
+
+.footer--contacts .footer__item a {
+  font-size: 3.628vh;
 }
 
 @media screen and (max-width: 830px) {
@@ -401,7 +405,6 @@ html {
 
 .main {
   text-transform: uppercase;
-  padding-top: 4%;
 }
 
 .k {
@@ -420,8 +423,9 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-top: 4%;
   margin-bottom: 4%;
-  font-size: 80px;
+  font-size: 5.55vw;
   font-family: Montserrat;
 }
 
@@ -430,20 +434,21 @@ html {
 }
 
 .title__pic {
-  width: 80px;
-  height: 70px;
+  width: 6.25vw;
+  height: 5.55vw;
+  background: url("../media/fighter_1.gif") 60% 50%;
+  background-repeat: no-repeat;
+  background-size: 145%;
 }
 
 .title__pic:first-child {
-  background: url("../media/fighter_1.gif") 60% 50%;
-  background-size: 145%;
+  -webkit-transform: translate(0, -8%);
+          transform: translate(0, -8%);
 }
 
 .title__pic:last-child {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
-  background: url("../media/fighter_1.gif") 60% 50%;
-  background-size: 145%;
+  -webkit-transform: rotateY(180deg) translate(0, -8%);
+          transform: rotateY(180deg) translate(0, -8%);
 }
 
 .team {
@@ -690,7 +695,7 @@ html {
           justify-content: center;
 }
 
-.team .team__link {
+.team__link {
   position: relative;
   margin: 20% 5% 0 0;
   padding: 1.5% 2%;
@@ -698,19 +703,19 @@ html {
   z-index: 100;
 }
 
-.team .team__link > a {
+.team__link > a {
   font-size: 0.83vw;
   color: white;
 }
 
-.team .team__link:hover {
+.team__link:hover {
   cursor: pointer;
   border-color: white;
   -webkit-transition: border-color .3s;
   transition: border-color .3s;
 }
 
-.team .team__link:hover > a {
+.team__link:hover > a {
   color: #3FED41;
   -webkit-transition: color .3s;
   transition: color .3s;
@@ -751,5 +756,60 @@ html {
           box-shadow: inset 2px 2px 2px 0 black;
   -webkit-transition: all .3s;
   transition: all .3s;
+}
+
+@media screen and (max-width: 830px) {
+  .title {
+    padding: 6% 5% 0;
+    margin-bottom: 6%;
+    font-size: 8.53vw;
+  }
+  .title__pic {
+    width: 12vw;
+    height: 12vw;
+  }
+  .title__text {
+    line-height: 1.4;
+    width: 75%;
+  }
+  .title__pic:first-child {
+    -webkit-transform: translate(0, 35%);
+            transform: translate(0, 35%);
+  }
+  .title__pic:last-child {
+    -webkit-transform: rotateY(180deg) translate(0, 35%);
+            transform: rotateY(180deg) translate(0, 35%);
+  }
+  .team {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .team__item {
+    width: 85.9vw;
+    height: 104vw;
+    margin-bottom: 4%;
+  }
+  .team__button {
+    font-size: 4.26vw;
+  }
+  .team__name {
+    font-size: 5.33vw;
+  }
+  .team__info, .team__link a {
+    font-size: 3.2vw;
+  }
+  .content {
+    margin-top: 15%;
+  }
+  .content__text {
+    margin: 8% 0;
+    font-size: 16px;
+  }
+  .btn {
+    margin: 12% auto 14%;
+    padding: 2.5% 5%;
+    font-size: 8.533vw;
+  }
 }
 /*# sourceMappingURL=temp.css.map */

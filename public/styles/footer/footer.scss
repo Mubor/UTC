@@ -25,11 +25,11 @@
         z-index: 3;
         a {
             font-family: AndaleMono;
-            font-size: 3.628vh;
+            font-size: 2.222vw;
             text-transform: uppercase;
             color: #3FED41;
             transition: color .3s;
-
+            
             &:hover{
                 color: #E46D29;
                 transition: color .3s;
@@ -37,6 +37,10 @@
         }
         
     }
+}
+
+.footer--contacts .footer__item a {
+    font-size: 3.628vh;
 }
 
 @media screen and (max-width: 830px){

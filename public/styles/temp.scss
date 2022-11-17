@@ -15,7 +15,6 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
 
 .main {
     text-transform: uppercase;
-    padding-top: 4%;
 }
 
 .k {
@@ -31,9 +30,10 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
 .title {
     display: flex;
     justify-content: center;
+    padding-top: 4%;
     margin-bottom: 4%;
     // padding: 0 8%;
-    font-size: 80px;
+    font-size: 5.55vw;
     font-family: Montserrat;
 
     &__text {
@@ -41,20 +41,23 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
     }
 
     &__pic {
-        width: 80px;
-        height: 70px
-    }
-
-    &__pic:first-child {
+        width: 6.25vw;
+        height: 5.55vw;
         background: url('../media/fighter_1.gif') 60% 50%;
+        background-repeat: no-repeat;
         background-size: 145%;
+    }
+    
+    &__pic:first-child {
         // background-blend-mode:hue, normal;
+        transform: translate(0, -8%);
     }
     
     &__pic:last-child {
-        transform: rotateY(180deg);
-        background: url('../media/fighter_1.gif') 60% 50%;
-        background-size: 145%;
+        transform: rotateY(180deg) translate(0, -8%);
+        // background: url('../media/fighter_1.gif') 60% 50%;
+        // background-size: 145%;
+        
     }
 
 }
@@ -277,7 +280,7 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
         justify-content: center;
     }
     
-    .team__link {
+    &__link {
         position: relative;
         margin: 20% 5% 0 0;
         padding: 1.5% 2%;
@@ -290,7 +293,7 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
         }
     }
 
-    .team__link:hover {
+    &__link:hover {
         cursor: pointer;
         border-color: white;
         transition: border-color .3s;
@@ -331,4 +334,68 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
     background-color: #838383;
     box-shadow: inset 2px 2px 2px 0 black;
     transition: all .3s;
+}
+
+
+@media screen and (max-width: 830px) {
+    .title {
+        padding: 6% 5% 0;
+        margin-bottom: 6%;
+        font-size: 8.53vw;
+        
+        &__pic {
+            width: 12vw;
+            height: 12vw;
+        }
+
+        &__text{
+            line-height: 1.4;
+            width: 75%;
+        }
+
+        &__pic:first-child {
+            transform: translate(0, 35%);
+        }
+        
+        &__pic:last-child {
+            transform: rotateY(180deg) translate(0, 35%);
+        }
+    }
+
+    .team {
+        justify-content: center;
+
+        &__item {
+            width: 85.9vw;
+            height: 104vw;
+            margin-bottom: 4%;
+        }
+
+        &__button{
+            font-size: 4.26vw;
+        }
+
+        &__name {
+            font-size: 5.33vw;
+        }
+
+        &__info, &__link a {
+            font-size: 3.2vw;
+        }
+    }
+
+    .content {
+
+        margin-top: 15%;
+
+        &__text {
+            margin: 8% 0;
+            font-size: 16px;
+        }        
+    }
+    .btn {
+        margin: 12% auto 14%;
+        padding: 2.5% 5%;
+        font-size: 8.533vw;
+    }
 }

@@ -401,6 +401,7 @@ html {
 
 .main {
   text-transform: uppercase;
+  padding-top: 4%;
 }
 
 .k {
@@ -419,13 +420,30 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 4% 0;
+  margin-bottom: 4%;
   font-size: 80px;
   font-family: Montserrat;
 }
 
 .title__text {
   text-align: center;
+}
+
+.title__pic {
+  width: 80px;
+  height: 70px;
+}
+
+.title__pic:first-child {
+  background: url("../media/fighter_1.gif") 60% 50%;
+  background-size: 145%;
+}
+
+.title__pic:last-child {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  background: url("../media/fighter_1.gif") 60% 50%;
+  background-size: 145%;
 }
 
 .team {
@@ -436,13 +454,14 @@ html {
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  padding: 0 1%;
 }
 
 .team__item {
   position: relative;
   margin-bottom: 2%;
-  width: 22.92vw;
-  height: 27.7vw;
+  width: 22.4vw;
+  height: 27vw;
   font-family: AndaleMono;
   background-color: white;
   overflow: hidden;

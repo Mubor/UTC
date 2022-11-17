@@ -15,6 +15,7 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
 
 .main {
     text-transform: uppercase;
+    padding-top: 4%;
 }
 
 .k {
@@ -30,7 +31,7 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
 .title {
     display: flex;
     justify-content: center;
-    margin: 4% 0;
+    margin-bottom: 4%;
     // padding: 0 8%;
     font-size: 80px;
     font-family: Montserrat;
@@ -39,26 +40,43 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
         text-align: center;
     }
 
+    &__pic {
+        width: 80px;
+        height: 70px
+    }
+
+    &__pic:first-child {
+        background: url('../media/fighter_1.gif') 60% 50%;
+        background-size: 145%;
+        // background-blend-mode:hue, normal;
+    }
+    
+    &__pic:last-child {
+        transform: rotateY(180deg);
+        background: url('../media/fighter_1.gif') 60% 50%;
+        background-size: 145%;
+    }
+
 }
 
 .team {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    // margin-top: 2%;
+    padding: 0 1%;
 
     
     &__item {
         position: relative;
+        // margin: 0 1% 1%;
         margin-bottom: 2%;
-        width: 22.92vw;
-        height: 27.7vw;
+        // width: 22.92vw;
+        // height: 27.7vw;
+        width: 22.4vw;
+        height: 27vw;
         font-family: AndaleMono;
         background-color: white;
         overflow: hidden;
-        
-        &::before {
-        }
         
         &:hover img {
             visibility: visible;

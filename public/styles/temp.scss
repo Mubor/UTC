@@ -95,6 +95,10 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
         z-index: 1;
     }
 
+    // &__front {
+    //     height:100%
+    // }
+
     &__back {
         position: absolute;
         top: 0;
@@ -193,14 +197,6 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
     
     
     &__item:nth-child(1) &__gif {
-        background: url('../media/team/oleksandr-static.png') 50% 100% no-repeat;
-        background-size: 80%;
-        
-        &>img {
-            transform: scale(1.3) translate(4%);
-        }
-    }
-    &__item:nth-child(2) &__gif {
         background: url('../media/team/volodymyr.jpg') 50% 60% no-repeat;
         background-size: 115%;
         
@@ -208,33 +204,45 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
             transform: scale(1.15);
         }
     }
+    &__item:nth-child(2) &__gif {
+        background: url('../media/team/oleksandr-static.png') 50% 100% no-repeat;
+        background-size: 80%;
+        
+        &>img {
+            transform: scale(1.3) translate(4%);
+        }
+    }
     &__item:nth-child(3) &__gif {
-        background: url('../media/team/sonya.jpg') 50% 50% no-repeat;
-        background-size: 100%;    
+        background: url('../media/team/sonya-static.jpg') 39% 50% no-repeat;
+        background-size: 166%; 
+        
+        &>img {
+            transform: scale(1.1);
+        }
     }
     &__item:nth-child(4) &__gif {
         background: url('../media/team/volodymyr-static.png') 50% 50% no-repeat;
         background-size: 85%;    
     }
     &__item:nth-child(5) &__gif {
-        background: url('../media/team/sasha-static.jpg') 50% 50% no-repeat;
-        background-size: 100%;    
-    }
-    &__item:nth-child(6) &__gif {
         background: url('../media/team/volodymyr-static.png') 50% 50% no-repeat;
         background-size: 85%;    
+    }
+    &__item:nth-child(6) &__gif {
+        background: url('../media/team/sasha-static.jpg') 50% 50% no-repeat;
+        background-size: 100%;    
     }
     &__item:nth-child(7) &__gif {
         background: url('../media/team/volodymyr-static.png') 50% 50% no-repeat;
         background-size: 85%;    
     }
     &__item:nth-child(8) &__gif {
-        background: url('../media/team/oksana.jpg') 50% 50% no-repeat;
-        background-size: 120%;    
-        margin-top: 21.1%;
+        background: url('../media/team/oksana.jpg') 50% 70% no-repeat;
+        background-size: 125%;    
+        height: 21vw;
 
         &>img {
-            transform: scale(1.2);
+            transform: scale(1.25) translate(0,2%);
         }
     }
     
@@ -247,12 +255,6 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
             width: 100%;
             visibility: hidden;
         }
-
-        // &:hover {
-        //     img {
-        //         visibility: visible ;
-        //     }
-        // }
     }
     
     &__name {
@@ -371,6 +373,9 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
             margin-bottom: 4%;
         }
 
+        &__item:nth-child(8) &__gif {
+            height: 81vw;
+        }
         &__button{
             font-size: 4.26vw;
         }
@@ -385,12 +390,11 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
     }
 
     .content {
-
         margin-top: 15%;
 
         &__text {
             margin: 8% 0;
-            font-size: 16px;
+            font-size: 18px;
         }        
     }
     .btn {

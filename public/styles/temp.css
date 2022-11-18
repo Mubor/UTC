@@ -597,28 +597,33 @@ html {
 }
 
 .team__item:nth-child(1) .team__gif {
-  background: url("../media/team/oleksandr-static.png") 50% 100% no-repeat;
-  background-size: 80%;
-}
-
-.team__item:nth-child(1) .team__gif > img {
-  -webkit-transform: scale(1.3) translate(4%);
-          transform: scale(1.3) translate(4%);
-}
-
-.team__item:nth-child(2) .team__gif {
   background: url("../media/team/volodymyr.jpg") 50% 60% no-repeat;
   background-size: 115%;
 }
 
-.team__item:nth-child(2) .team__gif > img {
+.team__item:nth-child(1) .team__gif > img {
   -webkit-transform: scale(1.15);
           transform: scale(1.15);
 }
 
+.team__item:nth-child(2) .team__gif {
+  background: url("../media/team/oleksandr-static.png") 50% 100% no-repeat;
+  background-size: 80%;
+}
+
+.team__item:nth-child(2) .team__gif > img {
+  -webkit-transform: scale(1.3) translate(4%);
+          transform: scale(1.3) translate(4%);
+}
+
 .team__item:nth-child(3) .team__gif {
-  background: url("../media/team/sonya.jpg") 50% 50% no-repeat;
-  background-size: 100%;
+  background: url("../media/team/sonya-static.jpg") 39% 50% no-repeat;
+  background-size: 166%;
+}
+
+.team__item:nth-child(3) .team__gif > img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .team__item:nth-child(4) .team__gif {
@@ -627,13 +632,13 @@ html {
 }
 
 .team__item:nth-child(5) .team__gif {
-  background: url("../media/team/sasha-static.jpg") 50% 50% no-repeat;
-  background-size: 100%;
+  background: url("../media/team/volodymyr-static.png") 50% 50% no-repeat;
+  background-size: 85%;
 }
 
 .team__item:nth-child(6) .team__gif {
-  background: url("../media/team/volodymyr-static.png") 50% 50% no-repeat;
-  background-size: 85%;
+  background: url("../media/team/sasha-static.jpg") 50% 50% no-repeat;
+  background-size: 100%;
 }
 
 .team__item:nth-child(7) .team__gif {
@@ -642,14 +647,14 @@ html {
 }
 
 .team__item:nth-child(8) .team__gif {
-  background: url("../media/team/oksana.jpg") 50% 50% no-repeat;
-  background-size: 120%;
-  margin-top: 21.1%;
+  background: url("../media/team/oksana.jpg") 50% 70% no-repeat;
+  background-size: 125%;
+  height: 21vw;
 }
 
 .team__item:nth-child(8) .team__gif > img {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.25) translate(0, 2%);
+          transform: scale(1.25) translate(0, 2%);
 }
 
 .team__gif {
@@ -786,6 +791,9 @@ html {
     height: 104vw;
     margin-bottom: 4%;
   }
+  .team__item:nth-child(8) .team__gif {
+    height: 81vw;
+  }
   .team__button {
     font-size: 4.26vw;
   }
@@ -800,7 +808,7 @@ html {
   }
   .content__text {
     margin: 8% 0;
-    font-size: 16px;
+    font-size: 18px;
   }
   .btn {
     margin: 12% auto 14%;

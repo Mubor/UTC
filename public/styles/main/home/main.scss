@@ -135,6 +135,10 @@
         width: 100%;
         padding: 0;
 
+        &__media > img[src="media/team3.gif"] {
+            transform: scale(1);
+        }
+
         &>&__media  {
             display: none
         }

@@ -193,19 +193,19 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
     
     
     &__item:nth-child(1) &__gif {
+        background: url('../media/team/oleksandr-static.png') 50% 100% no-repeat;
+        background-size: 80%;
+        
+        &>img {
+            transform: scale(1.3) translate(4%);
+        }
+    }
+    &__item:nth-child(2) &__gif {
         background: url('../media/team/volodymyr.jpg') 50% 60% no-repeat;
         background-size: 115%;
         
         &>img {
             transform: scale(1.15);
-        }
-    }
-    &__item:nth-child(2) &__gif {
-        background: url('../media/team/oleksandr-static.png') 50% 100% no-repeat;
-        background-size: 80%;
-
-        &>img {
-            transform: scale(1.3) translate(4%);
         }
     }
     &__item:nth-child(3) &__gif {
@@ -218,11 +218,7 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
     }
     &__item:nth-child(5) &__gif {
         background: url('../media/team/sasha-static.jpg') 50% 50% no-repeat;
-        background-size: 110%;    
-
-        &>img {
-            transform: scale(1.1);
-        }
+        background-size: 100%;    
     }
     &__item:nth-child(6) &__gif {
         background: url('../media/team/volodymyr-static.png') 50% 50% no-repeat;
@@ -251,6 +247,12 @@ $shadow: inset -2px -2px 0px #262626, inset 2px 2px 0px #F0F0F0, inset -4px -4px
             width: 100%;
             visibility: hidden;
         }
+
+        // &:hover {
+        //     img {
+        //         visibility: visible ;
+        //     }
+        // }
     }
     
     &__name {

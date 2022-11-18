@@ -597,23 +597,23 @@ html {
 }
 
 .team__item:nth-child(1) .team__gif {
-  background: url("../media/team/volodymyr.jpg") 50% 60% no-repeat;
-  background-size: 115%;
-}
-
-.team__item:nth-child(1) .team__gif > img {
-  -webkit-transform: scale(1.15);
-          transform: scale(1.15);
-}
-
-.team__item:nth-child(2) .team__gif {
   background: url("../media/team/oleksandr-static.png") 50% 100% no-repeat;
   background-size: 80%;
 }
 
-.team__item:nth-child(2) .team__gif > img {
+.team__item:nth-child(1) .team__gif > img {
   -webkit-transform: scale(1.3) translate(4%);
           transform: scale(1.3) translate(4%);
+}
+
+.team__item:nth-child(2) .team__gif {
+  background: url("../media/team/volodymyr.jpg") 50% 60% no-repeat;
+  background-size: 115%;
+}
+
+.team__item:nth-child(2) .team__gif > img {
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
 }
 
 .team__item:nth-child(3) .team__gif {
@@ -628,12 +628,7 @@ html {
 
 .team__item:nth-child(5) .team__gif {
   background: url("../media/team/sasha-static.jpg") 50% 50% no-repeat;
-  background-size: 110%;
-}
-
-.team__item:nth-child(5) .team__gif > img {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  background-size: 100%;
 }
 
 .team__item:nth-child(6) .team__gif {

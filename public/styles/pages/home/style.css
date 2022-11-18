@@ -480,6 +480,10 @@ html {
     width: 100%;
     padding: 0;
   }
+  .team__media > img[src="media/team3.gif"] {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
   .team > .team__media {
     display: none;
   }

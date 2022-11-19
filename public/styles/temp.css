@@ -388,7 +388,7 @@ html {
     padding: 2vh 0 10%;
     width: 87%;
   }
-  .footer a {
+  .footer > a, .footer--contacts .footer__item a {
     font-size: 16px;
   }
 }
@@ -626,24 +626,9 @@ html {
           transform: scale(1.1);
 }
 
-.team__item:nth-child(4) .team__gif {
-  background: url("../media/team/volodymyr-static.png") 50% 50% no-repeat;
-  background-size: 85%;
-}
-
-.team__item:nth-child(5) .team__gif {
-  background: url("../media/team/volodymyr-static.png") 50% 50% no-repeat;
-  background-size: 85%;
-}
-
 .team__item:nth-child(6) .team__gif {
   background: url("../media/team/sasha-static.jpg") 50% 50% no-repeat;
   background-size: 100%;
-}
-
-.team__item:nth-child(7) .team__gif {
-  background: url("../media/team/volodymyr-static.png") 50% 50% no-repeat;
-  background-size: 85%;
 }
 
 .team__item:nth-child(8) .team__gif {

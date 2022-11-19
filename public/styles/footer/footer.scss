@@ -45,11 +45,12 @@
 
 @media screen and (max-width: 830px){
     .footer{
+
         &__body{
             padding: 2vh 0 10%;
             width: 87%;
         }
-        a{
+        &>a, &--contacts &__item a{
             font-size: 16px;
         }
     }

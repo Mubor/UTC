@@ -685,7 +685,7 @@ input[type="submit"] {
     padding: 2vh 0 10%;
     width: 87%;
   }
-  .footer a {
+  .footer > a, .footer--contacts .footer__item a {
     font-size: 16px;
   }
 }

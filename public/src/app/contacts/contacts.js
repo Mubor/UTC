@@ -68,3 +68,8 @@ form.addEventListener('submit', async (e) => {
         alert("Something went wrong, please check your input.");
     }
 });
+
+form.time.onchange = (e) => {
+    const style = form.time.style;
+    style.color = form.time.value === '' ? 'black' :  '#b2b2b2';
+}

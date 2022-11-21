@@ -6,6 +6,7 @@ const dialogButton = document.getElementById('dialog-open-button');
 const closeButton = document.getElementById('close-button');
 const appDialog = document.getElementById('dialog');
 const form = document.forms.data;
+const wrapper = document.querySelector('.wrapper');
 
 const toggleDialogVisibility = (e) => {
     e.preventDefault();
@@ -15,6 +16,7 @@ const toggleDialogVisibility = (e) => {
     }
 
     appDialog.hidden = !appDialog.hidden;
+    wrapper.hidden = !wrapper.hidden;
     document.body.style.overflow = appDialog.hidden ? '' : 'hidden';
 }
 

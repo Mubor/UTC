@@ -134,8 +134,8 @@ input[type="datetime-local"]{
         &__body {
             justify-content: space-between;
             width: 100%;
-            height: 100vh;
-            overflow: hidden;
+            height: 100%;
+            // overflow: hidden;
             
             &>.container {
                 justify-content: space-between;

@@ -12,6 +12,13 @@
 }
 
 .app-dialog__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 70%;
   padding: 2.5%;
   border-radius: 8px;
@@ -131,6 +138,9 @@ input[type="datetime-local"]:focus {
     font-size: 20px;
   }
   .app-dialog__body {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 100%;
     height: 100%;
   }
@@ -143,7 +153,6 @@ input[type="datetime-local"]:focus {
     display: none;
   }
   form {
-    margin-top: 50%;
     color: black;
   }
   label, input, .placeholder {

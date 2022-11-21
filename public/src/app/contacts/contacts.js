@@ -15,6 +15,7 @@ const toggleDialogVisibility = (e) => {
     }
 
     appDialog.hidden = !appDialog.hidden;
+    document.body.style.overflow = appDialog.hidden ? '' : 'hidden';
 }
 
 appDialog.hidden = true;

@@ -12,8 +12,8 @@
 }
 
 .app-dialog__body {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
     width: 70%;
     padding: 2.5%;
     border-radius: 8px;
@@ -132,7 +132,7 @@ input[type="datetime-local"]{
     }
     .app-dialog {
         &__body {
-            justify-content: space-between;
+            // justify-content: space-between;
             width: 100%;
             height: 100%;
             
@@ -146,7 +146,7 @@ input[type="datetime-local"]{
     }
     
     form {
-        // margin-top: 50%;
+        margin-top: 20vh;
         color: black;
     }
     
@@ -175,7 +175,7 @@ input[type="datetime-local"]{
     }
 
     input[type="submit"]{
-        margin-top: 40%;
+        margin-top: 18vh;
         width: 100%;
         font-size: 24px;
     }

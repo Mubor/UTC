@@ -20,6 +20,7 @@ const toggleDialogVisibility = (e) => {
     document.body.style.overflow = appDialog.hidden ? '' : 'hidden';
 }
 
+wrapper.hidden = false;
 appDialog.hidden = true;
 
 const scrollCenter = 989/2 - mediaContainer.clientWidth/2;

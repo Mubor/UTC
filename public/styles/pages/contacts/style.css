@@ -296,7 +296,6 @@ html {
     width: 100%;
     height: 0;
     visibility: hidden;
-    overflow: scroll;
   }
   .header__menu--homepage {
     height: 0;
@@ -465,6 +464,9 @@ input[type="datetime-local"]:focus {
     font-size: 20px;
   }
   .app-dialog__body {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -478,7 +480,6 @@ input[type="datetime-local"]:focus {
     display: none;
   }
   form {
-    margin-top: 20vh;
     color: black;
   }
   label, input, .placeholder {

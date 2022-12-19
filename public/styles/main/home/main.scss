@@ -49,6 +49,10 @@
     .indent-br {
         display: block;
     }
+
+    .indent-max {
+        padding-left: 30%;
+    }
 }
 
 .language {
@@ -161,7 +165,8 @@
             padding: 5% 5% 0 5%;
             width: 100%;
             // font-size: 40px;
-            font-size: 10vw;
+            // font-size: 10vw;
+            font-size: 9.5vw;
             letter-spacing: normal;
             word-spacing: 15px;
             // text-align: justify;
@@ -184,9 +189,14 @@
             display: block;
         }
 
-        .indent-team3 {
+        .indent-team3, .indent-max {
             padding-left: 8%;
             // width: 100%;
+        }
+
+        .indent-max {
+
+           padding-left: 20%
         }
     }
 

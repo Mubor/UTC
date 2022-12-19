@@ -19,15 +19,15 @@ const generate = () => {
         },
         {
             gif: `<img src="media/team2.gif" alt="teamgif">`,
-            mesageTop: `<span class="keytext">whoever folds</span><br>
-            <span class="indent-team2">
-                his hands turns 
-            </span> 
-            <span class="indent indent-team2">to a boring stone,</span>`,
-            mesageBottom: `so thats why
-            <span class="indent indent-team2">we always<br></span>
-            <span class="indent-mobile">battle</span> 
-            <span class="keytext">to the end</span>`,
+            mesageTop: `<span class="indent indent-br"><span class="keytext">whoever</span> folds</span>
+            <span class="indent-team2 indent-br">
+                his hands<span class="spec-violet">&#177</span>
+            </span>
+                <span class="indent-max indent-br">turns to</span>
+            <span>a boring {stone}</span>`,
+            mesageBottom: `<br><span class="indent">th@ts why<br></span>
+            <span class="indent-team2">we always battle</span>
+            <span class="indent-max">to the <span class="keytext"><span class="spec-orange">$</span>end</span></span>`,
         },
         {
             gif: `<img src="media/team3.gif" alt="teamgif">`,

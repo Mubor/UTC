@@ -407,6 +407,10 @@ html {
   display: block;
 }
 
+.team .indent-max {
+  padding-left: 30%;
+}
+
 .language {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -527,7 +531,7 @@ html {
     position: static;
     padding: 5% 5% 0 5%;
     width: 100%;
-    font-size: 10vw;
+    font-size: 9.5vw;
     letter-spacing: normal;
     word-spacing: 15px;
     font-weight: 500;
@@ -547,8 +551,11 @@ html {
     text-indent: 9%;
     display: block;
   }
-  .team .indent-team3 {
+  .team .indent-team3, .team .indent-max {
     padding-left: 8%;
+  }
+  .team .indent-max {
+    padding-left: 20%;
   }
   .language {
     margin-top: 13%;

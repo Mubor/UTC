@@ -411,6 +411,186 @@ html {
   }
 }
 
+.app-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.app-dialog * {
+  font-family: AndaleMono;
+}
+
+.app-dialog__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+  padding: 2.5%;
+  border-radius: 8px;
+  font-size: 1.6vw;
+  z-index: 10;
+  background-color: black;
+  color: white;
+}
+
+.app-dialog__body > .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.app-dialog__overlay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+label {
+  position: relative;
+}
+
+form {
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.app-dialog__message, input {
+  font-size: 2.222vw;
+  color: #b2b2b2;
+}
+
+.placeholder {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-bottom: 2%;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #6B6B6B;
+}
+
+input {
+  width: 20vw;
+  background-color: black;
+  border: 0;
+}
+
+input:not(input[type="submit"]) {
+  border-bottom: 1px solid #6261F8;
+}
+
+input:focus {
+  border-color: black;
+}
+
+input[type="submit"] {
+  display: block;
+  margin: 8% auto 0;
+  width: 50%;
+  text-transform: uppercase;
+  text-decoration: underline;
+  color: #4AE64B;
+}
+
+input[type="datetime-local"] {
+  color: black;
+}
+
+input[type="datetime-local"]:focus {
+  color: #b2b2b2 !important;
+}
+
+#close-button {
+  padding: 1% 2%;
+}
+
+#close-button {
+  font-size: 1.6vw;
+  border: 0;
+  background-color: transparent;
+  color: #E46D29;
+}
+
+@media screen and (max-width: 830px) {
+  .title {
+    display: block;
+  }
+  .title, #close-button,
+  input, label > .placeholder {
+    font-size: 20px;
+  }
+  .app-dialog__body {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0;
+  }
+  .app-dialog__body > .container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .app-dialog__message {
+    display: none;
+  }
+  form {
+    color: black;
+  }
+  label, input, .placeholder {
+    display: block;
+  }
+  label:not(label[for="button"]) {
+    margin: 0 auto 7vh;
+  }
+  label:not(label[for="button"]):hover .placeholder {
+    display: none;
+  }
+  label[for="button"] {
+    margin-bottom: 5vh;
+  }
+  input {
+    margin: 0 auto;
+    width: 80%;
+  }
+  input:not(input[type="submit"]) {
+    padding: 2%;
+    border-bottom: 2px solid #6261F8;
+  }
+  input[type="submit"] {
+    margin-top: 20vh;
+    width: 100%;
+    font-size: 24px;
+  }
+}
+
 @font-face {
   font-family: AndaleMono;
   src: url("../fonts/AndaleMono.ttf");
@@ -616,48 +796,68 @@ html {
 
 .team__item:nth-child(1) .team__gif {
   background: url("../media/team/volodymyr.jpg") 50% 60% no-repeat;
-  background-size: 115%;
-}
-
-.team__item:nth-child(1) .team__gif > img {
-  -webkit-transform: scale(1.15);
-          transform: scale(1.15);
-}
-
-.team__item:nth-child(2) .team__gif {
-  background: url("../media/team/oleksandr-static.png") 50% 100% no-repeat;
-  background-size: 80%;
-}
-
-.team__item:nth-child(2) .team__gif > img {
-  -webkit-transform: scale(1.3) translate(4%);
-          transform: scale(1.3) translate(4%);
-}
-
-.team__item:nth-child(3) .team__gif {
-  background: url("../media/team/sonya-static.jpg") 39% 50% no-repeat;
-  background-size: 166%;
-}
-
-.team__item:nth-child(3) .team__gif > img {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-.team__item:nth-child(6) .team__gif {
-  background: url("../media/team/sasha-static.jpg") 50% 50% no-repeat;
   background-size: 100%;
 }
 
+.team__item:nth-child(2) .team__gif {
+  background: url("../media/team/oleksandr-static.png") 50% 40% no-repeat;
+  background-size: 70%;
+}
+
+.team__item:nth-child(2) .team__gif > img {
+  -webkit-transform: scale(1.1) translate(3%, -2%);
+          transform: scale(1.1) translate(3%, -2%);
+}
+
+.team__item:nth-child(3) .team__gif {
+  background: url("../media/team/sonya-static.jpg") 39% 100% no-repeat;
+  background-size: 140%;
+}
+
+.team__item:nth-child(3) .team__gif > img {
+  -webkit-transform: scale(0.95) translate(0, 5%);
+          transform: scale(0.95) translate(0, 5%);
+}
+
+.team__item:nth-child(4) .team__gif {
+  background: url("../media/team/hidden-static.png") 20% 50% no-repeat;
+  background-size: 80%;
+}
+
+.team__item:nth-child(4) .team__gif > img {
+  -webkit-transform: scale(1.07) translate(0, 2%);
+          transform: scale(1.07) translate(0, 2%);
+}
+
+.team__item:nth-child(6) .team__gif {
+  background: url("../media/team/sasha-static.jpg") 50% -10% no-repeat;
+  background-size: 90%;
+}
+
+.team__item:nth-child(6) .team__gif > img {
+  -webkit-transform: scale(1) translate(0, -5%);
+          transform: scale(1) translate(0, -5%);
+}
+
+.team__item:nth-child(7) .team__gif {
+  background: url("../media/team/hidden-static.png") 20% 50% no-repeat;
+  background-size: 80%;
+}
+
+.team__item:nth-child(7) .team__gif > img {
+  -webkit-transform: scale(1.07) translate(0, 2%);
+          transform: scale(1.07) translate(0, 2%);
+}
+
 .team__item:nth-child(8) .team__gif {
-  background: url("../media/team/oksana.jpg") 50% 70% no-repeat;
-  background-size: 125%;
+  background: url("../media/team/oksana.jpg") 50% -100% no-repeat;
+  background-size: 120%;
   height: 21vw;
 }
 
 .team__item:nth-child(8) .team__gif > img {
-  -webkit-transform: scale(1.25) translate(0, 2%);
-          transform: scale(1.25) translate(0, 2%);
+  -webkit-transform: scale(1.2) translate(0, 16%);
+          transform: scale(1.2) translate(0, 16%);
 }
 
 .team__gif {

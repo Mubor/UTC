@@ -16,7 +16,7 @@
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../lib/menu */ \"./public/src/lib/menu.js\");\n\r\n\r\n(0,_lib_menu__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('menu-button', 'header');\r\n\r\nconst buttons = document.querySelectorAll('.team__button');\r\n\r\nconst slide = (e) => {\r\n    const item = e.target.closest('.team__item');\r\n    const back = item.querySelector('.team__back');\r\n\r\n    back.classList.toggle('team__open');\r\n};\r\n\r\n[...buttons].forEach(element => {\r\n    element.addEventListener('click', slide)\r\n});\r\n\r\n\n\n//# sourceURL=webpack:///./public/src/app/team/team.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib_menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../lib/menu */ \"./public/src/lib/menu.js\");\n/* harmony import */ var _lib_modalWindowForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../lib/modalWindowForm */ \"./public/src/lib/modalWindowForm.js\");\n\r\n\r\n\r\n(0,_lib_menu__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('menu-button', 'header');\r\n\r\nconst buttons = document.querySelectorAll('.team__button');\r\nconst appDialog = document.getElementById('dialog');\r\nconst openButton = document.getElementById('dialog-open-button');\r\nconst closeButton = document.getElementById('close-button');\r\n\r\nappDialog.hidden = true;\r\n\r\nconst slide = (e) => {\r\n    const item = e.target.closest('.team__item');\r\n    const back = item.querySelector('.team__back');\r\n\r\n    back.classList.toggle('team__open');\r\n};\r\n\r\n[...buttons].forEach(element => {\r\n    element.addEventListener('click', slide)\r\n});\r\n\r\nopenButton.addEventListener('click', _lib_modalWindowForm__WEBPACK_IMPORTED_MODULE_1__.toggleDialogVisibility);\r\ncloseButton.addEventListener('click', _lib_modalWindowForm__WEBPACK_IMPORTED_MODULE_1__.toggleDialogVisibility);\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./public/src/app/team/team.js?");
 
 /***/ }),
 
@@ -27,6 +27,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\nconst menuActivator = (buttonSelector, moveDownElementSelector) => {\r\n    const menuButton = document.getElementById(buttonSelector);\r\n    const header = document.querySelector(moveDownElementSelector);\r\n\r\n    const switchMenu = () => {\r\n        header.classList.toggle('open');\r\n        document.body.classList.toggle('overflow');\r\n        \r\n        if (header.classList[header.classList.length-1] === 'open') {\r\n            menuButton.innerHTML = 'close menu';\r\n        }\r\n        else {\r\n            menuButton.innerHTML = 'menu';\r\n        }\r\n    }\r\n\r\n    menuButton.addEventListener('click', switchMenu);\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menuActivator);\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./public/src/lib/menu.js?");
+
+/***/ }),
+
+/***/ "./public/src/lib/modalWindowForm.js":
+/*!*******************************************!*\
+  !*** ./public/src/lib/modalWindowForm.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"toggleDialogVisibility\": () => (/* binding */ toggleDialogVisibility)\n/* harmony export */ });\n\r\nconst toggleDialogVisibility = (e) => {\r\n    e.preventDefault();\r\n\r\n    const appDialog = document.getElementById('dialog');\r\n    // const wrapper = document.querySelector('.wrapper');\r\n    const openButton = document.getElementById('dialog-open-button');\r\n\r\n    if(e.target === openButton && localStorage.getItem('formOpenAccess') === false) {\r\n        window.location = calendarURL;\r\n    }\r\n    \r\n    appDialog.hidden = !appDialog.hidden;\r\n    // wrapper.hidden = !wrapper.hidden;\r\n    document.body.style.overflow = appDialog.hidden ? '' : 'hidden';\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./public/src/lib/modalWindowForm.js?");
 
 /***/ })
 

@@ -34,28 +34,38 @@ function getEndDate(date) {
     return (new Date(eventDate - dateOffset).toISOString().slice(0, -1).split('.')[0]);
 }
 
-async function run(res, data) {
-    const SCOPES = ['https://www.googleapis.com/auth/calendar', 'https://www.googleapis.com/auth/calendar.events'];
-    const CALENDAR_ID = process.env.CALENDAR_ID;
-    const sk = process.env.SERVICE_KEY;
-
-
+async function authJWT(SCOPES) {
     const jwtClient = new google.auth.JWT(
         sk.client_email,
         null,
         sk.private_key,
         SCOPES,
     );
-      
+
+    const auth = new google.auth.GoogleAuth({
+        keyFile: "./service_key.json",
+        scopes: SCOPES,
+    }); 
+
+    return {jwtClient, auth}
+}
+
+async function runGmailAPI(res, data) {
+    
+}
+
+async function runCalendarAPI(res, data) {
+    const SCOPES = ['https://www.googleapis.com/auth/calendar', 'https://www.googleapis.com/auth/calendar.events'];
+    const CALENDAR_ID = process.env.CALENDAR_ID;
+    const sk = process.env.SERVICE_KEY;
+    
+
+
     const calendar = google.calendar({
         version: "v3",
         auth: jwtClient,
     });
-      
-    const auth = new google.auth.GoogleAuth({
-        keyFile: "./service_key.json",
-        scopes: SCOPES,
-    });  
+   
       
     const calendarEvent = {
         summary: "MEETING WITH UTC FILM",

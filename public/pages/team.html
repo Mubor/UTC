@@ -292,7 +292,7 @@
                                 show bio
                             </div>
                         </div>
-                        <div class="team__gif"><img src="" alt=""></div>
+                        <div class="team__gif"><img src="../media/team/hidden.gif" alt="hidden"></div>
                         <div class="team__name">Hidden Charachter</div>
                     </div>
                     <div class="team__back">
@@ -506,7 +506,7 @@
                                 show bio
                             </div>
                         </div>
-                        <div class="team__gif"><img src="" alt=""></div>
+                        <div class="team__gif"><img src="../media/team/hidden.gif" alt="hidden"></div>
                         <div class="team__name">Hidden Charachter</div>
                     </div>
                     <div class="team__back">
@@ -623,7 +623,7 @@
                 <p class="content__text">WE CREATE ADVERTISING CAMPAIGNS AND 🎥 SHOOT THEM OURSELVES, HAVING TWO INDEPENDENT UNITS: CREATIVE AND VIDEO PRODUCTION, WHERE CREATORS AND PRODUCERS WORK LIKE TWO LEGS OF THE SAME CAPYBARA 🦫 - FROM THE IDEA TO ITS FULL IMPLEMENTATION. </p>
                 <p class="content__text">WE PRODUCE LARGE AND SMALL PROJECTS FOR UKRAINIAN AND 🌍 GLOBAL BRANDS, EMBODYING BOLD IDEAS THAT MOVE BUSINESSES FORWARD AND HELP BRANDS FIND THEIR INIMITABLE PATH AND SHINE BRIGHTLY IN A WORLD FULL OF DARKNESS✨</p>
             </div>
-            <a class="btn" href="">{join us}</a>
+            <span class="btn" id="dialog-open-button">{join us}</a>
         </section>
         <footer class="footer">
             <div class="footer__body">
@@ -633,6 +633,44 @@
                 <div class="footer__item"><a href="mailto:ukr.tv.film@gmail.com" class="footer__link">gmail</a></div>
             </div>
         </footer>
+    </div>
+    <div class="app-dialog" id="dialog">
+        <div class="app-dialog__overlay">
+          <div class="app-dialog__body">
+            <div class="container">
+                <!-- <div class="title">set up a meeting</div> -->
+                <button id="close-button">CLOSE</button>
+            </div>
+            <form name="data" method="post">
+                <span class="app-dialog__message">HELLO! MY NAME IS</span>
+                <label for="fullname">
+                    <div class="placeholder">input your full name</div>
+                    <input type="text" name="fullname" id="fullname" required><span class="error"></span>.
+                </label>
+                <span class="app-dialog__message">I am interested in your agency. It would be interesting to meet. Let's create a meeting for that date</span>
+                <label for="email">
+                    <div class="placeholder">input your email</div>
+                    <input type="email" name="email" id="email" required><span class="error"></span>.
+                </label>
+                <span class="app-dialog__message">Lorem ipsum dolor sit amet</span>
+                <label for="phone">
+                        <div class="placeholder">input your phone number</div>
+                        <input type="tel" name="phone" id="phone" ><span class="error"></span>.
+                    </label>
+                    <span class="app-dialog__message">adipiscing elit. Id orci, ut quam massa leo, tristique. Eleifend integer luctus phasellus</span>
+                    <label for="time">
+                        <div class="placeholder">input date</div>
+                        <input type="datetime-local" name="time" id="time" value="" required><span class="error"></span>.
+                    </label>
+                    <span class="app-dialog__message">eu egestas velit. Feugiat molestie sed eu, leo morbi et netus elit Feugiat molestie sed.</span>
+                    <label for="button">
+                        <input type="submit" value="Invite for a date" id="button">
+                    </label>
+                    <h2 id="message"></h2>
+                    <span class="app-dialog__message"></span>
+              </form>
+          </div>
+        </div>
     </div>
     <script src="../dist/team.js"></script>
 </body>

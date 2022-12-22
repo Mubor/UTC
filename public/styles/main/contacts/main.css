@@ -112,21 +112,15 @@ input[type="datetime-local"]:focus {
   color: #b2b2b2 !important;
 }
 
-.title, #close-button {
+#close-button {
   padding: 1% 2%;
-}
-
-.title {
-  display: none;
-  text-transform: uppercase;
-  color: #4AE64B;
 }
 
 #close-button {
   font-size: 1.6vw;
   border: 0;
   background-color: transparent;
-  color: darkgoldenrod;
+  color: #E46D29;
 }
 
 @media screen and (max-width: 830px) {

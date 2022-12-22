@@ -1,26 +1,13 @@
 import menuActivator from "../../lib/menu";
+import { toggleDialogVisibility } from "../../lib/modalWindowForm";
         
 const calendarURL = "https://calendar.google.com/calendar/u/4?cid=dXQ5bWVsMmUxNmNpOW1lcTJ1dWJoZTBsMmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ";
 const mediaContainer = document.getElementById('scroll-media');
-const dialogButton = document.getElementById('dialog-open-button');
+const openButton = document.getElementById('dialog-open-button');
 const closeButton = document.getElementById('close-button');
 const appDialog = document.getElementById('dialog');
 const form = document.forms.data;
-const wrapper = document.querySelector('.wrapper');
 
-const toggleDialogVisibility = (e) => {
-    e.preventDefault();
-
-    if(e.target === dialogButton && localStorage.getItem('formOpenAccess') === false) {
-        window.location = calendarURL;
-    }
-
-    appDialog.hidden = !appDialog.hidden;
-    wrapper.hidden = !wrapper.hidden;
-    document.body.style.overflow = appDialog.hidden ? '' : 'hidden';
-}
-
-wrapper.hidden = false;
 appDialog.hidden = true;
 
 const scrollCenter = 989/2 - mediaContainer.clientWidth/2;
@@ -28,7 +15,7 @@ mediaContainer.scrollTo(scrollCenter, 0);
 
 menuActivator('menu-button', 'header');
 
-dialogButton.addEventListener('click', toggleDialogVisibility);
+openButton.addEventListener('click', toggleDialogVisibility);
 closeButton.addEventListener('click', toggleDialogVisibility);
 
 

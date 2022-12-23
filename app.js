@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const { google } = require('googleapis');
 const bodyParser = require('body-parser');
+const { gmail } = require("googleapis/build/src/apis/gmail");
 
 
 const app = express();
@@ -34,7 +35,7 @@ function getEndDate(date) {
     return (new Date(eventDate - dateOffset).toISOString().slice(0, -1).split('.')[0]);
 }
 
-async function authJWT(SCOPES) {
+async function authJWT(SCOPES, sk) {
     const jwtClient = new google.auth.JWT(
         sk.client_email,
         null,
@@ -51,7 +52,26 @@ async function authJWT(SCOPES) {
 }
 
 async function runGmailAPI(res, data) {
-    
+    const SCOPES = ['https://www.googleapis.com/auth/gmail', 'https://www.googleapis.com/auth/gmail.send'];
+    const auth = new google.auth.GoogleAuth({
+        keyFile: "./service_key.json",
+        scopes: SCOPES,
+    }); 
+    const jwtClient = new google.auth.JWT(
+        sk.client_email,
+        null,
+        sk.private_key,
+        SCOPES,
+    );
+
+    const mail = google.gmail({
+        version: "v3",
+        auth: jwtClient,
+    });
+
+    auth.getClient().then(auth => {
+        mail.users.messages.send
+    });
 }
 
 async function runCalendarAPI(res, data) {
@@ -59,14 +79,13 @@ async function runCalendarAPI(res, data) {
     const CALENDAR_ID = process.env.CALENDAR_ID;
     const sk = process.env.SERVICE_KEY;
     
-
+    const {jwtClient, auth} = authJWT(SCOPES, sk);
 
     const calendar = google.calendar({
         version: "v3",
         auth: jwtClient,
     });
    
-      
     const calendarEvent = {
         summary: "MEETING WITH UTC FILM",
         description: `Meeting with: ${data.fullname}, ${data.email}`,
@@ -88,8 +107,7 @@ async function runCalendarAPI(res, data) {
         },
     };
     
-
-    const operationResponser = (error, response) => {
+    const calendarOperationResponser = (error, response) => {
         if (error) {
             console.log("Something went wrong: " + error.message);
             return;
@@ -104,7 +122,7 @@ async function runCalendarAPI(res, data) {
                 calendarId: CALENDAR_ID,
                 resource: calendarEvent,
             }, 
-            operationResponser);
+            calendarOperationResponser);
         });
 
     };

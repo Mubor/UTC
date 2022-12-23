@@ -623,7 +623,7 @@
                 <p class="content__text">WE CREATE ADVERTISING CAMPAIGNS AND 🎥 SHOOT THEM OURSELVES, HAVING TWO INDEPENDENT UNITS: CREATIVE AND VIDEO PRODUCTION, WHERE CREATORS AND PRODUCERS WORK LIKE TWO LEGS OF THE SAME CAPYBARA 🦫 - FROM THE IDEA TO ITS FULL IMPLEMENTATION. </p>
                 <p class="content__text">WE PRODUCE LARGE AND SMALL PROJECTS FOR UKRAINIAN AND 🌍 GLOBAL BRANDS, EMBODYING BOLD IDEAS THAT MOVE BUSINESSES FORWARD AND HELP BRANDS FIND THEIR INIMITABLE PATH AND SHINE BRIGHTLY IN A WORLD FULL OF DARKNESS✨</p>
             </div>
-            <span class="btn" id="dialog-open-button">{join us}</a>
+            <span class="btn" id="dialog-open-button">{UTC++}</a>
         </section>
         <footer class="footer">
             <div class="footer__body">
@@ -642,32 +642,37 @@
                 <button id="close-button">CLOSE</button>
             </div>
             <form name="data" method="post">
-                <span class="app-dialog__message">HELLO! MY NAME IS</span>
+                <span class="app-dialog__message">HI THERE! MY NAME IS</span>
                 <label for="fullname">
                     <div class="placeholder">input your full name</div>
                     <input type="text" name="fullname" id="fullname" required><span class="error"></span>.
                 </label>
-                <span class="app-dialog__message">I am interested in your agency. It would be interesting to meet. Let's create a meeting for that date</span>
-                <label for="email">
-                    <div class="placeholder">input your email</div>
-                    <input type="email" name="email" id="email" required><span class="error"></span>.
+                <span class="app-dialog__message"> I AM</span>
+                <label for="vacancy">
+                    <div class="placeholder">select vacancy</div>
+                    <!-- <input type="email" name="email" id="email" required> -->
+                    <select name="vacancy" id="vacancy">
+                        <option value="creative">CREATIVE</option>
+                        <option value="new business">NEW BUSINESS</option>
+                        <option value="intern">INTERN</option>
+                    </select><span class="error"></span>.
                 </label>
-                <span class="app-dialog__message">Lorem ipsum dolor sit amet</span>
+                <span class="app-dialog__message"> I REALLY LIKE WHAT YOU DO SO I WANT TO BE PART OF YOUR TEAM. I WILL LEAVE A LINK HERE TO MY PORTFOLIO/CV</span>
+                <label for="cv">
+                    <div class="placeholder">input link to your CV</div>
+                    <input type="text" name="cv" id="cv" ><span class="error"></span>.
+                </label>
+                <span class="app-dialog__message">AND PHONE NUMBER</span>
                 <label for="phone">
-                        <div class="placeholder">input your phone number</div>
-                        <input type="tel" name="phone" id="phone" ><span class="error"></span>.
-                    </label>
-                    <span class="app-dialog__message">adipiscing elit. Id orci, ut quam massa leo, tristique. Eleifend integer luctus phasellus</span>
-                    <label for="time">
-                        <div class="placeholder">input date</div>
-                        <input type="datetime-local" name="time" id="time" value="" required><span class="error"></span>.
-                    </label>
-                    <span class="app-dialog__message">eu egestas velit. Feugiat molestie sed eu, leo morbi et netus elit Feugiat molestie sed.</span>
-                    <label for="button">
-                        <input type="submit" value="Invite for a date" id="button">
-                    </label>
-                    <h2 id="message"></h2>
-                    <span class="app-dialog__message"></span>
+                    <div class="placeholder">input your phone number</div>
+                    <input type="tel" name="phone" id="phone" ><span class="error"></span>.
+                </label>
+                <span class="app-dialog__message">LET A SPARK FLY BETWEEN US. I'M LOOKING FORWARD TO! (YOUR FUTURE FRIEND).</span>
+                <label for="button">
+                    <input type="submit" value="JOIN OUR TEAM" id="button">
+                </label>
+                <h2 id="message"></h2>
+                <span class="app-dialog__message"></span>
               </form>
           </div>
         </div>

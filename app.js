@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const { google } = require('googleapis');
 const bodyParser = require('body-parser');
 const { gmail } = require("googleapis/build/src/apis/gmail");
+const nodemailer = require("nodemailer") 
 
 
 const app = express();
@@ -20,7 +21,11 @@ app.listen(process.env.PORT, ()=>console.log('Server is running...' + process.cw
 
 app.post("/create", function (request, response) {
     if(!request.body || request.body === {}) return response.sendStatus(400);
-    run(response, request.body);
+    runCalendarAPI(response, request.body);
+});
+app.post("/send", function (request, response) {
+    if(!request.body || request.body === {}) return response.sendStatus(400);
+    runGmailAPI(response, request.body);
 });
 
 
@@ -35,43 +40,54 @@ function getEndDate(date) {
     return (new Date(eventDate - dateOffset).toISOString().slice(0, -1).split('.')[0]);
 }
 
-async function authJWT(SCOPES, sk) {
-    const jwtClient = new google.auth.JWT(
-        sk.client_email,
-        null,
-        sk.private_key,
-        SCOPES,
-    );
-
-    const auth = new google.auth.GoogleAuth({
-        keyFile: "./service_key.json",
-        scopes: SCOPES,
-    }); 
-
-    return {jwtClient, auth}
-}
-
 async function runGmailAPI(res, data) {
-    const SCOPES = ['https://www.googleapis.com/auth/gmail', 'https://www.googleapis.com/auth/gmail.send'];
-    const auth = new google.auth.GoogleAuth({
-        keyFile: "./service_key.json",
-        scopes: SCOPES,
-    }); 
-    const jwtClient = new google.auth.JWT(
-        sk.client_email,
-        null,
-        sk.private_key,
-        SCOPES,
+    const ck = JSON.parse(process.env.CLIENT_KEY);
+    const token = JSON.parse(process.env.TOKEN);
+    const myEmail = 'muha010801@gmail.com';
+    const oauth2Client = new google.auth.OAuth2(
+        ck.client_id, 
+        ck.client_secret, 
+        token.redirect_uris
     );
 
-    const mail = google.gmail({
-        version: "v3",
-        auth: jwtClient,
+    oauth2Client.setCredentials({ refresh_token: token.refresh_token});
+    
+    const accessToken = await oauth2Client.getAccessToken();
+
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+            type: 'OAuth2',
+            user: myEmail,
+            clientId: ck.client_id,
+            clientSecret: ck.client_secret,
+            refreshToken: token.refresh_token,
+            accessToken,
+        },
     });
 
-    auth.getClient().then(auth => {
-        mail.users.messages.send
-    });
+    try {
+        await transporter.sendMail({
+            from: myEmail,
+            to: "muha010801@gmail.com",
+            subject: "Message from " + data.username,
+            text: data.message,
+          }, 
+          function(error, info){
+            if(error){
+              console.log("Error: "+error);
+            } else {
+              console.log("Success: "+info);
+            }
+        });
+
+    } catch (error) {
+        console.log(error.message);
+        res.sendStatus(400)
+    }
 }
 
 async function runCalendarAPI(res, data) {
@@ -79,7 +95,17 @@ async function runCalendarAPI(res, data) {
     const CALENDAR_ID = process.env.CALENDAR_ID;
     const sk = process.env.SERVICE_KEY;
     
-    const {jwtClient, auth} = authJWT(SCOPES, sk);
+    const jwtClient = new google.auth.JWT(
+        sk.client_email,
+        null,
+        sk.private_key,
+        SCOPES,
+    );
+
+    const auth = new google.auth.GoogleAuth({
+        keyFile: "./service_key.json",
+        scopes: SCOPES,
+    }); 
 
     const calendar = google.calendar({
         version: "v3",

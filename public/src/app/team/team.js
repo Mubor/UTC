@@ -7,6 +7,7 @@ const buttons = document.querySelectorAll('.team__button');
 const appDialog = document.getElementById('dialog');
 const openButton = document.getElementById('dialog-open-button');
 const closeButton = document.getElementById('close-button');
+const form = document.forms.letter
 
 appDialog.hidden = true;
 
@@ -24,5 +25,44 @@ const slide = (e) => {
 openButton.addEventListener('click', toggleDialogVisibility);
 closeButton.addEventListener('click', toggleDialogVisibility);
 
+const messageFormer = (form) => {
+    const formChildArr = form.children;
+    let res = '';
+    for (const element of formChildArr) {
+        if(element.className === 'app-dialog__message') {
+            res+=element.innerHTML;
+        } 
+        else if (element.id !== 'message' && element.attributes.for.textContent !== 'button') {
+            res += ' ' + form[element.attributes.for.textContent].value + '.'
+        }
+    }
+    
+    console.log(res);
+    return res;
+}
+
+form.addEventListener('submit', async e => {
+    e.preventDefault();
+    
+    let request = {
+        username: form.fullname.value,
+        message: messageFormer(form)
+    }
+    
+    let response = await fetch('/send', {
+        method: 'POST',
+        headers: new Headers({'content-type': 'application/json'}),
+        body: JSON.stringify(request),
+    });
+  
+    await response.json();
+
+    if(response.status === 200) {
+      console.log("sent")
+    }
+    else {
+        alert("Something went wrong, please check your input.");
+    }
+})
 
 

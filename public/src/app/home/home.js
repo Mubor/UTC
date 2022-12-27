@@ -1,6 +1,7 @@
 import menuActivator from "../../lib/menu";
 import Typed from "typed.js";
 import generate from "../../lib/generate";
+import { translatePage } from "../../lib/translator";
 
 const typeText = document.getElementById('type-source').innerHTML;
 const isLooped = JSON.parse(document.getElementById('type-loop').innerHTML);
@@ -46,6 +47,46 @@ window.addEventListener('resize', () => {
 });
 
 //generate random teammate from sample after reload
-window.onload = generate;
 //menu activate
 menuActivator('menu-button', 'header');
+
+//language switchers 
+
+const uaButton = document.getElementById('ua');
+const engButton = document.getElementById('eng');
+const currentLang = localStorage.getItem('lang') || 'eng';
+
+const langButton = document.getElementById(currentLang);
+
+const resetActiveClass = (buttons,activeClass) => {
+    buttons.forEach((elem) => {
+        elem.classList.remove(activeClass);
+	});
+}
+
+const changeLang = (e) => {
+    const activeClass = 'language__elem--current';
+    const itemClass = '.language__elem';
+    
+    if( e.target.classList.contains(activeClass) ) {
+        return;
+    }
+    
+    resetActiveClass([...document.querySelectorAll(itemClass)], activeClass);
+    e.target.closest(itemClass).classList.add(activeClass);
+    localStorage.setItem('lang', e.target.id);
+    translatePage('home', e.target.id)
+    console.log(currentLang)
+}
+
+uaButton.onclick = changeLang;
+engButton.onclick = changeLang;
+
+window.onload = () => {
+    generate();
+    
+    langButton.closest('.language__elem').classList.add('language__elem--current');
+    if(currentLang !== 'eng') {
+        translatePage('home', currentLang);
+    }
+}

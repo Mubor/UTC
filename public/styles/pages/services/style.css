@@ -446,7 +446,7 @@ html {
   font-family: Montserrat;
   text-transform: uppercase;
   text-align: center;
-  font-size: 8.89vh;
+  font-size: 8vh;
 }
 
 .text__img {
@@ -553,7 +553,7 @@ html {
   }
   .text__item {
     width: 70%;
-    font-size: 17.06vw;
+    font-size: 11.06vw;
     text-align: center;
   }
   .text__item > span {

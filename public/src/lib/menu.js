@@ -8,10 +8,12 @@ const menuActivator = (buttonSelector, moveDownElementSelector) => {
         document.body.classList.toggle('overflow');
         
         if (header.classList[header.classList.length-1] === 'open') {
-            menuButton.innerHTML = 'close menu';
+            menuButton.innerHTML = localStorage.getItem('lang') === 'ua'
+                ? 'закрити меню' : 'close menu';
         }
         else {
-            menuButton.innerHTML = 'menu';
+            menuButton.innerHTML = localStorage.getItem('lang') === 'ua'
+                ? 'меню' : 'menu';
         }
     }
 

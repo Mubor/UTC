@@ -18,25 +18,25 @@
                     <span class="spec-violet header__mobile-hidden">~</span>
                     <span class="header__mobile-hidden">$</span>
                     <span class="header__text">
-                        <a href="../index.html">HOME</a>
+                        <a href="../index.html" data-lang="link-1">HOME</a>
                     </span>
                     ->
-                    <a href="../pages/services.html">CONTACTS</a>
+                    <a href="../pages/services.html" data-lang="link-5">CONTACTS</a>
                     <span class="type-cursor">|</span>
                 </div>
                 <div class="header__menu-button">
-                    <span id="menu-button">menu</span>
+                    <span id="menu-button" data-lang="menu-button">menu</span>
                 </div>
             </div>
             <nav class="header__menu">
                 <div class="header__menu-top">
-                    <a href="../pages/contacts.html" class="header__link">contacts</a>
+                    <a href="../pages/contacts.html" class="header__link" data-lang="link-5">contacts</a>
                 </div>
                 <ul class="header__list">
-                    <li class="header__link--current"><a href="../index.html" class="header__link">home</a></li>
-                    <li><a href="works.html" class="header__link">works</a></li>
-                    <li><a href="team.html" class="header__link">team</a></li>
-                    <li><a href="services.html" class="header__link">services</a></li>
+                    <li class="header__link--current"><a href="../index.html" class="header__link" data-lang="link-1">home</a></li>
+                    <li><a href="works.html" class="header__link" data-lang="link-2">works</a></li>
+                    <li><a href="team.html" class="header__link" data-lang="link-3">team</a></li>
+                    <li><a href="services.html" class="header__link" data-lang="link-4">services</a></li>
                 </ul>
             </nav>
         </header>
@@ -45,8 +45,8 @@
             <div class="contacts__item"> 
                 <div class="contacts__title">
                     <span class="keytext">
-                        YOU CAN:
-                        <a class="contacts__link" href="mailto:ukr.tv.film@gmail.com">
+                        <span data-lang="title-1">YOU CAN:</span>
+                        <a class="contacts__link" href="mailto:ukr.tv.film@gmail.com" data-lang="title-2">
                             <span class="spec-violet">~</span>TEXT U<span class="spec-orange">$</span>
                         </a>
                     </span>
@@ -56,8 +56,8 @@
             <div class="contacts__item">
                 <div class="contacts__title">
                     <span class="keytext">
-                        YOU CAN: 
-                        <a class="contacts__link" href="tel:+380506945679">
+                        <span data-lang="title-1">YOU CAN:</span> 
+                        <a class="contacts__link" href="tel:+380506945679" data-lang="title-3">
                             <span class="spec-violet">~</span>C&commat;LL US
                         </a>
                     </span>
@@ -68,14 +68,14 @@
            </div>
            <div class="info">
             <div class="info__text">
-                <span class="keytext">OR YOU CAN JUST MEET US ON THE FUCKING AWESOME ROOF</span>
+                <span class="keytext" data-lang="text-1">OR YOU CAN JUST MEET US ON THE FUCKING AWESOME ROOF</span>
             </div>
-            <div class="info__text">KOZHUMIATSKA 16B ST, KYIV, UKRAINE</div>
+            <div class="info__text" data-lang="text-2">KOZHUMIATSKA 16B ST, KYIV, UKRAINE</div>
             <div class="info__media" id="scroll-media">
                 <img src="../media/roof.png" alt="roof">
                 <div class="info__button df">
                     <div class="info__pic"><img src="../media/heart.png" alt="heart"></div>
-                    <span id="dialog-open-button">Invite for a date</span>
+                    <span id="dialog-open-button" data-lang="btn-1">Invite for a date</span>
                     <div class="info__pic"><img src="../media/heart.png" alt="heart"></div>
                 </div>
             </div>
@@ -105,9 +105,9 @@
           <div class="app-dialog__body">
             <div class="container">
                 <!-- <div class="title">set up a meeting</div> -->
-                <button id="close-button">CLOSE</button>
+                <button id="close-button" data-lang="form-close">CLOSE</button>
             </div>
-            <form name="data" method="post">
+            <form name="data" method="post" data-lang="form-text">
                 <span class="app-dialog__message">HELLO! MY NAME IS</span>
                 <label for="fullname">
                     <div class="placeholder">input your full name</div>
@@ -141,3 +141,4 @@
     <script src="../dist/contacts.js"></script>
 </body>
 </html>
+

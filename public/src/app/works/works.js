@@ -1,5 +1,8 @@
 import menuActivator from "../../lib/menu";
 import Masonry from "masonry-layout";
+import { translatePage } from "../../lib/translator";
+
+const currentLang = localStorage.getItem('lang');
 
 menuActivator('menu-button', 'header');
 
@@ -13,6 +16,10 @@ window.onload = () => {
         gutter: '.grid__gutter-sizer',
         percentPosition: true
     });
+
+    if(currentLang !== 'eng') {
+        translatePage('works', currentLang);
+    }
 }
 
 

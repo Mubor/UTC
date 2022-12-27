@@ -442,15 +442,11 @@ html {
   border: 2px solid black;
 }
 
-.language__elem:hover ~ .language__elem {
-  border-color: white;
-}
-
-.language .language__elem--current > a {
+.language .language__elem--current > div {
   color: black;
 }
 
-.language__elem > a {
+.language__elem > div {
   color: #AFAFAF;
 }
 

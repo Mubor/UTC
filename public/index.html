@@ -19,18 +19,18 @@
                     <span class="header__text" id="type-container"></span>
                 </div>
                 <div class="header__menu-button">
-                    <span id="menu-button">menu</span>
+                    <span id="menu-button" data-lang="menu-button">menu</span>
                 </div>
             </div>
             <nav class="header__menu header__menu--homepage">
                 <div class="header__menu-top">
-                    <a href="." class="header__link">home</a>
+                    <a href="." class="header__link" data-lang="link-1">home</a>
                 </div>
                 <ul class="header__list">
-                    <li><a href="pages/works.html" class="header__link">works</a></li>
-                    <li><a href="pages/team.html" class="header__link">team</a></li>
-                    <li><a href="pages/services.html" class="header__link">services</a></li>
-                    <li><a href="pages/contacts.html" class="header__link">contacts</a></li>
+                    <li><a href="pages/works.html" class="header__link" data-lang="link-2">works</a></li>
+                    <li><a href="pages/team.html" class="header__link" data-lang="link-3">team</a></li>
+                    <li><a href="pages/services.html" class="header__link" data-lang="link-4">services</a></li>
+                    <li><a href="pages/contacts.html" class="header__link" data-lang="link-5">contacts</a></li>
                 </ul>
             </nav>
         </header>
@@ -62,11 +62,12 @@
                 </div>
                 <div class="language df">
                     <div class="language__elem">
-                        <a href="">козак</a>
+                        <div id="ua" data-btn="ua">козак</div>
                     </div>
                     <span>~</span>
-                    <div class="language__elem language__elem--current">
-                        <a href="">englishman</a>
+                    <div class="language__elem">
+                        <div id="eng" data-btn="eng">englishman</div>
+                        <!-- <a href="">englishman</a> -->
                     </div>
                 </div>
             </div>

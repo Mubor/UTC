@@ -1,5 +1,6 @@
 import menuActivator from "../../lib/menu";
 import { toggleDialogVisibility } from "../../lib/modalWindowForm";
+import { translatePage } from "../../lib/translator";
         
 const calendarURL = "https://calendar.google.com/calendar/u/4?cid=dXQ5bWVsMmUxNmNpOW1lcTJ1dWJoZTBsMmdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ";
 const mediaContainer = document.getElementById('scroll-media');
@@ -7,6 +8,7 @@ const openButton = document.getElementById('dialog-open-button');
 const closeButton = document.getElementById('close-button');
 const appDialog = document.getElementById('dialog');
 const form = document.forms.data;
+const currentLang = localStorage.getItem('lang');
 
 appDialog.hidden = true;
 
@@ -26,6 +28,12 @@ const validateDate = (date) => {
         return false;
     }
     else return true;
+}
+
+window.onload = () => {
+    if(currentLang !== 'eng') {
+        translatePage('contacts', currentLang);
+    }
 }
 
 form.addEventListener('submit', async (e) => {

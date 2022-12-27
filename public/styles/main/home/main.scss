@@ -82,16 +82,19 @@
             border: 2px solid black;
         }
 
-        &:hover ~ & {
-            border-color: white;
-        }
+        // &:hover {
+        //     border-color: white;
+        // }
+        // &:hover ~ & {
+        //     border-color: white;
+        // }
     }
 
-    & &__elem--current > a {
+    & &__elem--current > div {
         color: black ;
     }
     
-    &__elem > a {
+    &__elem > div {
         color: #AFAFAF;
     }
 

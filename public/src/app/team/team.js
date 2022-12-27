@@ -1,5 +1,6 @@
 import menuActivator from "../../lib/menu";
 import { toggleDialogVisibility } from "../../lib/modalWindowForm";
+import { translatePage } from "../../lib/translator";
 
 menuActivator('menu-button', 'header');
 
@@ -8,6 +9,7 @@ const appDialog = document.getElementById('dialog');
 const openButton = document.getElementById('dialog-open-button');
 const closeButton = document.getElementById('close-button');
 const form = document.forms.letter
+const currentLang = localStorage.getItem('lang');
 
 appDialog.hidden = true;
 
@@ -64,5 +66,11 @@ form.addEventListener('submit', async e => {
         alert("Something went wrong, please check your input.");
     }
 })
+
+window.onload = () => {
+    if(currentLang !== 'eng') {
+        translatePage('home', currentLang);
+    }
+}
 
 

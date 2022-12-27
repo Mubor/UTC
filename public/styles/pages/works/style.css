@@ -358,7 +358,8 @@ html {
 }
 
 .message {
-  margin: 2% auto;
+  margin: 0 auto;
+  padding: 2%;
   text-align: center;
   font-size: 5.555vw;
   line-height: 1.2;

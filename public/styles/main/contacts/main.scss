@@ -4,7 +4,9 @@
 body {
     position: relative;
 }
-
+html {
+    background-color: rgb(253, 253, 253);
+}
 .main {
     position: relative;
     font-size: 3.628vh;
@@ -23,8 +25,7 @@ body {
 }
 
 .contacts {
-    margin: 0 auto;
-    padding-top: 6vh;
+    margin: 6vh auto 0;
     // width: 158vh;
     width: 97%;
     justify-content: space-between;

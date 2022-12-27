@@ -533,6 +533,10 @@ body {
   position: relative;
 }
 
+html {
+  background-color: #fdfdfd;
+}
+
 .main {
   position: relative;
   font-size: 3.628vh;
@@ -551,8 +555,7 @@ body {
 }
 
 .contacts {
-  margin: 0 auto;
-  padding-top: 6vh;
+  margin: 6vh auto 0;
   width: 97%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
